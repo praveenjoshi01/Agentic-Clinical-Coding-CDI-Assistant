@@ -121,7 +121,7 @@ Return a JSON object with these exact fields:
 - "confidence": your confidence 0.0-1.0
 - "reasoning": one sentence explaining why this code is most appropriate
 - "needs_specificity": true if a more specific code might exist but documentation is insufficient
-- "alternatives": [{"code": "X", "description": "Y", "reason": "Z"}] for top 2 alternatives
+- "alternatives": [{{"code": "X", "description": "Y", "reason": "Z"}}] for top 2 alternatives
 
 Return ONLY the JSON object, no other text."""
 
@@ -207,7 +207,7 @@ def build_code_suggestion(
     # Blend LLM confidence with top reranker score
     llm_confidence = llm_result["confidence"]
     top_rerank_score = candidates[0].get("rerank_score", candidates[0].get("score", 0.0))
-    blended_confidence = 0.6 * llm_confidence + 0.4 * top_rerank_score
+    blended_confidence = max(0.0, min(1.0, 0.6 * llm_confidence + 0.4 * top_rerank_score))
 
     return CodeSuggestion(
         icd10_code=llm_result["selected_code"],

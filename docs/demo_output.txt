@@ -1,0 +1,168 @@
+========================================================================
+  ClinIQ -- Clinical Documentation Integrity Pipeline Demo (quick mode -- skipping LLM coding)
+  5-stage pipeline: Ingest -> NER -> RAG Coding -> CDI -> Audit
+========================================================================
+
+========================================================================
+  SCENARIO: CKD + Hypertension (68M, case_004)
+========================================================================
+  File: case_004.txt
+  Input preview: Chief Complaint: Follow-up for chronic kidney disease and hypertension.
+
+History of Present Illness: Patient is a 68-yea...
+
+
+------------------------------------------------------------------------
+  STAGE 1: INGESTION
+------------------------------------------------------------------------
+  Source type   : text
+  Patient ID    : 0cbca27f-3f5c-46ba-bca6-02a6640c3ade
+  Encounter ID  : a055b67a-466a-4a17-bd34-30ee7c629be7
+  Confidence    : 1.00
+  Narrative len : 681 chars
+
+------------------------------------------------------------------------
+  STAGE 2: NER (Named Entity Recognition)
+------------------------------------------------------------------------
+  Total entities: 19
+  Diagnoses     : 4
+  Procedures    : 1
+  Medications   : 6
+
+  Entity Text                         Type               Neg?    Conf  Qualifiers
+  ----------------------------------- ------------------ ------ -----  --------------------
+  68 - year - old                     other                      1.00  
+  male                                other                      1.00  
+  chronic kidney disease              diagnosis                  0.99  stage 3
+  45                                  other                      0.92  
+  good                                lab_value                  1.00  
+  blood pressure control              procedure                  0.85  
+  li                                  medication                 1.00  
+  ##sin                               medication                 1.00  
+  ##opril                             medication                 0.95  
+  20mg                                other              YES     1.00  
+  amlodipine                          medication         YES     0.92  
+  5mg                                 other              YES     0.99  
+  chest                               anatomical_site    YES     1.00  
+  short                               diagnosis          YES     1.00  
+  edema                               diagnosis          YES     0.97  low
+  medication                          medication         YES     1.00  
+  hypertension                        diagnosis                  0.97  
+  medications                         medication                 1.00  
+  3 months                            other                      0.95  
+
+------------------------------------------------------------------------
+  STAGE 3: RAG-BASED ICD-10 CODING
+------------------------------------------------------------------------
+  (skipped in --quick mode; full run requires ~20 min/scenario on CPU)
+
+------------------------------------------------------------------------
+  STAGE 4: CDI ANALYSIS
+------------------------------------------------------------------------
+  Completeness score: 1.00
+  Gaps: 0  |  Conflicts: 0  |  Missed Dx: 0
+
+------------------------------------------------------------------------
+  STAGE 5: AUDIT TRAIL (Explainability)
+------------------------------------------------------------------------
+  Case ID       : f948fe98
+  Stages traced : 4
+
+    ingestion         0.2 ms  in=str  out=text, confidence=1.00
+    ner            7975.4 ms  in=681 chars  out=19 entities
+    rag               0.0 ms  in=skipped  out=Coding skipped
+    cdi               3.9 ms  in=0 codes  out=0 gaps, 0 conflicts, 0 missed dx
+
+  Total pipeline time: 7979.9 ms
+
+
+========================================================================
+  SCENARIO: CHF + Atrial Fibrillation (75M, case_010)
+========================================================================
+  File: case_010.txt
+  Input preview: Chief Complaint: Heart failure and atrial fibrillation management.
+
+History of Present Illness: 75-year-old male with co...
+
+
+------------------------------------------------------------------------
+  STAGE 1: INGESTION
+------------------------------------------------------------------------
+  Source type   : text
+  Patient ID    : d4dc8e22-6aa2-4b6d-980c-2275e8deaac4
+  Encounter ID  : d2cba589-6c66-47a5-b619-cce98f4e664a
+  Confidence    : 1.00
+  Narrative len : 860 chars
+
+------------------------------------------------------------------------
+  STAGE 2: NER (Named Entity Recognition)
+------------------------------------------------------------------------
+  Total entities: 34
+  Diagnoses     : 11
+  Procedures    : 1
+  Medications   : 6
+
+  Entity Text                         Type               Neg?    Conf  Qualifiers
+  ----------------------------------- ------------------ ------ -----  --------------------
+  heart failure                       diagnosis                  1.00  
+  at                                  diagnosis                  1.00  
+  ##rial fibrillation                 diagnosis                  0.93  
+  75 - year - old                     other                      1.00  
+  male                                other                      1.00  
+  heart failure                       diagnosis                  0.96  cong
+  l                                   diagnosis                  0.96  
+  ##ve                                diagnosis                  0.88  
+  atrial fibrillation                 diagnosis                  1.00  chronic
+  presents                            other                      0.97  
+  d                                   diagnosis                  1.00  mild
+  ##ys                                diagnosis                  1.00  
+  chest                               anatomical_site    YES     1.00  
+  pain                                diagnosis          YES     1.00  
+  stable                              lab_value          YES     0.82  
+  furosemide                          medication         YES     1.00  
+  40mg daily                          other              YES     1.00  
+  carvedilol                          medication         YES     1.00  
+  25mg                                other              YES     1.00  
+  apixaban                            medication                 0.91  
+  no                                  lab_value                  0.99  
+  lungs                               anatomical_site    YES     1.00  
+  clear                               lab_value          YES     0.99  
+  ex                                  anatomical_site    YES     0.83  
+  lower extremity                     anatomical_site    YES     1.00  
+  atrial fibrillation                 diagnosis                  1.00  chronic systolic, chronic, continue
+  controlled                          lab_value                  0.95  
+  medications                         medication                 1.00  
+  low                                 lab_value                  1.00  
+  sodium                              medication                 1.00  
+  diet counseling                     medication                 0.98  
+  daily                               other                      0.92  
+  weights                             procedure                  0.96  
+  3 months                            other                      0.93  
+
+------------------------------------------------------------------------
+  STAGE 3: RAG-BASED ICD-10 CODING
+------------------------------------------------------------------------
+  (skipped in --quick mode; full run requires ~20 min/scenario on CPU)
+
+------------------------------------------------------------------------
+  STAGE 4: CDI ANALYSIS
+------------------------------------------------------------------------
+  Completeness score: 1.00
+  Gaps: 0  |  Conflicts: 0  |  Missed Dx: 0
+
+------------------------------------------------------------------------
+  STAGE 5: AUDIT TRAIL (Explainability)
+------------------------------------------------------------------------
+  Case ID       : e947ff4b
+  Stages traced : 4
+
+    ingestion         0.1 ms  in=str  out=text, confidence=1.00
+    ner             119.4 ms  in=860 chars  out=34 entities
+    rag               0.0 ms  in=skipped  out=Coding skipped
+    cdi               0.1 ms  in=0 codes  out=0 gaps, 0 conflicts, 0 missed dx
+
+  Total pipeline time: 120.0 ms
+
+========================================================================
+  Demo complete.
+========================================================================
