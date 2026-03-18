@@ -10,30 +10,31 @@ See: .planning/PROJECT.md (updated 2026-03-18)
 ## Current Position
 
 Phase: 1 of 3 (Core Pipeline & Test Data Foundation)
-Plan: 3 of 6 in current phase
+Plan: 4 of 6 in current phase
 Status: Executing
-Last activity: 2026-03-18 — Completed 01-03: Multi-modal ingestion module
+Last activity: 2026-03-18 — Completed 01-04: Clinical NER pipeline with negation and qualifiers
 
-Progress: [█████░░░░░] 50%
+Progress: [██████░░░░] 67%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 3
+- Total plans completed: 4
 - Average duration: 4 min
-- Total execution time: 0.22 hours
+- Total execution time: 0.25 hours
 
 **By Phase:**
 
 | Phase | Plans | Total | Avg/Plan |
 |-------|-------|-------|----------|
-| 01 | 3 | 13 min | 4 min |
+| 01 | 4 | 15 min | 4 min |
 
 **Recent Trend:**
-- Last 5 plans: 3 min, 5 min, 5 min
+- Last 5 plans: 3 min, 5 min, 5 min, 2 min
 - Trend: Steady pace
 
 *Updated after each plan completion*
+| Phase 01 P04 | 2 | 2 tasks | 2 files |
 
 ## Accumulated Context
 
@@ -53,6 +54,9 @@ Recent decisions affecting current work:
 - 01-03: FHIR R4B (not R5) for parsing - R4B is standard for clinical systems, avoids R5 compatibility issues
 - 01-03: Confidence heuristic for image OCR based on text length (longer = better quality, clamped 0.4-0.85)
 - 01-03: Removed outlines dependency - requires Rust compiler, not needed for ingestion
+- [Phase 01]: Pattern-based negation detection over spaCy/negspacy for Python 3.14 compatibility
+- [Phase 01]: Keep qualifiers regardless of confidence threshold for clinical context preservation
+- [Phase 01]: 50-character window for qualifier attachment (balances precision/recall)
 
 ### Pending Todos
 
@@ -65,10 +69,10 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-03-18
-Stopped at: Completed 01-03-PLAN.md - Multi-modal ingestion module
+Stopped at: Completed 01-04-PLAN.md - Clinical NER pipeline with negation and qualifiers
 Resume file: None
 
 ---
 *State initialized: 2026-03-18*
-*Last updated: 2026-03-18 after completing 01-03*
-*Next action: /gsd:execute-phase 1 (continue with 01-04)*
+*Last updated: 2026-03-18 after completing 01-04*
+*Next action: /gsd:execute-phase 1 (continue with 01-05)*
