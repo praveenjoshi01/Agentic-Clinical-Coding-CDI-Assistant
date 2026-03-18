@@ -3,7 +3,6 @@
     "case_id": "case_001",
     "source_type": "fhir",
     "input_data": "cliniq/data/gold_standard/fhir_bundles/case_001.json",
-    "notes": "Type 2 diabetes with neuropathy and retinopathy complications",
     "expected_entities": [
       {
         "text": "Type 2 diabetes mellitus",
@@ -75,13 +74,13 @@
           "severity"
         ]
       }
-    ]
+    ],
+    "notes": "Type 2 diabetes with neuropathy and retinopathy complications"
   },
   {
     "case_id": "case_002",
     "source_type": "fhir",
     "input_data": "cliniq/data/gold_standard/fhir_bundles/case_002.json",
-    "notes": "Acute myocardial infarction with heart failure",
     "expected_entities": [
       {
         "text": "acute myocardial infarction",
@@ -100,6 +99,16 @@
         "end_char": 57,
         "negated": false,
         "qualifiers": []
+      },
+      {
+        "text": "elevated troponin",
+        "entity_type": "lab_finding",
+        "start_char": 62,
+        "end_char": 79,
+        "negated": false,
+        "qualifiers": [
+          "elevated"
+        ]
       }
     ],
     "expected_icd10_codes": [
@@ -145,13 +154,13 @@
           "systolic_diastolic"
         ]
       }
-    ]
+    ],
+    "notes": "Acute myocardial infarction with heart failure"
   },
   {
     "case_id": "case_003",
     "source_type": "fhir",
     "input_data": "cliniq/data/gold_standard/fhir_bundles/case_003.json",
-    "notes": "COPD exacerbation with pneumonia",
     "expected_entities": [
       {
         "text": "COPD exacerbation",
@@ -170,6 +179,16 @@
         "end_char": 32,
         "negated": false,
         "qualifiers": []
+      },
+      {
+        "text": "oxygen supplementation",
+        "entity_type": "treatment",
+        "start_char": 37,
+        "end_char": 59,
+        "negated": false,
+        "qualifiers": [
+          "supplemental"
+        ]
       }
     ],
     "expected_icd10_codes": [
@@ -215,10 +234,13 @@
           "laterality"
         ]
       }
-    ]
+    ],
+    "notes": "COPD exacerbation with pneumonia"
   },
   {
     "case_id": "case_004",
+    "source_type": "text",
+    "input_data": "cliniq/data/gold_standard/text_notes/case_004.txt",
     "expected_entities": [
       {
         "text": "chronic kidney disease",
@@ -301,12 +323,12 @@
         ]
       }
     ],
-    "source_type": "text",
-    "input_data": "cliniq/data/gold_standard/text_notes/case_004.txt",
     "notes": "Text note case from case_004"
   },
   {
     "case_id": "case_005",
+    "source_type": "text",
+    "input_data": "cliniq/data/gold_standard/text_notes/case_005.txt",
     "expected_entities": [
       {
         "text": "major depressive disorder",
@@ -389,12 +411,12 @@
         ]
       }
     ],
-    "source_type": "text",
-    "input_data": "cliniq/data/gold_standard/text_notes/case_005.txt",
     "notes": "Text note case from case_005"
   },
   {
     "case_id": "case_006",
+    "source_type": "text",
+    "input_data": "cliniq/data/gold_standard/text_notes/case_006.txt",
     "expected_entities": [
       {
         "text": "wound infection",
@@ -478,12 +500,12 @@
         ]
       }
     ],
-    "source_type": "text",
-    "input_data": "cliniq/data/gold_standard/text_notes/case_006.txt",
     "notes": "Text note case from case_006"
   },
   {
     "case_id": "case_007",
+    "source_type": "text",
+    "input_data": "cliniq/data/gold_standard/text_notes/case_007.txt",
     "expected_entities": [
       {
         "text": "asthma",
@@ -558,12 +580,12 @@
         ]
       }
     ],
-    "source_type": "text",
-    "input_data": "cliniq/data/gold_standard/text_notes/case_007.txt",
     "notes": "Text note case from case_007"
   },
   {
     "case_id": "case_008",
+    "source_type": "text",
+    "input_data": "cliniq/data/gold_standard/text_notes/case_008.txt",
     "expected_entities": [
       {
         "text": "breast cancer",
@@ -647,12 +669,12 @@
         ]
       }
     ],
-    "source_type": "text",
-    "input_data": "cliniq/data/gold_standard/text_notes/case_008.txt",
     "notes": "Text note case from case_008"
   },
   {
     "case_id": "case_009",
+    "source_type": "text",
+    "input_data": "cliniq/data/gold_standard/text_notes/case_009.txt",
     "expected_entities": [
       {
         "text": "urinary tract infection",
@@ -733,12 +755,12 @@
         ]
       }
     ],
-    "source_type": "text",
-    "input_data": "cliniq/data/gold_standard/text_notes/case_009.txt",
     "notes": "Text note case from case_009"
   },
   {
     "case_id": "case_010",
+    "source_type": "text",
+    "input_data": "cliniq/data/gold_standard/text_notes/case_010.txt",
     "expected_entities": [
       {
         "text": "congestive heart failure",
@@ -821,12 +843,12 @@
         ]
       }
     ],
-    "source_type": "text",
-    "input_data": "cliniq/data/gold_standard/text_notes/case_010.txt",
     "notes": "Text note case from case_010"
   },
   {
     "case_id": "case_011",
+    "source_type": "text",
+    "input_data": "cliniq/data/gold_standard/text_notes/case_011.txt",
     "expected_entities": [
       {
         "text": "osteoarthritis",
@@ -900,12 +922,12 @@
         ]
       }
     ],
-    "source_type": "text",
-    "input_data": "cliniq/data/gold_standard/text_notes/case_011.txt",
     "notes": "Text note case from case_011"
   },
   {
     "case_id": "case_012",
+    "source_type": "text",
+    "input_data": "cliniq/data/gold_standard/text_notes/case_012.txt",
     "expected_entities": [
       {
         "text": "ischemic stroke",
@@ -958,6 +980,11 @@
         "text": "Patient denies recent falls",
         "entity": "falls",
         "negated": true
+      },
+      {
+        "text": "no new ischemic events on imaging",
+        "entity": "ischemic events",
+        "negated": true
       }
     ],
     "cdi_gap_annotations": [
@@ -982,12 +1009,12 @@
         ]
       }
     ],
-    "source_type": "text",
-    "input_data": "cliniq/data/gold_standard/text_notes/case_012.txt",
     "notes": "Text note case from case_012"
   },
   {
     "case_id": "case_013",
+    "source_type": "text",
+    "input_data": "cliniq/data/gold_standard/text_notes/case_013.txt",
     "expected_entities": [
       {
         "text": "pneumonia",
@@ -1031,6 +1058,11 @@
         "text": "Patient denies chest pain when lucid",
         "entity": "chest pain",
         "negated": true
+      },
+      {
+        "text": "patient is febrile with productive cough",
+        "entity": "productive cough",
+        "negated": false
       }
     ],
     "cdi_gap_annotations": [
@@ -1063,12 +1095,12 @@
         ]
       }
     ],
-    "source_type": "text",
-    "input_data": "cliniq/data/gold_standard/text_notes/case_013.txt",
     "notes": "Text note case from case_013"
   },
   {
     "case_id": "case_014",
+    "source_type": "text",
+    "input_data": "cliniq/data/gold_standard/text_notes/case_014.txt",
     "expected_entities": [
       {
         "text": "hypothyroidism",
@@ -1110,6 +1142,11 @@
         "text": "Denies depression",
         "entity": "depression",
         "negated": true
+      },
+      {
+        "text": "no goiter on examination",
+        "entity": "goiter",
+        "negated": true
       }
     ],
     "cdi_gap_annotations": [
@@ -1128,12 +1165,12 @@
         ]
       }
     ],
-    "source_type": "text",
-    "input_data": "cliniq/data/gold_standard/text_notes/case_014.txt",
     "notes": "Text note case from case_014"
   },
   {
     "case_id": "case_015",
+    "source_type": "image",
+    "input_data": "cliniq/data/gold_standard/images/case_015.png",
     "expected_entities": [
       {
         "text": "lumbar disc herniation",
@@ -1212,12 +1249,12 @@
         ]
       }
     ],
-    "source_type": "image",
-    "input_data": "cliniq/data/gold_standard/images/case_015.png",
     "notes": "Image case from case_015"
   },
   {
     "case_id": "case_016",
+    "source_type": "image",
+    "input_data": "cliniq/data/gold_standard/images/case_016.png",
     "expected_entities": [
       {
         "text": "diabetic foot ulcer",
@@ -1313,12 +1350,12 @@
         ]
       }
     ],
-    "source_type": "image",
-    "input_data": "cliniq/data/gold_standard/images/case_016.png",
     "notes": "Image case from case_016"
   },
   {
     "case_id": "case_017",
+    "source_type": "image",
+    "input_data": "cliniq/data/gold_standard/images/case_017.png",
     "expected_entities": [
       {
         "text": "COPD",
@@ -1404,12 +1441,12 @@
         ]
       }
     ],
-    "source_type": "image",
-    "input_data": "cliniq/data/gold_standard/images/case_017.png",
     "notes": "Image case from case_017"
   },
   {
     "case_id": "case_018",
+    "source_type": "image",
+    "input_data": "cliniq/data/gold_standard/images/case_018.png",
     "expected_entities": [
       {
         "text": "chest pain",
@@ -1464,6 +1501,11 @@
         "text": "Denies orthopnea",
         "entity": "orthopnea",
         "negated": true
+      },
+      {
+        "text": "stress test negative for ischemia",
+        "entity": "ischemia",
+        "negated": true
       }
     ],
     "cdi_gap_annotations": [
@@ -1488,12 +1530,12 @@
         ]
       }
     ],
-    "source_type": "image",
-    "input_data": "cliniq/data/gold_standard/images/case_018.png",
     "notes": "Image case from case_018"
   },
   {
     "case_id": "case_019",
+    "source_type": "image",
+    "input_data": "cliniq/data/gold_standard/images/case_019.png",
     "expected_entities": [
       {
         "text": "pulmonary embolism",
@@ -1569,15 +1611,12 @@
         ]
       }
     ],
-    "source_type": "image",
-    "input_data": "cliniq/data/gold_standard/images/case_019.png",
     "notes": "Image case from case_019"
   },
   {
     "case_id": "case_020",
     "source_type": "fhir",
     "input_data": "cliniq/data/gold_standard/fhir_bundles/case_020.json",
-    "notes": "Orthopedic follow-up with multiple procedures",
     "expected_entities": [
       {
         "text": "total hip replacement",
@@ -1596,6 +1635,16 @@
         "end_char": 43,
         "negated": false,
         "qualifiers": []
+      },
+      {
+        "text": "osteoarthritis",
+        "entity_type": "diagnosis",
+        "start_char": 48,
+        "end_char": 62,
+        "negated": false,
+        "qualifiers": [
+          "hip"
+        ]
       }
     ],
     "expected_icd10_codes": [
@@ -1639,6 +1688,7 @@
           "procedure_type"
         ]
       }
-    ]
+    ],
+    "notes": "Orthopedic follow-up with multiple procedures"
   }
 ]
