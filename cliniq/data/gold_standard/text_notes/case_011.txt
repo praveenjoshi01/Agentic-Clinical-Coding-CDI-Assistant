@@ -1,0 +1,13 @@
+Chief Complaint: Chronic pain management for osteoarthritis.
+
+History of Present Illness: 69-year-old female with bilateral knee osteoarthritis and chronic lower back pain. Patient reports daily pain rated 6/10, worse with activity. She denies radiculopathy. Currently taking acetaminophen 1000mg TID with minimal relief. Patient denies fall risk. Physical therapy completed 6 months ago with limited benefit. No previous joint replacements.
+
+Physical Exam: Musculoskeletal: bilateral knee crepitus, limited range of motion. Lumbar spine: tenderness to palpation L4-S1.
+
+Assessment and Plan:
+1. Bilateral primary osteoarthritis of knee (M17.0)
+2. Chronic low back pain (M54.5)
+3. Start meloxicam 15mg daily
+4. Referral to orthopedics for possible knee replacement evaluation
+5. Consider spinal imaging if pain worsens
+6. Follow up in 6 weeks

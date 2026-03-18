@@ -1,0 +1,12 @@
+Chief Complaint: Asthma exacerbation.
+
+History of Present Illness: 28-year-old male with history of moderate persistent asthma presents with acute exacerbation. Patient reports 3 days of progressive dyspnea, wheezing, and cough. Currently using albuterol inhaler every 2-3 hours without relief. Denies fever. No sick contacts. Triggered by recent upper respiratory infection. Patient denies chest pain.
+
+Physical Exam: Respiratory: bilateral expiratory wheezing, increased work of breathing. Peak flow 60% of personal best.
+
+Assessment and Plan:
+1. Asthma with acute exacerbation (J45.41)
+2. Nebulized albuterol with ipratropium
+3. Oral prednisone 60mg daily x 5 days
+4. Continue maintenance inhaled corticosteroid
+5. Follow up in 1 week

@@ -1,0 +1,13 @@
+Chief Complaint: Urinary tract infection.
+
+History of Present Illness: 62-year-old female with type 2 diabetes mellitus presents with dysuria, urinary frequency, and suprapubic pain for 2 days. Patient reports cloudy urine with foul odor. Denies fever. Denies flank pain. No nausea or vomiting. Blood sugar readings have been elevated (180-220 mg/dL) over past 2 days. Patient denies vaginal discharge.
+
+Urinalysis: Positive leukocyte esterase, 50+ WBCs, nitrite positive, bacteria present.
+
+Assessment and Plan:
+1. Urinary tract infection, site not specified (N39.0)
+2. Type 2 diabetes mellitus without complications (E11.9) - currently uncontrolled
+3. Ciprofloxacin 500mg PO BID x 7 days
+4. Increase metformin from 1000mg to 1500mg BID
+5. Repeat urinalysis after treatment
+6. Follow up in 2 weeks

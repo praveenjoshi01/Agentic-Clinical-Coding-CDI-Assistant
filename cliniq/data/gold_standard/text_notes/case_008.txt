@@ -1,0 +1,10 @@
+Chief Complaint: Breast cancer follow-up.
+
+History of Present Illness: 58-year-old female with recently diagnosed infiltrating ductal carcinoma of the left breast. Pathology shows ER-positive, PR-positive, HER2-negative invasive carcinoma with lymph node involvement (2 of 15 nodes positive). Tumor size 2.5cm. Patient completed lumpectomy 2 weeks ago. No signs of surgical site infection. Denies fever, denies wound drainage.
+
+Assessment and Plan:
+1. Malignant neoplasm of upper-outer quadrant of left breast with lymph node involvement (C50.412, C77.3)
+2. Referral to medical oncology for adjuvant chemotherapy discussion
+3. Referral to radiation oncology for radiation therapy planning
+4. Start aromatase inhibitor after chemotherapy completion
+5. Genetic counseling referral

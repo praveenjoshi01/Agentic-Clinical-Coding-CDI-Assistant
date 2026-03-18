@@ -1,0 +1,8 @@
+Chief Complaint: Follow-up for chronic kidney disease and hypertension.
+
+History of Present Illness: Patient is a 68-year-old male with stage 3 chronic kidney disease (eGFR 45 mL/min/1.73m²) and hypertension. He reports good blood pressure control on current medications (lisinopril 20mg daily, amlodipine 5mg daily). Denies chest pain, denies shortness of breath. No edema noted. Patient reports compliance with low-sodium diet and medication regimen.
+
+Assessment and Plan:
+1. Chronic kidney disease, stage 3 (N18.3) - stable, continue current management
+2. Essential hypertension (I10) - well controlled, continue medications
+3. Follow up in 3 months with repeat labs (BMP, eGFR)

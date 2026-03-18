@@ -1,0 +1,12 @@
+Chief Complaint: Depression and anxiety management.
+
+History of Present Illness: 45-year-old female with major depressive disorder and generalized anxiety disorder. Patient reports persistent low mood, difficulty sleeping, and excessive worry for the past 6 months. No suicidal ideation. Denies manic episodes. She denies substance abuse. Currently on sertraline 100mg daily with partial response.
+
+Mental Status Exam: Alert and oriented x3. Depressed affect. No psychotic features. Insight and judgment intact.
+
+Assessment and Plan:
+1. Major depressive disorder, recurrent episode, moderate (F33.1)
+2. Generalized anxiety disorder (F41.1)
+3. Increase sertraline to 150mg daily
+4. Recommend cognitive behavioral therapy
+5. Follow up in 4 weeks

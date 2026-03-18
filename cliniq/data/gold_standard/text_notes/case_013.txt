@@ -1,0 +1,13 @@
+Chief Complaint: Pneumonia with sepsis.
+
+History of Present Illness: 80-year-old female from nursing home presents with fever (102.8°F), productive cough, and altered mental status for 2 days. Patient has history of dementia and hypertension. No recent travel. Chest x-ray shows right lower lobe infiltrate consistent with bacterial pneumonia. Lactate elevated at 3.2 mmol/L. Blood pressure 85/50 mmHg. Patient denies chest pain when lucid.
+
+Physical Exam: Vital signs: Temp 102.8°F, BP 85/50, HR 110, RR 28, O2 sat 88% on room air. Respiratory: decreased breath sounds right base, crackles. Mental status: confused, disoriented to time and place.
+
+Assessment and Plan:
+1. Severe bacterial pneumonia, right lower lobe (J15.9)
+2. Sepsis due to pneumonia (A41.9)
+3. Admission to ICU
+4. Start broad-spectrum antibiotics (ceftriaxone + azithromycin)
+5. IV fluid resuscitation
+6. Continuous monitoring

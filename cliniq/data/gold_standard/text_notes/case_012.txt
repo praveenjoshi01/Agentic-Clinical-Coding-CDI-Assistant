@@ -1,0 +1,13 @@
+Chief Complaint: Stroke follow-up with residual deficits.
+
+History of Present Illness: 71-year-old male status post ischemic stroke 6 months ago affecting left middle cerebral artery territory. Patient has residual right-sided hemiplegia and expressive aphasia. Currently receiving outpatient physical therapy and speech therapy. Patient denies recent falls. On aspirin and atorvastatin for stroke prevention. Caregiver reports gradual improvement in functional status.
+
+Physical Exam: Neurological: right upper extremity 2/5 strength, right lower extremity 3/5 strength. Expressive aphasia present. Alert and follows commands.
+
+Assessment and Plan:
+1. Late effects of cerebrovascular disease with hemiplegia affecting right dominant side (I69.351)
+2. Late effects of cerebrovascular disease with aphasia (I69.320)
+3. Continue stroke prevention medications
+4. Continue physical therapy and speech therapy
+5. Caregiver support resources provided
+6. Follow up in 2 months

@@ -1,0 +1,13 @@
+Chief Complaint: Heart failure and atrial fibrillation management.
+
+History of Present Illness: 75-year-old male with congestive heart failure (LVEF 30%) and chronic atrial fibrillation presents for routine follow-up. Patient reports mild dyspnea on exertion, controlled with current diuretic regimen. No orthopnea. Denies chest pain. Weight stable. Patient compliant with furosemide 40mg daily and carvedilol 25mg BID. On apixaban for anticoagulation.
+
+Physical Exam: Cardiovascular: irregular rhythm, no murmurs. Lungs: clear to auscultation. Extremities: trace bilateral lower extremity edema.
+
+Assessment and Plan:
+1. Congestive heart failure, chronic systolic (I50.22) - compensated
+2. Chronic atrial fibrillation (I48.20) - rate controlled
+3. Continue current medications
+4. Low sodium diet counseling
+5. Daily weights monitoring
+6. Follow up in 3 months

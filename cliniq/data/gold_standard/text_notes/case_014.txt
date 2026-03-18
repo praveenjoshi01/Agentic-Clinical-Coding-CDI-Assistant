@@ -1,0 +1,12 @@
+Chief Complaint: Hypothyroidism with fatigue.
+
+History of Present Illness: 52-year-old female with primary hypothyroidism presents with persistent fatigue, weight gain (15 lbs over 6 months), and cold intolerance. Patient reports compliance with levothyroxine 75mcg daily. Denies depression. No hair loss or skin changes. TSH recently checked: 8.5 mIU/L (elevated).
+
+Physical Exam: Vital signs: BP 128/78, HR 62. General: appears fatigued but non-toxic. Thyroid: not palpably enlarged.
+
+Assessment and Plan:
+1. Hypothyroidism, primary (E03.9) - currently under-treated
+2. Increase levothyroxine to 100mcg daily
+3. Repeat TSH in 6 weeks
+4. Nutrition counseling for weight management
+5. Follow up after lab results available

@@ -1,0 +1,1644 @@
+[
+  {
+    "case_id": "case_001",
+    "source_type": "fhir",
+    "input_data": "cliniq/data/gold_standard/fhir_bundles/case_001.json",
+    "notes": "Type 2 diabetes with neuropathy and retinopathy complications",
+    "expected_entities": [
+      {
+        "text": "Type 2 diabetes mellitus",
+        "entity_type": "diagnosis",
+        "start_char": 0,
+        "end_char": 25,
+        "negated": false,
+        "qualifiers": [
+          "type 2"
+        ]
+      },
+      {
+        "text": "diabetic neuropathy",
+        "entity_type": "diagnosis",
+        "start_char": 31,
+        "end_char": 50,
+        "negated": false,
+        "qualifiers": []
+      },
+      {
+        "text": "diabetic retinopathy",
+        "entity_type": "diagnosis",
+        "start_char": 56,
+        "end_char": 76,
+        "negated": false,
+        "qualifiers": []
+      }
+    ],
+    "expected_icd10_codes": [
+      "E11.40",
+      "E11.311"
+    ],
+    "expected_principal_dx": "E11.40",
+    "expected_comorbidities": [
+      "E11.311"
+    ],
+    "expected_complications": [],
+    "negation_test_cases": [
+      {
+        "text": "no evidence of diabetic ketoacidosis",
+        "entity": "diabetic ketoacidosis",
+        "negated": true
+      },
+      {
+        "text": "patient has diabetic retinopathy",
+        "entity": "diabetic retinopathy",
+        "negated": false
+      }
+    ],
+    "cdi_gap_annotations": [
+      {
+        "code": "E11.40",
+        "missing_qualifier": "severity of neuropathy",
+        "query_hint": "What is the severity of the diabetic neuropathy?"
+      }
+    ],
+    "kg_qualification_rules": [
+      {
+        "code": "E11.40",
+        "requires": [
+          "complication_type",
+          "laterality"
+        ]
+      },
+      {
+        "code": "E11.311",
+        "requires": [
+          "laterality",
+          "severity"
+        ]
+      }
+    ]
+  },
+  {
+    "case_id": "case_002",
+    "source_type": "fhir",
+    "input_data": "cliniq/data/gold_standard/fhir_bundles/case_002.json",
+    "notes": "Acute myocardial infarction with heart failure",
+    "expected_entities": [
+      {
+        "text": "acute myocardial infarction",
+        "entity_type": "diagnosis",
+        "start_char": 0,
+        "end_char": 27,
+        "negated": false,
+        "qualifiers": [
+          "acute"
+        ]
+      },
+      {
+        "text": "congestive heart failure",
+        "entity_type": "diagnosis",
+        "start_char": 33,
+        "end_char": 57,
+        "negated": false,
+        "qualifiers": []
+      }
+    ],
+    "expected_icd10_codes": [
+      "I21.9",
+      "I50.9"
+    ],
+    "expected_principal_dx": "I21.9",
+    "expected_comorbidities": [
+      "I50.9"
+    ],
+    "expected_complications": [],
+    "negation_test_cases": [
+      {
+        "text": "no signs of arrhythmia",
+        "entity": "arrhythmia",
+        "negated": true
+      },
+      {
+        "text": "patient presents with chest pain",
+        "entity": "chest pain",
+        "negated": false
+      }
+    ],
+    "cdi_gap_annotations": [
+      {
+        "code": "I21.9",
+        "missing_qualifier": "specific arterial location",
+        "query_hint": "Which coronary artery was affected?"
+      }
+    ],
+    "kg_qualification_rules": [
+      {
+        "code": "I21.9",
+        "requires": [
+          "arterial_location",
+          "STEMI_vs_NSTEMI"
+        ]
+      },
+      {
+        "code": "I50.9",
+        "requires": [
+          "acuity",
+          "systolic_diastolic"
+        ]
+      }
+    ]
+  },
+  {
+    "case_id": "case_003",
+    "source_type": "fhir",
+    "input_data": "cliniq/data/gold_standard/fhir_bundles/case_003.json",
+    "notes": "COPD exacerbation with pneumonia",
+    "expected_entities": [
+      {
+        "text": "COPD exacerbation",
+        "entity_type": "diagnosis",
+        "start_char": 0,
+        "end_char": 17,
+        "negated": false,
+        "qualifiers": [
+          "exacerbation"
+        ]
+      },
+      {
+        "text": "pneumonia",
+        "entity_type": "diagnosis",
+        "start_char": 23,
+        "end_char": 32,
+        "negated": false,
+        "qualifiers": []
+      }
+    ],
+    "expected_icd10_codes": [
+      "J44.1",
+      "J18.9"
+    ],
+    "expected_principal_dx": "J44.1",
+    "expected_comorbidities": [
+      "J18.9"
+    ],
+    "expected_complications": [],
+    "negation_test_cases": [
+      {
+        "text": "denies fever",
+        "entity": "fever",
+        "negated": true
+      },
+      {
+        "text": "reports dyspnea",
+        "entity": "dyspnea",
+        "negated": false
+      }
+    ],
+    "cdi_gap_annotations": [
+      {
+        "code": "J44.1",
+        "missing_qualifier": "with or without lower respiratory infection",
+        "query_hint": "Is there concurrent lower respiratory infection?"
+      }
+    ],
+    "kg_qualification_rules": [
+      {
+        "code": "J44.1",
+        "requires": [
+          "acute_chronic",
+          "with_lower_respiratory_infection"
+        ]
+      },
+      {
+        "code": "J18.9",
+        "requires": [
+          "organism",
+          "laterality"
+        ]
+      }
+    ]
+  },
+  {
+    "case_id": "case_004",
+    "expected_entities": [
+      {
+        "text": "chronic kidney disease",
+        "entity_type": "diagnosis",
+        "start_char": 23,
+        "end_char": 45,
+        "negated": false,
+        "qualifiers": [
+          "chronic",
+          "stage 3"
+        ]
+      },
+      {
+        "text": "hypertension",
+        "entity_type": "diagnosis",
+        "start_char": 50,
+        "end_char": 62,
+        "negated": false,
+        "qualifiers": [
+          "essential"
+        ]
+      },
+      {
+        "text": "chest pain",
+        "entity_type": "diagnosis",
+        "start_char": 280,
+        "end_char": 290,
+        "negated": true,
+        "qualifiers": []
+      },
+      {
+        "text": "shortness of breath",
+        "entity_type": "diagnosis",
+        "start_char": 299,
+        "end_char": 318,
+        "negated": true,
+        "qualifiers": []
+      }
+    ],
+    "expected_icd10_codes": [
+      "N18.3",
+      "I10"
+    ],
+    "expected_principal_dx": "N18.3",
+    "expected_comorbidities": [
+      "I10"
+    ],
+    "expected_complications": [],
+    "negation_test_cases": [
+      {
+        "text": "Denies chest pain",
+        "entity": "chest pain",
+        "negated": true
+      },
+      {
+        "text": "denies shortness of breath",
+        "entity": "shortness of breath",
+        "negated": true
+      }
+    ],
+    "cdi_gap_annotations": [
+      {
+        "code": "N18.3",
+        "missing_qualifier": "specific eGFR value",
+        "query_hint": "What is the patient's current eGFR?"
+      }
+    ],
+    "kg_qualification_rules": [
+      {
+        "code": "N18.3",
+        "requires": [
+          "eGFR_range",
+          "stage"
+        ]
+      },
+      {
+        "code": "I10",
+        "requires": [
+          "controlled_uncontrolled"
+        ]
+      }
+    ],
+    "source_type": "text",
+    "input_data": "cliniq/data/gold_standard/text_notes/case_004.txt",
+    "notes": "Text note case from case_004"
+  },
+  {
+    "case_id": "case_005",
+    "expected_entities": [
+      {
+        "text": "major depressive disorder",
+        "entity_type": "diagnosis",
+        "start_char": 78,
+        "end_char": 103,
+        "negated": false,
+        "qualifiers": [
+          "major",
+          "recurrent"
+        ]
+      },
+      {
+        "text": "generalized anxiety disorder",
+        "entity_type": "diagnosis",
+        "start_char": 108,
+        "end_char": 136,
+        "negated": false,
+        "qualifiers": [
+          "generalized"
+        ]
+      },
+      {
+        "text": "suicidal ideation",
+        "entity_type": "diagnosis",
+        "start_char": 230,
+        "end_char": 247,
+        "negated": true,
+        "qualifiers": []
+      },
+      {
+        "text": "substance abuse",
+        "entity_type": "diagnosis",
+        "start_char": 270,
+        "end_char": 285,
+        "negated": true,
+        "qualifiers": []
+      }
+    ],
+    "expected_icd10_codes": [
+      "F33.1",
+      "F41.1"
+    ],
+    "expected_principal_dx": "F33.1",
+    "expected_comorbidities": [
+      "F41.1"
+    ],
+    "expected_complications": [],
+    "negation_test_cases": [
+      {
+        "text": "No suicidal ideation",
+        "entity": "suicidal ideation",
+        "negated": true
+      },
+      {
+        "text": "Denies manic episodes",
+        "entity": "manic episodes",
+        "negated": true
+      }
+    ],
+    "cdi_gap_annotations": [
+      {
+        "code": "F33.1",
+        "missing_qualifier": "with or without psychotic features",
+        "query_hint": "Are psychotic features present?"
+      }
+    ],
+    "kg_qualification_rules": [
+      {
+        "code": "F33.1",
+        "requires": [
+          "severity",
+          "psychotic_features"
+        ]
+      },
+      {
+        "code": "F41.1",
+        "requires": [
+          "severity"
+        ]
+      }
+    ],
+    "source_type": "text",
+    "input_data": "cliniq/data/gold_standard/text_notes/case_005.txt",
+    "notes": "Text note case from case_005"
+  },
+  {
+    "case_id": "case_006",
+    "expected_entities": [
+      {
+        "text": "wound infection",
+        "entity_type": "diagnosis",
+        "start_char": 20,
+        "end_char": 35,
+        "negated": false,
+        "qualifiers": [
+          "post-surgical"
+        ]
+      },
+      {
+        "text": "cellulitis",
+        "entity_type": "diagnosis",
+        "start_char": 220,
+        "end_char": 230,
+        "negated": false,
+        "qualifiers": []
+      },
+      {
+        "text": "hip replacement",
+        "entity_type": "procedure",
+        "start_char": 75,
+        "end_char": 90,
+        "negated": false,
+        "qualifiers": [
+          "total",
+          "right"
+        ]
+      },
+      {
+        "text": "chest pain",
+        "entity_type": "diagnosis",
+        "start_char": 245,
+        "end_char": 255,
+        "negated": true,
+        "qualifiers": []
+      }
+    ],
+    "expected_icd10_codes": [
+      "T81.4XXA",
+      "L03.115"
+    ],
+    "expected_principal_dx": "T81.4XXA",
+    "expected_comorbidities": [],
+    "expected_complications": [
+      "L03.115"
+    ],
+    "negation_test_cases": [
+      {
+        "text": "Denies chest pain",
+        "entity": "chest pain",
+        "negated": true
+      },
+      {
+        "text": "No respiratory symptoms",
+        "entity": "respiratory symptoms",
+        "negated": true
+      }
+    ],
+    "cdi_gap_annotations": [
+      {
+        "code": "T81.4XXA",
+        "missing_qualifier": "organism",
+        "query_hint": "What organism was cultured from the wound?"
+      }
+    ],
+    "kg_qualification_rules": [
+      {
+        "code": "T81.4XXA",
+        "requires": [
+          "encounter_context",
+          "organism"
+        ]
+      },
+      {
+        "code": "L03.115",
+        "requires": [
+          "laterality",
+          "body_site"
+        ]
+      }
+    ],
+    "source_type": "text",
+    "input_data": "cliniq/data/gold_standard/text_notes/case_006.txt",
+    "notes": "Text note case from case_006"
+  },
+  {
+    "case_id": "case_007",
+    "expected_entities": [
+      {
+        "text": "asthma",
+        "entity_type": "diagnosis",
+        "start_char": 45,
+        "end_char": 51,
+        "negated": false,
+        "qualifiers": [
+          "moderate persistent"
+        ]
+      },
+      {
+        "text": "exacerbation",
+        "entity_type": "diagnosis",
+        "start_char": 73,
+        "end_char": 85,
+        "negated": false,
+        "qualifiers": [
+          "acute"
+        ]
+      },
+      {
+        "text": "dyspnea",
+        "entity_type": "diagnosis",
+        "start_char": 135,
+        "end_char": 142,
+        "negated": false,
+        "qualifiers": [
+          "progressive"
+        ]
+      },
+      {
+        "text": "fever",
+        "entity_type": "diagnosis",
+        "start_char": 245,
+        "end_char": 250,
+        "negated": true,
+        "qualifiers": []
+      }
+    ],
+    "expected_icd10_codes": [
+      "J45.41"
+    ],
+    "expected_principal_dx": "J45.41",
+    "expected_comorbidities": [],
+    "expected_complications": [],
+    "negation_test_cases": [
+      {
+        "text": "Denies fever",
+        "entity": "fever",
+        "negated": true
+      },
+      {
+        "text": "Patient denies chest pain",
+        "entity": "chest pain",
+        "negated": true
+      }
+    ],
+    "cdi_gap_annotations": [
+      {
+        "code": "J45.41",
+        "missing_qualifier": "severity classification",
+        "query_hint": "Is this mild, moderate, or severe persistent asthma?"
+      }
+    ],
+    "kg_qualification_rules": [
+      {
+        "code": "J45.41",
+        "requires": [
+          "severity",
+          "exacerbation_status"
+        ]
+      }
+    ],
+    "source_type": "text",
+    "input_data": "cliniq/data/gold_standard/text_notes/case_007.txt",
+    "notes": "Text note case from case_007"
+  },
+  {
+    "case_id": "case_008",
+    "expected_entities": [
+      {
+        "text": "breast cancer",
+        "entity_type": "diagnosis",
+        "start_char": 20,
+        "end_char": 33,
+        "negated": false,
+        "qualifiers": [
+          "infiltrating ductal"
+        ]
+      },
+      {
+        "text": "invasive carcinoma",
+        "entity_type": "diagnosis",
+        "start_char": 145,
+        "end_char": 163,
+        "negated": false,
+        "qualifiers": [
+          "invasive"
+        ]
+      },
+      {
+        "text": "lymph node involvement",
+        "entity_type": "diagnosis",
+        "start_char": 169,
+        "end_char": 191,
+        "negated": false,
+        "qualifiers": []
+      },
+      {
+        "text": "infection",
+        "entity_type": "diagnosis",
+        "start_char": 310,
+        "end_char": 319,
+        "negated": true,
+        "qualifiers": []
+      }
+    ],
+    "expected_icd10_codes": [
+      "C50.412",
+      "C77.3"
+    ],
+    "expected_principal_dx": "C50.412",
+    "expected_comorbidities": [
+      "C77.3"
+    ],
+    "expected_complications": [],
+    "negation_test_cases": [
+      {
+        "text": "No signs of surgical site infection",
+        "entity": "infection",
+        "negated": true
+      },
+      {
+        "text": "Denies fever",
+        "entity": "fever",
+        "negated": true
+      }
+    ],
+    "cdi_gap_annotations": [
+      {
+        "code": "C50.412",
+        "missing_qualifier": "histologic grade",
+        "query_hint": "What is the histologic grade of the tumor?"
+      }
+    ],
+    "kg_qualification_rules": [
+      {
+        "code": "C50.412",
+        "requires": [
+          "laterality",
+          "quadrant",
+          "histology",
+          "grade"
+        ]
+      },
+      {
+        "code": "C77.3",
+        "requires": [
+          "number_of_nodes_involved"
+        ]
+      }
+    ],
+    "source_type": "text",
+    "input_data": "cliniq/data/gold_standard/text_notes/case_008.txt",
+    "notes": "Text note case from case_008"
+  },
+  {
+    "case_id": "case_009",
+    "expected_entities": [
+      {
+        "text": "urinary tract infection",
+        "entity_type": "diagnosis",
+        "start_char": 20,
+        "end_char": 43,
+        "negated": false,
+        "qualifiers": []
+      },
+      {
+        "text": "type 2 diabetes mellitus",
+        "entity_type": "diagnosis",
+        "start_char": 64,
+        "end_char": 88,
+        "negated": false,
+        "qualifiers": [
+          "type 2"
+        ]
+      },
+      {
+        "text": "fever",
+        "entity_type": "diagnosis",
+        "start_char": 210,
+        "end_char": 215,
+        "negated": true,
+        "qualifiers": []
+      },
+      {
+        "text": "flank pain",
+        "entity_type": "diagnosis",
+        "start_char": 224,
+        "end_char": 234,
+        "negated": true,
+        "qualifiers": []
+      }
+    ],
+    "expected_icd10_codes": [
+      "N39.0",
+      "E11.9"
+    ],
+    "expected_principal_dx": "N39.0",
+    "expected_comorbidities": [
+      "E11.9"
+    ],
+    "expected_complications": [],
+    "negation_test_cases": [
+      {
+        "text": "Denies fever",
+        "entity": "fever",
+        "negated": true
+      },
+      {
+        "text": "Denies flank pain",
+        "entity": "flank pain",
+        "negated": true
+      }
+    ],
+    "cdi_gap_annotations": [
+      {
+        "code": "N39.0",
+        "missing_qualifier": "organism",
+        "query_hint": "What organism was identified in urine culture?"
+      }
+    ],
+    "kg_qualification_rules": [
+      {
+        "code": "N39.0",
+        "requires": [
+          "organism",
+          "site"
+        ]
+      },
+      {
+        "code": "E11.9",
+        "requires": [
+          "complication",
+          "control_status"
+        ]
+      }
+    ],
+    "source_type": "text",
+    "input_data": "cliniq/data/gold_standard/text_notes/case_009.txt",
+    "notes": "Text note case from case_009"
+  },
+  {
+    "case_id": "case_010",
+    "expected_entities": [
+      {
+        "text": "congestive heart failure",
+        "entity_type": "diagnosis",
+        "start_char": 75,
+        "end_char": 99,
+        "negated": false,
+        "qualifiers": [
+          "chronic systolic"
+        ]
+      },
+      {
+        "text": "atrial fibrillation",
+        "entity_type": "diagnosis",
+        "start_char": 122,
+        "end_char": 141,
+        "negated": false,
+        "qualifiers": [
+          "chronic"
+        ]
+      },
+      {
+        "text": "orthopnea",
+        "entity_type": "diagnosis",
+        "start_char": 250,
+        "end_char": 259,
+        "negated": true,
+        "qualifiers": []
+      },
+      {
+        "text": "chest pain",
+        "entity_type": "diagnosis",
+        "start_char": 268,
+        "end_char": 278,
+        "negated": true,
+        "qualifiers": []
+      }
+    ],
+    "expected_icd10_codes": [
+      "I50.22",
+      "I48.20"
+    ],
+    "expected_principal_dx": "I50.22",
+    "expected_comorbidities": [
+      "I48.20"
+    ],
+    "expected_complications": [],
+    "negation_test_cases": [
+      {
+        "text": "No orthopnea",
+        "entity": "orthopnea",
+        "negated": true
+      },
+      {
+        "text": "Denies chest pain",
+        "entity": "chest pain",
+        "negated": true
+      }
+    ],
+    "cdi_gap_annotations": [
+      {
+        "code": "I50.22",
+        "missing_qualifier": "NYHA class",
+        "query_hint": "What is the NYHA functional class?"
+      }
+    ],
+    "kg_qualification_rules": [
+      {
+        "code": "I50.22",
+        "requires": [
+          "acuity",
+          "systolic_diastolic",
+          "NYHA_class"
+        ]
+      },
+      {
+        "code": "I48.20",
+        "requires": [
+          "paroxysmal_persistent_permanent"
+        ]
+      }
+    ],
+    "source_type": "text",
+    "input_data": "cliniq/data/gold_standard/text_notes/case_010.txt",
+    "notes": "Text note case from case_010"
+  },
+  {
+    "case_id": "case_011",
+    "expected_entities": [
+      {
+        "text": "osteoarthritis",
+        "entity_type": "diagnosis",
+        "start_char": 43,
+        "end_char": 57,
+        "negated": false,
+        "qualifiers": [
+          "bilateral knee"
+        ]
+      },
+      {
+        "text": "chronic lower back pain",
+        "entity_type": "diagnosis",
+        "start_char": 62,
+        "end_char": 85,
+        "negated": false,
+        "qualifiers": [
+          "chronic"
+        ]
+      },
+      {
+        "text": "radiculopathy",
+        "entity_type": "diagnosis",
+        "start_char": 145,
+        "end_char": 158,
+        "negated": true,
+        "qualifiers": []
+      }
+    ],
+    "expected_icd10_codes": [
+      "M17.0",
+      "M54.5"
+    ],
+    "expected_principal_dx": "M17.0",
+    "expected_comorbidities": [
+      "M54.5"
+    ],
+    "expected_complications": [],
+    "negation_test_cases": [
+      {
+        "text": "denies radiculopathy",
+        "entity": "radiculopathy",
+        "negated": true
+      },
+      {
+        "text": "Patient denies fall risk",
+        "entity": "fall risk",
+        "negated": true
+      }
+    ],
+    "cdi_gap_annotations": [
+      {
+        "code": "M17.0",
+        "missing_qualifier": "primary vs secondary",
+        "query_hint": "Is this primary or secondary osteoarthritis?"
+      }
+    ],
+    "kg_qualification_rules": [
+      {
+        "code": "M17.0",
+        "requires": [
+          "laterality",
+          "primary_secondary"
+        ]
+      },
+      {
+        "code": "M54.5",
+        "requires": [
+          "acuity"
+        ]
+      }
+    ],
+    "source_type": "text",
+    "input_data": "cliniq/data/gold_standard/text_notes/case_011.txt",
+    "notes": "Text note case from case_011"
+  },
+  {
+    "case_id": "case_012",
+    "expected_entities": [
+      {
+        "text": "ischemic stroke",
+        "entity_type": "diagnosis",
+        "start_char": 40,
+        "end_char": 55,
+        "negated": false,
+        "qualifiers": []
+      },
+      {
+        "text": "hemiplegia",
+        "entity_type": "diagnosis",
+        "start_char": 145,
+        "end_char": 155,
+        "negated": false,
+        "qualifiers": [
+          "right-sided"
+        ]
+      },
+      {
+        "text": "aphasia",
+        "entity_type": "diagnosis",
+        "start_char": 170,
+        "end_char": 177,
+        "negated": false,
+        "qualifiers": [
+          "expressive"
+        ]
+      },
+      {
+        "text": "falls",
+        "entity_type": "diagnosis",
+        "start_char": 265,
+        "end_char": 270,
+        "negated": true,
+        "qualifiers": []
+      }
+    ],
+    "expected_icd10_codes": [
+      "I69.351",
+      "I69.320"
+    ],
+    "expected_principal_dx": "I69.351",
+    "expected_comorbidities": [
+      "I69.320"
+    ],
+    "expected_complications": [],
+    "negation_test_cases": [
+      {
+        "text": "Patient denies recent falls",
+        "entity": "falls",
+        "negated": true
+      }
+    ],
+    "cdi_gap_annotations": [
+      {
+        "code": "I69.351",
+        "missing_qualifier": "dominant vs non-dominant side",
+        "query_hint": "Is the right side dominant or non-dominant?"
+      }
+    ],
+    "kg_qualification_rules": [
+      {
+        "code": "I69.351",
+        "requires": [
+          "laterality",
+          "dominance"
+        ]
+      },
+      {
+        "code": "I69.320",
+        "requires": [
+          "type_of_aphasia"
+        ]
+      }
+    ],
+    "source_type": "text",
+    "input_data": "cliniq/data/gold_standard/text_notes/case_012.txt",
+    "notes": "Text note case from case_012"
+  },
+  {
+    "case_id": "case_013",
+    "expected_entities": [
+      {
+        "text": "pneumonia",
+        "entity_type": "diagnosis",
+        "start_char": 20,
+        "end_char": 29,
+        "negated": false,
+        "qualifiers": [
+          "bacterial",
+          "right lower lobe"
+        ]
+      },
+      {
+        "text": "sepsis",
+        "entity_type": "diagnosis",
+        "start_char": 35,
+        "end_char": 41,
+        "negated": false,
+        "qualifiers": []
+      },
+      {
+        "text": "chest pain",
+        "entity_type": "diagnosis",
+        "start_char": 360,
+        "end_char": 370,
+        "negated": true,
+        "qualifiers": []
+      }
+    ],
+    "expected_icd10_codes": [
+      "J15.9",
+      "A41.9"
+    ],
+    "expected_principal_dx": "J15.9",
+    "expected_comorbidities": [],
+    "expected_complications": [
+      "A41.9"
+    ],
+    "negation_test_cases": [
+      {
+        "text": "Patient denies chest pain when lucid",
+        "entity": "chest pain",
+        "negated": true
+      }
+    ],
+    "cdi_gap_annotations": [
+      {
+        "code": "J15.9",
+        "missing_qualifier": "organism",
+        "query_hint": "What organism was identified in sputum culture?"
+      },
+      {
+        "code": "A41.9",
+        "missing_qualifier": "severe sepsis criteria",
+        "query_hint": "Does patient meet severe sepsis criteria?"
+      }
+    ],
+    "kg_qualification_rules": [
+      {
+        "code": "J15.9",
+        "requires": [
+          "organism",
+          "laterality",
+          "lobe"
+        ]
+      },
+      {
+        "code": "A41.9",
+        "requires": [
+          "severe_sepsis",
+          "septic_shock",
+          "organism"
+        ]
+      }
+    ],
+    "source_type": "text",
+    "input_data": "cliniq/data/gold_standard/text_notes/case_013.txt",
+    "notes": "Text note case from case_013"
+  },
+  {
+    "case_id": "case_014",
+    "expected_entities": [
+      {
+        "text": "hypothyroidism",
+        "entity_type": "diagnosis",
+        "start_char": 40,
+        "end_char": 54,
+        "negated": false,
+        "qualifiers": [
+          "primary"
+        ]
+      },
+      {
+        "text": "fatigue",
+        "entity_type": "diagnosis",
+        "start_char": 60,
+        "end_char": 67,
+        "negated": false,
+        "qualifiers": [
+          "persistent"
+        ]
+      },
+      {
+        "text": "depression",
+        "entity_type": "diagnosis",
+        "start_char": 230,
+        "end_char": 240,
+        "negated": true,
+        "qualifiers": []
+      }
+    ],
+    "expected_icd10_codes": [
+      "E03.9"
+    ],
+    "expected_principal_dx": "E03.9",
+    "expected_comorbidities": [],
+    "expected_complications": [],
+    "negation_test_cases": [
+      {
+        "text": "Denies depression",
+        "entity": "depression",
+        "negated": true
+      }
+    ],
+    "cdi_gap_annotations": [
+      {
+        "code": "E03.9",
+        "missing_qualifier": "congenital vs acquired",
+        "query_hint": "Is this congenital or acquired hypothyroidism?"
+      }
+    ],
+    "kg_qualification_rules": [
+      {
+        "code": "E03.9",
+        "requires": [
+          "primary_secondary",
+          "congenital_acquired"
+        ]
+      }
+    ],
+    "source_type": "text",
+    "input_data": "cliniq/data/gold_standard/text_notes/case_014.txt",
+    "notes": "Text note case from case_014"
+  },
+  {
+    "case_id": "case_015",
+    "expected_entities": [
+      {
+        "text": "lumbar disc herniation",
+        "entity_type": "diagnosis",
+        "start_char": 450,
+        "end_char": 472,
+        "negated": false,
+        "qualifiers": [
+          "L4-L5"
+        ]
+      },
+      {
+        "text": "radiculopathy",
+        "entity_type": "diagnosis",
+        "start_char": 150,
+        "end_char": 163,
+        "negated": false,
+        "qualifiers": [
+          "right"
+        ]
+      },
+      {
+        "text": "chronic low back pain",
+        "entity_type": "diagnosis",
+        "start_char": 530,
+        "end_char": 551,
+        "negated": false,
+        "qualifiers": [
+          "chronic"
+        ]
+      }
+    ],
+    "expected_icd10_codes": [
+      "M51.16",
+      "M54.5",
+      "M54.30"
+    ],
+    "expected_principal_dx": "M51.16",
+    "expected_comorbidities": [
+      "M54.5",
+      "M54.30"
+    ],
+    "expected_complications": [],
+    "negation_test_cases": [
+      {
+        "text": "Denies bowel or bladder incontinence",
+        "entity": "incontinence",
+        "negated": true
+      },
+      {
+        "text": "No history of trauma",
+        "entity": "trauma",
+        "negated": true
+      }
+    ],
+    "cdi_gap_annotations": [
+      {
+        "code": "M51.16",
+        "missing_qualifier": "with or without myelopathy",
+        "query_hint": "Is myelopathy present?"
+      }
+    ],
+    "kg_qualification_rules": [
+      {
+        "code": "M51.16",
+        "requires": [
+          "level",
+          "with_without_myelopathy",
+          "laterality"
+        ]
+      },
+      {
+        "code": "M54.30",
+        "requires": [
+          "laterality"
+        ]
+      }
+    ],
+    "source_type": "image",
+    "input_data": "cliniq/data/gold_standard/images/case_015.png",
+    "notes": "Image case from case_015"
+  },
+  {
+    "case_id": "case_016",
+    "expected_entities": [
+      {
+        "text": "diabetic foot ulcer",
+        "entity_type": "diagnosis",
+        "start_char": 50,
+        "end_char": 69,
+        "negated": false,
+        "qualifiers": [
+          "right foot",
+          "plantar"
+        ]
+      },
+      {
+        "text": "type 2 diabetes mellitus",
+        "entity_type": "diagnosis",
+        "start_char": 90,
+        "end_char": 114,
+        "negated": false,
+        "qualifiers": [
+          "type 2"
+        ]
+      },
+      {
+        "text": "peripheral neuropathy",
+        "entity_type": "diagnosis",
+        "start_char": 135,
+        "end_char": 156,
+        "negated": false,
+        "qualifiers": [
+          "diabetic"
+        ]
+      },
+      {
+        "text": "peripheral vascular disease",
+        "entity_type": "diagnosis",
+        "start_char": 162,
+        "end_char": 189,
+        "negated": false,
+        "qualifiers": []
+      }
+    ],
+    "expected_icd10_codes": [
+      "E11.621",
+      "E11.51",
+      "E11.40",
+      "I73.9"
+    ],
+    "expected_principal_dx": "E11.621",
+    "expected_comorbidities": [
+      "E11.51",
+      "E11.40",
+      "I73.9"
+    ],
+    "expected_complications": [],
+    "negation_test_cases": [
+      {
+        "text": "Denies fever or chills",
+        "entity": "fever",
+        "negated": true
+      },
+      {
+        "text": "No purulent drainage noted today",
+        "entity": "purulent drainage",
+        "negated": true
+      }
+    ],
+    "cdi_gap_annotations": [
+      {
+        "code": "E11.621",
+        "missing_qualifier": "severity and depth of ulcer",
+        "query_hint": "What is the Wagner grade of the ulcer?"
+      }
+    ],
+    "kg_qualification_rules": [
+      {
+        "code": "E11.621",
+        "requires": [
+          "laterality",
+          "depth",
+          "location"
+        ]
+      },
+      {
+        "code": "E11.51",
+        "requires": [
+          "specific_type"
+        ]
+      },
+      {
+        "code": "I73.9",
+        "requires": [
+          "specific_diagnosis"
+        ]
+      }
+    ],
+    "source_type": "image",
+    "input_data": "cliniq/data/gold_standard/images/case_016.png",
+    "notes": "Image case from case_016"
+  },
+  {
+    "case_id": "case_017",
+    "expected_entities": [
+      {
+        "text": "COPD",
+        "entity_type": "diagnosis",
+        "start_char": 180,
+        "end_char": 184,
+        "negated": false,
+        "qualifiers": [
+          "chronic"
+        ]
+      },
+      {
+        "text": "exacerbation",
+        "entity_type": "diagnosis",
+        "start_char": 850,
+        "end_char": 862,
+        "negated": false,
+        "qualifiers": [
+          "acute"
+        ]
+      },
+      {
+        "text": "dyspnea",
+        "entity_type": "diagnosis",
+        "start_char": 230,
+        "end_char": 237,
+        "negated": false,
+        "qualifiers": [
+          "progressive"
+        ]
+      },
+      {
+        "text": "hemoptysis",
+        "entity_type": "diagnosis",
+        "start_char": 330,
+        "end_char": 340,
+        "negated": true,
+        "qualifiers": []
+      }
+    ],
+    "expected_icd10_codes": [
+      "J44.1",
+      "Z99.81",
+      "Z87.891"
+    ],
+    "expected_principal_dx": "J44.1",
+    "expected_comorbidities": [
+      "Z99.81",
+      "Z87.891"
+    ],
+    "expected_complications": [],
+    "negation_test_cases": [
+      {
+        "text": "Denies hemoptysis",
+        "entity": "hemoptysis",
+        "negated": true
+      },
+      {
+        "text": "No fever documented",
+        "entity": "fever",
+        "negated": true
+      }
+    ],
+    "cdi_gap_annotations": [
+      {
+        "code": "J44.1",
+        "missing_qualifier": "with lower respiratory infection",
+        "query_hint": "Is there documented lower respiratory infection?"
+      }
+    ],
+    "kg_qualification_rules": [
+      {
+        "code": "J44.1",
+        "requires": [
+          "acute_chronic",
+          "with_infection"
+        ]
+      },
+      {
+        "code": "Z99.81",
+        "requires": [
+          "duration"
+        ]
+      }
+    ],
+    "source_type": "image",
+    "input_data": "cliniq/data/gold_standard/images/case_017.png",
+    "notes": "Image case from case_017"
+  },
+  {
+    "case_id": "case_018",
+    "expected_entities": [
+      {
+        "text": "chest pain",
+        "entity_type": "diagnosis",
+        "start_char": 30,
+        "end_char": 40,
+        "negated": false,
+        "qualifiers": [
+          "atypical"
+        ]
+      },
+      {
+        "text": "hypertension",
+        "entity_type": "diagnosis",
+        "start_char": 90,
+        "end_char": 102,
+        "negated": false,
+        "qualifiers": [
+          "essential"
+        ]
+      },
+      {
+        "text": "hyperlipidemia",
+        "entity_type": "diagnosis",
+        "start_char": 104,
+        "end_char": 118,
+        "negated": false,
+        "qualifiers": []
+      },
+      {
+        "text": "orthopnea",
+        "entity_type": "diagnosis",
+        "start_char": 450,
+        "end_char": 459,
+        "negated": true,
+        "qualifiers": []
+      }
+    ],
+    "expected_icd10_codes": [
+      "R07.9",
+      "I10",
+      "E78.5"
+    ],
+    "expected_principal_dx": "R07.9",
+    "expected_comorbidities": [
+      "I10",
+      "E78.5"
+    ],
+    "expected_complications": [],
+    "negation_test_cases": [
+      {
+        "text": "Denies orthopnea",
+        "entity": "orthopnea",
+        "negated": true
+      }
+    ],
+    "cdi_gap_annotations": [
+      {
+        "code": "R07.9",
+        "missing_qualifier": "rule out CAD results",
+        "query_hint": "What were the stress test results?"
+      }
+    ],
+    "kg_qualification_rules": [
+      {
+        "code": "R07.9",
+        "requires": [
+          "location",
+          "quality"
+        ]
+      },
+      {
+        "code": "E78.5",
+        "requires": [
+          "specific_type"
+        ]
+      }
+    ],
+    "source_type": "image",
+    "input_data": "cliniq/data/gold_standard/images/case_018.png",
+    "notes": "Image case from case_018"
+  },
+  {
+    "case_id": "case_019",
+    "expected_entities": [
+      {
+        "text": "pulmonary embolism",
+        "entity_type": "diagnosis",
+        "start_char": 680,
+        "end_char": 698,
+        "negated": false,
+        "qualifiers": [
+          "acute",
+          "right lower lobe"
+        ]
+      },
+      {
+        "text": "chest pain",
+        "entity_type": "diagnosis",
+        "start_char": 20,
+        "end_char": 30,
+        "negated": false,
+        "qualifiers": [
+          "pleuritic",
+          "sharp"
+        ]
+      },
+      {
+        "text": "trauma",
+        "entity_type": "diagnosis",
+        "start_char": 280,
+        "end_char": 286,
+        "negated": true,
+        "qualifiers": []
+      }
+    ],
+    "expected_icd10_codes": [
+      "I26.99",
+      "R07.1"
+    ],
+    "expected_principal_dx": "I26.99",
+    "expected_comorbidities": [
+      "R07.1"
+    ],
+    "expected_complications": [],
+    "negation_test_cases": [
+      {
+        "text": "Denies trauma",
+        "entity": "trauma",
+        "negated": true
+      },
+      {
+        "text": "No cough or fever",
+        "entity": "cough",
+        "negated": true
+      }
+    ],
+    "cdi_gap_annotations": [
+      {
+        "code": "I26.99",
+        "missing_qualifier": "acute vs chronic",
+        "query_hint": "Is this acute or chronic PE?"
+      }
+    ],
+    "kg_qualification_rules": [
+      {
+        "code": "I26.99",
+        "requires": [
+          "acute_chronic",
+          "with_without_acute_cor_pulmonale"
+        ]
+      },
+      {
+        "code": "R07.1",
+        "requires": [
+          "location"
+        ]
+      }
+    ],
+    "source_type": "image",
+    "input_data": "cliniq/data/gold_standard/images/case_019.png",
+    "notes": "Image case from case_019"
+  },
+  {
+    "case_id": "case_020",
+    "source_type": "fhir",
+    "input_data": "cliniq/data/gold_standard/fhir_bundles/case_020.json",
+    "notes": "Orthopedic follow-up with multiple procedures",
+    "expected_entities": [
+      {
+        "text": "total hip replacement",
+        "entity_type": "procedure",
+        "start_char": 0,
+        "end_char": 21,
+        "negated": false,
+        "qualifiers": [
+          "total"
+        ]
+      },
+      {
+        "text": "physical therapy",
+        "entity_type": "procedure",
+        "start_char": 27,
+        "end_char": 43,
+        "negated": false,
+        "qualifiers": []
+      }
+    ],
+    "expected_icd10_codes": [
+      "Z96.641",
+      "Z47.1"
+    ],
+    "expected_principal_dx": "Z96.641",
+    "expected_comorbidities": [
+      "Z47.1"
+    ],
+    "expected_complications": [],
+    "negation_test_cases": [
+      {
+        "text": "no signs of infection",
+        "entity": "infection",
+        "negated": true
+      },
+      {
+        "text": "patient reports pain",
+        "entity": "pain",
+        "negated": false
+      }
+    ],
+    "cdi_gap_annotations": [
+      {
+        "code": "Z96.641",
+        "missing_qualifier": "laterality",
+        "query_hint": "Which hip (left or right)?"
+      }
+    ],
+    "kg_qualification_rules": [
+      {
+        "code": "Z96.641",
+        "requires": [
+          "laterality"
+        ]
+      },
+      {
+        "code": "Z47.1",
+        "requires": [
+          "procedure_type"
+        ]
+      }
+    ]
+  }
+]

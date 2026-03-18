@@ -1,0 +1,13 @@
+Chief Complaint: Post-surgical wound infection.
+
+History of Present Illness: 72-year-old female status post right total hip replacement 3 weeks ago. Presents with wound erythema, purulent drainage, and fever (101.2°F). Surgical site shows signs of infection with surrounding cellulitis. Denies chest pain. No respiratory symptoms. Patient reports increased pain at surgical site.
+
+Physical Exam: Vital signs: Temp 101.2°F, BP 135/82, HR 92, RR 16. Surgical wound: 3cm area of erythema, purulent drainage noted, warmth and tenderness present.
+
+Assessment and Plan:
+1. Post-procedural wound infection (T81.4XXA) following hip replacement
+2. Cellulitis of right hip region (L03.115)
+3. Obtain wound culture
+4. Start IV vancomycin 1g q12h
+5. Consult orthopedic surgery
+6. Admission for IV antibiotics
