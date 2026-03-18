@@ -13,7 +13,7 @@ ClinIQ delivers a fully local, multi-modal clinical coding pipeline with explain
 Decimal phases appear between their surrounding integers in numeric order.
 
 - [x] **Phase 1: Core Pipeline & Test Data Foundation** - Multi-modal ingestion, clinical NER, RAG-based ICD-10 coding, plus comprehensive synthetic test data for all modules
-- [ ] **Phase 2: CDI Intelligence Layer** - Knowledge graph reasoning, gap detection, and explainability
+- [x] **Phase 2: CDI Intelligence Layer** - Knowledge graph reasoning, gap detection, and explainability
 - [ ] **Phase 3: Evaluation & Demo UI** - Quantitative validation suite and 5-page Streamlit demo
 
 ## Phase Details
@@ -53,12 +53,12 @@ Plans:
 **Plans:** 6 plans
 
 Plans:
-- [ ] 02-01-PLAN.md — CDI/Audit Pydantic schemas, KG schema constants, KG builder with curated rules
-- [ ] 02-02-PLAN.md — KG querier functions (gap detection, conflict detection, co-occurrence) + unit tests
-- [ ] 02-03-PLAN.md — Explainability module (audit trail builder, CoT capture, evidence linking) + unit tests
-- [ ] 02-04-PLAN.md — CDI agent module (physician query generation, CDIReport assembly) + unit tests
-- [ ] 02-05-PLAN.md — Pipeline integration (CDI stage + audit trail instrumentation) + integration tests
-- [ ] 02-06-PLAN.md — LLM-as-judge evaluation (query relevance CDI-06, CoT coherence EXPL-05) + tests
+- [x] 02-01-PLAN.md — CDI/Audit Pydantic schemas, KG schema constants, KG builder with curated rules
+- [x] 02-02-PLAN.md — KG querier functions (gap detection, conflict detection, co-occurrence) + unit tests
+- [x] 02-03-PLAN.md — Explainability module (audit trail builder, CoT capture, evidence linking) + unit tests
+- [x] 02-04-PLAN.md — CDI agent module (physician query generation, CDIReport assembly) + unit tests
+- [x] 02-05-PLAN.md — Pipeline integration (CDI stage + audit trail instrumentation) + integration tests
+- [x] 02-06-PLAN.md — LLM-as-judge evaluation (query relevance CDI-06, CoT coherence EXPL-05) + tests
 
 ### Phase 3: Evaluation & Demo UI
 **Goal**: Polished 5-page Streamlit demo with quantitative metrics proving all pipeline stages meet targets
@@ -85,7 +85,7 @@ Phases execute in numeric order: 1 -> 2 -> 3
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Core Pipeline & Test Data Foundation | 7/7 | ✓ Complete | 2026-03-18 |
-| 2. CDI Intelligence Layer | 0/6 | Not started | - |
+| 2. CDI Intelligence Layer | 6/6 | ✓ Complete | 2026-03-18 |
 | 3. Evaluation & Demo UI | 0/TBD | Not started | - |
 
 ---
@@ -95,3 +95,5 @@ Phases execute in numeric order: 1 -> 2 -> 3
 *Depth: quick (3 phases, 1-3 plans each)*
 *Coverage: 45/45 v1 requirements mapped*
 *Phase 1 complete: 2026-03-18 (7/7 plans, verification passed 6/6)*
+*Phase 2 planned: 2026-03-18 (6 plans across 5 waves)*
+*Phase 2 complete: 2026-03-18 (6/6 plans, verification passed 5/5)*
