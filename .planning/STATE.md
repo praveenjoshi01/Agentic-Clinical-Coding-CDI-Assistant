@@ -5,23 +5,23 @@
 See: .planning/PROJECT.md (updated 2026-03-18)
 
 **Core value:** Every clinical note produces correctly sequenced ICD-10 codes with full explainability — from entity extraction through RAG retrieval through KG-based CDI gap detection — all running locally on OSS models.
-**Current focus:** Phase 2 complete. Ready for Phase 3 planning.
+**Current focus:** Phase 4 in progress. Building demo UI.
 
 ## Current Position
 
-Phase: 2 of 3 (CDI Intelligence Layer)
-Plan: 6 of 6 in current phase
-Status: Phase complete — verification passed (5/5)
-Last activity: 2026-03-18 — Phase 2 execution complete, verification passed
+Phase: 4 of 4 (Demo UI for the Whole App)
+Plan: 1 of 5 in current phase
+Status: Plan 04-01 complete
+Last activity: 2026-03-18 — Completed 04-01-PLAN.md (app shell, components, demo data)
 
-Progress: [████████░░] 40%
+Progress: [████████░░] 56%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 13
+- Total plans completed: 14
 - Average duration: 4 min
-- Total execution time: 0.70 hours
+- Total execution time: 0.80 hours
 
 **By Phase:**
 
@@ -29,6 +29,7 @@ Progress: [████████░░] 40%
 |-------|-------|-------|----------|
 | 01 | 7 | 28 min | 4 min |
 | 02 | 6 | 14 min | 2.3 min |
+| 04 | 1 | 6 min | 6 min |
 
 **Recent Trend:**
 - Last 5 plans: 2 min, 2 min, 2 min, 3 min, 2 min
@@ -44,6 +45,7 @@ Progress: [████████░░] 40%
 | Phase 02 P04 | 2 | 2 tasks | 2 files |
 | Phase 02 P05 | 3 | 2 tasks | 2 files |
 | Phase 02 P06 | 2 | 2 tasks | 3 files |
+| Phase 04 P01 | 6 | 2 tasks | 18 files |
 
 ## Accumulated Context
 
@@ -95,6 +97,11 @@ Recent decisions affecting current work:
 - 02-06: Normalize raw 1-5 scores to 0-1 by dividing by 5
 - 02-06: Fallback score of 0.6 (raw 3) on JSON parse failure for graceful degradation
 - 02-06: Relaxed test thresholds (0.60) for individual items; aggregate targets (0.80/0.82) for gold standard
+- 04-01: Streamlit >=1.35.0 for broader compatibility (st.navigation introduced in 1.36)
+- 04-01: TYPE_CHECKING guards for heavy imports in component modules (keep imports fast)
+- 04-01: Entity overlap resolution by confidence then span length for NER highlighting
+- 04-01: 1-hop neighbor expansion with size differentiation for KG subgraph visualization
+- 04-01: 8 pre-seeded QA questions covering all ClinIQ system aspects
 
 ### Pending Todos
 
@@ -111,10 +118,10 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-03-18
-Stopped at: Completed 02-06-PLAN.md (Phase 2 complete)
+Stopped at: Completed 04-01-PLAN.md
 Resume file: None
 
 ---
 *State initialized: 2026-03-18*
-*Last updated: 2026-03-18 after completing 02-06*
-*Next action: Phase 02 verified and complete. Proceed to `/gsd:plan-phase 3`.*
+*Last updated: 2026-03-18 after completing 04-01*
+*Next action: Execute 04-02-PLAN.md (Pipeline Runner page)*
