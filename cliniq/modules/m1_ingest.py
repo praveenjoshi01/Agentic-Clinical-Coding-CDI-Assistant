@@ -74,12 +74,12 @@ def parse_fhir(fhir_data: Union[dict, str]) -> ClinicalDocument:
         ValueError: If FHIR validation fails
     """
     # Import FHIR R4B resources (not default R5)
-    from fhir.resources.r4b.bundle import Bundle
-    from fhir.resources.r4b.condition import Condition
-    from fhir.resources.r4b.procedure import Procedure
-    from fhir.resources.r4b.encounter import Encounter
-    from fhir.resources.r4b.documentreference import DocumentReference
-    from fhir.resources.r4b.patient import Patient
+    from fhir.resources.R4B.bundle import Bundle
+    from fhir.resources.R4B.condition import Condition
+    from fhir.resources.R4B.procedure import Procedure
+    from fhir.resources.R4B.encounter import Encounter
+    from fhir.resources.R4B.documentreference import DocumentReference
+    from fhir.resources.R4B.patient import Patient
 
     # Parse string to dict if needed
     if isinstance(fhir_data, str):
@@ -103,7 +103,7 @@ def parse_fhir(fhir_data: Union[dict, str]) -> ClinicalDocument:
                 continue
 
             resource = entry.resource
-            resource_type = resource.resource_type
+            resource_type = resource.get_resource_type()
 
             # Extract patient ID
             if resource_type == "Patient":
