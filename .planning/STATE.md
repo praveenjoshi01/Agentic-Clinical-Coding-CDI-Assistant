@@ -100,6 +100,10 @@ Recent decisions affecting current work:
 
 None yet.
 
+### Roadmap Evolution
+
+- Phase 4 added: demo UI for the whole app
+
 ### Blockers/Concerns
 
 None yet.
