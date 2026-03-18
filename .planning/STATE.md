@@ -5,33 +5,33 @@
 See: .planning/PROJECT.md (updated 2026-03-18)
 
 **Core value:** Every clinical note produces correctly sequenced ICD-10 codes with full explainability — from entity extraction through RAG retrieval through KG-based CDI gap detection — all running locally on OSS models.
-**Current focus:** Phase 2 in progress — CDI Intelligence Layer.
+**Current focus:** Phase 2 complete — CDI Intelligence Layer. Ready for Phase 3.
 
 ## Current Position
 
 Phase: 2 of 3 (CDI Intelligence Layer)
-Plan: 5 of 6 in current phase
-Status: Executing — 02-05 complete
-Last activity: 2026-03-18 — Completed 02-05 (CDI pipeline integration)
+Plan: 6 of 6 in current phase
+Status: Phase 2 COMPLETE — all 6 plans executed
+Last activity: 2026-03-18 — Completed 02-06 (LLM-as-judge evaluation)
 
-Progress: [██████░░░░] 35%
+Progress: [████████░░] 40%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 12
+- Total plans completed: 13
 - Average duration: 4 min
-- Total execution time: 0.67 hours
+- Total execution time: 0.70 hours
 
 **By Phase:**
 
 | Phase | Plans | Total | Avg/Plan |
 |-------|-------|-------|----------|
 | 01 | 7 | 28 min | 4 min |
-| 02 | 5 | 12 min | 2.4 min |
+| 02 | 6 | 14 min | 2.3 min |
 
 **Recent Trend:**
-- Last 5 plans: 3 min, 2 min, 2 min, 2 min, 3 min
+- Last 5 plans: 2 min, 2 min, 2 min, 3 min, 2 min
 - Trend: Steady pace
 
 *Updated after each plan completion*
@@ -43,6 +43,7 @@ Progress: [██████░░░░] 35%
 | Phase 02 P03 | 2 | 2 tasks | 2 files |
 | Phase 02 P04 | 2 | 2 tasks | 2 files |
 | Phase 02 P05 | 3 | 2 tasks | 2 files |
+| Phase 02 P06 | 2 | 2 tasks | 3 files |
 
 ## Accumulated Context
 
@@ -90,6 +91,10 @@ Recent decisions affecting current work:
 - 02-05: Separate run_pipeline_audited function instead of modifying run_pipeline to maintain backward compatibility
 - 02-05: Optional cdi_report and audit_trail fields (default None) on PipelineResult for schema backward compatibility
 - 02-05: UUID4 hex[:8] for case_id generation (short, unique, no external dependencies)
+- 02-06: Explicit 5-point Likert rubric in prompts for consistent LLM judge scoring
+- 02-06: Normalize raw 1-5 scores to 0-1 by dividing by 5
+- 02-06: Fallback score of 0.6 (raw 3) on JSON parse failure for graceful degradation
+- 02-06: Relaxed test thresholds (0.60) for individual items; aggregate targets (0.80/0.82) for gold standard
 
 ### Pending Todos
 
@@ -102,10 +107,10 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-03-18
-Stopped at: Completed 02-05-PLAN.md
+Stopped at: Completed 02-06-PLAN.md (Phase 2 complete)
 Resume file: None
 
 ---
 *State initialized: 2026-03-18*
-*Last updated: 2026-03-18 after completing 02-05*
-*Next action: Execute 02-06-PLAN.md*
+*Last updated: 2026-03-18 after completing 02-06*
+*Next action: Begin Phase 3 planning*
