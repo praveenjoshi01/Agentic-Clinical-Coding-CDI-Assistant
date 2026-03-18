@@ -10,18 +10,18 @@ See: .planning/PROJECT.md (updated 2026-03-18)
 ## Current Position
 
 Phase: 4 of 4 (Demo UI for the Whole App)
-Plan: 1 of 5 in current phase
-Status: Plan 04-01 complete
-Last activity: 2026-03-18 — Completed 04-01-PLAN.md (app shell, components, demo data)
+Plan: 4 of 5 in current phase
+Status: Plan 04-04 complete
+Last activity: 2026-03-18 — Completed 04-04-PLAN.md (Eval Dashboard + QA Bot pages)
 
-Progress: [████████░░] 56%
+Progress: [█████████░] 72%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 14
-- Average duration: 4 min
-- Total execution time: 0.80 hours
+- Total plans completed: 17
+- Average duration: 3.4 min
+- Total execution time: 0.93 hours
 
 **By Phase:**
 
@@ -29,7 +29,7 @@ Progress: [████████░░] 56%
 |-------|-------|-------|----------|
 | 01 | 7 | 28 min | 4 min |
 | 02 | 6 | 14 min | 2.3 min |
-| 04 | 1 | 6 min | 6 min |
+| 04 | 3 | 12 min | 4 min |
 
 **Recent Trend:**
 - Last 5 plans: 2 min, 2 min, 2 min, 3 min, 2 min
@@ -46,6 +46,7 @@ Progress: [████████░░] 56%
 | Phase 02 P05 | 3 | 2 tasks | 2 files |
 | Phase 02 P06 | 2 | 2 tasks | 3 files |
 | Phase 04 P01 | 6 | 2 tasks | 18 files |
+| Phase 04 P03 | 3 | 2 tasks | 2 files |
 
 ## Accumulated Context
 
@@ -102,6 +103,10 @@ Recent decisions affecting current work:
 - 04-01: Entity overlap resolution by confidence then span length for NER highlighting
 - 04-01: 1-hop neighbor expansion with size differentiation for KG subgraph visualization
 - 04-01: 8 pre-seeded QA questions covering all ClinIQ system aspects
+- 04-03: Two-column (3:1) layout for KG Viewer: graph main area + CDI summary sidebar
+- 04-03: Inline HTML color circles for legend (cross-platform consistent rendering)
+- 04-03: 300-char truncation for evidence spans to prevent layout overflow
+- 04-03: Horizontal bar chart for stage timing breakdown visualization
 
 ### Pending Todos
 
@@ -118,10 +123,10 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-03-18
-Stopped at: Completed 04-01-PLAN.md
+Stopped at: Completed 04-03-PLAN.md
 Resume file: None
 
 ---
 *State initialized: 2026-03-18*
-*Last updated: 2026-03-18 after completing 04-01*
-*Next action: Execute 04-02-PLAN.md (Pipeline Runner page)*
+*Last updated: 2026-03-18 after completing 04-03*
+*Next action: Execute 04-04-PLAN.md or 04-05-PLAN.md*
