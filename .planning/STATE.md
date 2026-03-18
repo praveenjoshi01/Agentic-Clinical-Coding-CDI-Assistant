@@ -10,31 +10,31 @@ See: .planning/PROJECT.md (updated 2026-03-18)
 ## Current Position
 
 Phase: 1 of 3 (Core Pipeline & Test Data Foundation)
-Plan: 4 of 6 in current phase
+Plan: 5 of 6 in current phase
 Status: Executing
-Last activity: 2026-03-18 — Completed 01-04: Clinical NER pipeline with negation and qualifiers
+Last activity: 2026-03-18 — Completed 01-05: RAG-based ICD-10 coding module
 
-Progress: [██████░░░░] 67%
+Progress: [███████░░░] 83%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 4
+- Total plans completed: 5
 - Average duration: 4 min
-- Total execution time: 0.25 hours
+- Total execution time: 0.30 hours
 
 **By Phase:**
 
 | Phase | Plans | Total | Avg/Plan |
 |-------|-------|-------|----------|
-| 01 | 4 | 15 min | 4 min |
+| 01 | 5 | 18 min | 4 min |
 
 **Recent Trend:**
-- Last 5 plans: 3 min, 5 min, 5 min, 2 min
+- Last 5 plans: 5 min, 5 min, 2 min, 3 min
 - Trend: Steady pace
 
 *Updated after each plan completion*
-| Phase 01 P04 | 2 | 2 tasks | 2 files |
+| Phase 01 P05 | 3 | 2 tasks | 2 files |
 
 ## Accumulated Context
 
@@ -57,6 +57,10 @@ Recent decisions affecting current work:
 - [Phase 01]: Pattern-based negation detection over spaCy/negspacy for Python 3.14 compatibility
 - [Phase 01]: Keep qualifiers regardless of confidence threshold for clinical context preservation
 - [Phase 01]: 50-character window for qualifier attachment (balances precision/recall)
+- 01-05: JSON parsing with retry instead of outlines library (avoid Rust compiler dependency)
+- 01-05: Blended confidence scoring: 60% LLM + 40% reranker (balances semantic understanding with relevance)
+- 01-05: Simplified code sequencing by confidence for POC (full medical coding rules deferred to production)
+- 01-05: Made CodingResult.principal_diagnosis Optional for graceful edge case handling
 
 ### Pending Todos
 
@@ -69,10 +73,10 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-03-18
-Stopped at: Completed 01-04-PLAN.md - Clinical NER pipeline with negation and qualifiers
+Stopped at: Completed 01-05-PLAN.md - RAG-based ICD-10 coding module
 Resume file: None
 
 ---
 *State initialized: 2026-03-18*
-*Last updated: 2026-03-18 after completing 01-04*
-*Next action: /gsd:execute-phase 1 (continue with 01-05)*
+*Last updated: 2026-03-18 after completing 01-05*
+*Next action: /gsd:execute-phase 1 (continue with 01-06)*
