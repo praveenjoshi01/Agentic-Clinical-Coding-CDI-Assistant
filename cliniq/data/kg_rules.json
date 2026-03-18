@@ -1,0 +1,278 @@
+{
+  "co_occurrences": [
+    {
+      "code_a": "E11.9",
+      "code_b": "I10",
+      "weight": 0.85,
+      "evidence": "Type 2 diabetes and essential hypertension co-occur in 60-70% of cases (Elixhauser comorbidity index)"
+    },
+    {
+      "code_a": "I50.9",
+      "code_b": "I48.20",
+      "weight": 0.72,
+      "evidence": "Congestive heart failure and atrial fibrillation co-occur in 40-50% of heart failure patients"
+    },
+    {
+      "code_a": "J44.1",
+      "code_b": "J18.9",
+      "weight": 0.65,
+      "evidence": "COPD exacerbation with concurrent pneumonia is common trigger for acute exacerbation"
+    },
+    {
+      "code_a": "I21.9",
+      "code_b": "I50.9",
+      "weight": 0.60,
+      "evidence": "Acute MI complicated by heart failure occurs in 15-25% of MI presentations"
+    },
+    {
+      "code_a": "E11.9",
+      "code_b": "N18.3",
+      "weight": 0.55,
+      "evidence": "Diabetic nephropathy is a leading cause of CKD; 30-40% of diabetics develop CKD"
+    },
+    {
+      "code_a": "F33.1",
+      "code_b": "F41.1",
+      "weight": 0.68,
+      "evidence": "Major depressive disorder and generalized anxiety disorder co-occur in 50-60% of cases"
+    },
+    {
+      "code_a": "A41.9",
+      "code_b": "J15.9",
+      "weight": 0.58,
+      "evidence": "Sepsis frequently secondary to bacterial pneumonia; pneumonia is leading sepsis source"
+    },
+    {
+      "code_a": "C50.412",
+      "code_b": "C77.3",
+      "weight": 0.45,
+      "evidence": "Breast cancer with axillary lymph node metastasis occurs in 30-40% of invasive cases"
+    },
+    {
+      "code_a": "M17.0",
+      "code_b": "M54.5",
+      "weight": 0.50,
+      "evidence": "Bilateral knee osteoarthritis and chronic low back pain commonly co-occur in elderly"
+    },
+    {
+      "code_a": "E11.9",
+      "code_b": "E11.621",
+      "weight": 0.35,
+      "evidence": "Diabetic foot ulcer is a common complication of poorly controlled type 2 diabetes"
+    },
+    {
+      "code_a": "I10",
+      "code_b": "E78.5",
+      "weight": 0.75,
+      "evidence": "Hypertension and hyperlipidemia co-occur in metabolic syndrome; shared cardiovascular risk"
+    },
+    {
+      "code_a": "I10",
+      "code_b": "N18.3",
+      "weight": 0.62,
+      "evidence": "Hypertensive nephrosclerosis is second leading cause of CKD after diabetes"
+    },
+    {
+      "code_a": "E11.40",
+      "code_b": "E11.311",
+      "weight": 0.48,
+      "evidence": "Diabetic neuropathy and retinopathy commonly co-occur as microvascular complications"
+    },
+    {
+      "code_a": "I50.22",
+      "code_b": "I48.20",
+      "weight": 0.70,
+      "evidence": "Chronic systolic heart failure with chronic atrial fibrillation is a frequent combination"
+    },
+    {
+      "code_a": "E11.9",
+      "code_b": "E78.5",
+      "weight": 0.65,
+      "evidence": "Type 2 diabetes and hyperlipidemia are core components of metabolic syndrome"
+    },
+    {
+      "code_a": "J44.1",
+      "code_b": "I10",
+      "weight": 0.42,
+      "evidence": "COPD patients frequently have comorbid hypertension from shared smoking risk factors"
+    },
+    {
+      "code_a": "N18.3",
+      "code_b": "E03.9",
+      "weight": 0.30,
+      "evidence": "CKD patients have higher prevalence of hypothyroidism due to impaired thyroid hormone clearance"
+    },
+    {
+      "code_a": "I26.99",
+      "code_b": "I80.20",
+      "weight": 0.55,
+      "evidence": "Pulmonary embolism commonly originates from deep vein thrombosis (Virchow triad)"
+    },
+    {
+      "code_a": "E11.9",
+      "code_b": "I73.9",
+      "weight": 0.40,
+      "evidence": "Peripheral vascular disease is common macrovascular complication of type 2 diabetes"
+    },
+    {
+      "code_a": "I69.351",
+      "code_b": "I69.320",
+      "weight": 0.52,
+      "evidence": "Hemiplegia and aphasia commonly co-occur as sequelae of cerebral infarction"
+    }
+  ],
+  "conflicts": [
+    {
+      "code_a": "E10.9",
+      "code_b": "E11.9",
+      "reason": "Cannot code both Type 1 and Type 2 diabetes mellitus (Excludes1: E10 excludes E11 and vice versa)"
+    },
+    {
+      "code_a": "I21.0",
+      "code_b": "I25.2",
+      "reason": "Acute STEMI of anterior wall (I21.0) excludes old myocardial infarction (I25.2) on same encounter"
+    },
+    {
+      "code_a": "I21.9",
+      "code_b": "I25.2",
+      "reason": "Acute MI unspecified (I21.9) excludes old MI (I25.2) when coding the acute event"
+    },
+    {
+      "code_a": "J45.20",
+      "code_b": "J44.9",
+      "reason": "Mild intermittent asthma (J45.20) excludes COPD unspecified (J44.9) — use J44.9 with asthma codes from J45.9x"
+    },
+    {
+      "code_a": "E11.9",
+      "code_b": "E11.65",
+      "reason": "DM type 2 without complications (E11.9) excludes DM type 2 with hyperglycemia (E11.65) — use the more specific code"
+    },
+    {
+      "code_a": "E10.9",
+      "code_b": "E10.65",
+      "reason": "DM type 1 without complications (E10.9) excludes DM type 1 with hyperglycemia (E10.65) — use the more specific code"
+    },
+    {
+      "code_a": "E11.9",
+      "code_b": "E11.40",
+      "reason": "DM type 2 without complications (E11.9) excludes DM type 2 with neuropathy (E11.40) — use the more specific code"
+    },
+    {
+      "code_a": "E11.9",
+      "code_b": "E11.311",
+      "reason": "DM type 2 without complications (E11.9) excludes DM type 2 with retinopathy (E11.311) — use the more specific code"
+    },
+    {
+      "code_a": "E11.9",
+      "code_b": "E11.621",
+      "reason": "DM type 2 without complications (E11.9) excludes DM type 2 with foot ulcer (E11.621) — use the more specific code"
+    },
+    {
+      "code_a": "I50.1",
+      "code_b": "I50.9",
+      "reason": "Left ventricular failure (I50.1) excludes heart failure unspecified (I50.9) — use the more specific code"
+    },
+    {
+      "code_a": "I50.22",
+      "code_b": "I50.9",
+      "reason": "Chronic systolic heart failure (I50.22) excludes heart failure unspecified (I50.9) — use the more specific code"
+    },
+    {
+      "code_a": "J45.41",
+      "code_b": "J45.20",
+      "reason": "Moderate persistent asthma with acute exacerbation (J45.41) excludes mild intermittent asthma (J45.20)"
+    },
+    {
+      "code_a": "N18.3",
+      "code_b": "N18.9",
+      "reason": "CKD stage 3 (N18.3) excludes CKD unspecified (N18.9) — use the more specific stage code"
+    },
+    {
+      "code_a": "F33.1",
+      "code_b": "F32.1",
+      "reason": "Recurrent MDD moderate (F33.1) excludes single episode MDD moderate (F32.1) — these are mutually exclusive episode types"
+    },
+    {
+      "code_a": "I21.0",
+      "code_b": "I21.9",
+      "reason": "Acute STEMI of anterior wall (I21.0) excludes acute MI unspecified (I21.9) — use the more specific code"
+    }
+  ],
+  "qualifier_requirements": [
+    {
+      "code": "E11.40",
+      "qualifiers": ["complication_type", "laterality"],
+      "rationale": "Diabetic neuropathy requires specification of neuropathy type and affected side"
+    },
+    {
+      "code": "E11.311",
+      "qualifiers": ["laterality", "severity"],
+      "rationale": "Diabetic retinopathy requires laterality (right/left/bilateral) and severity (mild/moderate/severe)"
+    },
+    {
+      "code": "I21.9",
+      "qualifiers": ["wall_involvement", "episode"],
+      "rationale": "Acute MI unspecified should specify wall involvement (anterior/inferior/lateral) and initial/subsequent"
+    },
+    {
+      "code": "I50.9",
+      "qualifiers": ["type", "acuity"],
+      "rationale": "Heart failure unspecified should specify systolic/diastolic/combined and acute/chronic"
+    },
+    {
+      "code": "J44.1",
+      "qualifiers": ["severity"],
+      "rationale": "COPD with acute exacerbation should document severity of exacerbation"
+    },
+    {
+      "code": "N18.3",
+      "qualifiers": ["stage"],
+      "rationale": "CKD stage 3 is already specified but should document 3a vs 3b substage"
+    },
+    {
+      "code": "C50.412",
+      "qualifiers": ["laterality"],
+      "rationale": "Breast cancer requires laterality specification for accurate coding"
+    },
+    {
+      "code": "J45.41",
+      "qualifiers": ["severity"],
+      "rationale": "Asthma with acute exacerbation should document severity classification"
+    },
+    {
+      "code": "M51.16",
+      "qualifiers": ["level"],
+      "rationale": "Lumbar disc herniation should specify intervertebral disc level"
+    },
+    {
+      "code": "E11.621",
+      "qualifiers": ["laterality"],
+      "rationale": "Diabetic foot ulcer requires laterality (right/left/bilateral)"
+    },
+    {
+      "code": "I26.99",
+      "qualifiers": ["acuity"],
+      "rationale": "Pulmonary embolism should specify acute vs chronic and with/without cor pulmonale"
+    },
+    {
+      "code": "I50.22",
+      "qualifiers": ["acuity", "NYHA_class"],
+      "rationale": "Chronic systolic heart failure should document NYHA functional class"
+    },
+    {
+      "code": "A41.9",
+      "qualifiers": ["organism", "severe_sepsis"],
+      "rationale": "Sepsis unspecified should document causative organism and severity (severe/septic shock)"
+    },
+    {
+      "code": "E03.9",
+      "qualifiers": ["primary_secondary", "congenital_acquired"],
+      "rationale": "Hypothyroidism should specify primary vs secondary and congenital vs acquired"
+    },
+    {
+      "code": "F33.1",
+      "qualifiers": ["severity", "psychotic_features"],
+      "rationale": "Recurrent MDD should specify severity and presence/absence of psychotic features"
+    }
+  ]
+}
