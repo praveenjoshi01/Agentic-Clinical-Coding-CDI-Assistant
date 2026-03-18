@@ -5,38 +5,40 @@
 See: .planning/PROJECT.md (updated 2026-03-18)
 
 **Core value:** Every clinical note produces correctly sequenced ICD-10 codes with full explainability — from entity extraction through RAG retrieval through KG-based CDI gap detection — all running locally on OSS models.
-**Current focus:** Phase 1 complete. Ready for Phase 2 planning.
+**Current focus:** Phase 2 in progress — CDI Intelligence Layer.
 
 ## Current Position
 
-Phase: 1 of 3 (Core Pipeline & Test Data Foundation) — COMPLETE ✓
-Plan: 7 of 7 in current phase
-Status: Phase complete — verification passed (6/6)
-Last activity: 2026-03-18 — Phase 1 execution complete, verification passed
+Phase: 2 of 3 (CDI Intelligence Layer)
+Plan: 1 of 6 in current phase
+Status: Executing — 02-01 complete
+Last activity: 2026-03-18 — Completed 02-01 (CDI schemas + KG builder)
 
-Progress: [██████████] 100%
+Progress: [█░░░░░░░░░] 17%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 7
+- Total plans completed: 8
 - Average duration: 4 min
-- Total execution time: 0.47 hours
+- Total execution time: 0.52 hours
 
 **By Phase:**
 
 | Phase | Plans | Total | Avg/Plan |
 |-------|-------|-------|----------|
 | 01 | 7 | 28 min | 4 min |
+| 02 | 1 | 3 min | 3 min |
 
 **Recent Trend:**
-- Last 5 plans: 5 min, 2 min, 3 min, 8 min, 2 min
+- Last 5 plans: 2 min, 3 min, 8 min, 2 min, 3 min
 - Trend: Steady pace
 
 *Updated after each plan completion*
 | Phase 01 P05 | 3 | 2 tasks | 2 files |
 | Phase 01 P06 | 8 | 2 tasks | 25 files |
 | Phase 01 P07 | 2 | 2 tasks | 2 files |
+| Phase 02 P01 | 3 | 2 tasks | 7 files |
 
 ## Accumulated Context
 
@@ -67,6 +69,10 @@ Recent decisions affecting current work:
 - [Phase 01-06]: 20 synthetic test cases over real clinical data (HIPAA compliance, full control over ground truth)
 - [Phase 01-06]: PIL-rendered images over scanned documents (reproducible, no dependencies)
 - 01-07: Pydantic model_validate() gate on test data generation to prevent schema drift
+- 02-01: Curated rules in external JSON (kg_rules.json) for auditability and clinical review
+- 02-01: Bidirectional edges for co-occurrence/conflict relationships in KG
+- 02-01: Qualifier nodes as separate graph nodes (qualifier:name pattern) for flexible querying
+- 02-01: HAS_PARENT edges link direct parent only (not transitive) to keep graph sparse
 
 ### Pending Todos
 
@@ -79,10 +85,10 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-03-18
-Stopped at: Phase 1 execution complete — all 7 plans done, verification passed 6/6
+Stopped at: Completed 02-01-PLAN.md
 Resume file: None
 
 ---
 *State initialized: 2026-03-18*
-*Last updated: 2026-03-18 after completing 01-07*
-*Next action: Phase 01 verified and complete. Proceed to `/gsd:plan-phase 2`.*
+*Last updated: 2026-03-18 after completing 02-01*
+*Next action: Execute 02-02-PLAN.md*
