@@ -10,32 +10,33 @@ See: .planning/PROJECT.md (updated 2026-03-18)
 ## Current Position
 
 Phase: 1 of 3 (Core Pipeline & Test Data Foundation)
-Plan: 6 of 6 in current phase
+Plan: 7 of 7 in current phase
 Status: Completed
-Last activity: 2026-03-18 — Completed 01-06: End-to-end pipeline and gold standard test data
+Last activity: 2026-03-18 — Completed 01-07: Gap closure (entity/negation minimums + Pydantic validation)
 
 Progress: [██████████] 100%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 6
+- Total plans completed: 7
 - Average duration: 4 min
-- Total execution time: 0.43 hours
+- Total execution time: 0.47 hours
 
 **By Phase:**
 
 | Phase | Plans | Total | Avg/Plan |
 |-------|-------|-------|----------|
-| 01 | 6 | 26 min | 4 min |
+| 01 | 7 | 28 min | 4 min |
 
 **Recent Trend:**
-- Last 5 plans: 5 min, 2 min, 3 min, 8 min
+- Last 5 plans: 5 min, 2 min, 3 min, 8 min, 2 min
 - Trend: Steady pace
 
 *Updated after each plan completion*
 | Phase 01 P05 | 3 | 2 tasks | 2 files |
 | Phase 01 P06 | 8 | 2 tasks | 25 files |
+| Phase 01 P07 | 2 | 2 tasks | 2 files |
 
 ## Accumulated Context
 
@@ -65,6 +66,7 @@ Recent decisions affecting current work:
 - [Phase 01-06]: Sequential batch processing over parallel for simpler error handling
 - [Phase 01-06]: 20 synthetic test cases over real clinical data (HIPAA compliance, full control over ground truth)
 - [Phase 01-06]: PIL-rendered images over scanned documents (reproducible, no dependencies)
+- 01-07: Pydantic model_validate() gate on test data generation to prevent schema drift
 
 ### Pending Todos
 
@@ -77,10 +79,10 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-03-18
-Stopped at: Completed 01-06-PLAN.md - End-to-end pipeline and gold standard test data
+Stopped at: Completed 01-07-PLAN.md - Gap closure (entity/negation minimums + Pydantic validation)
 Resume file: None
 
 ---
 *State initialized: 2026-03-18*
-*Last updated: 2026-03-18 after completing 01-06*
-*Next action: Phase 01 complete. Ready for Phase 02 planning.*
+*Last updated: 2026-03-18 after completing 01-07*
+*Next action: Phase 01 fully complete (including gap closure). Ready for Phase 02 planning.*
