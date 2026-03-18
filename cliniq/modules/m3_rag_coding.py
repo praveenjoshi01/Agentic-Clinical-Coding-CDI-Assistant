@@ -250,7 +250,7 @@ def sequence_codes(suggestions: list[CodeSuggestion]) -> CodingResult:
         )
 
     # Sort by confidence descending
-    sorted_suggestions = sorted(suggestions, copy=False, key=lambda x: x.confidence, reverse=True)
+    sorted_suggestions = sorted(suggestions, key=lambda x: x.confidence, reverse=True)
 
     # Principal diagnosis: highest confidence (simplified - assume all are diagnoses)
     principal = sorted_suggestions[0]

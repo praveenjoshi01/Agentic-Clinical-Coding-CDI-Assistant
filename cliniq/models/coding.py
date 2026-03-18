@@ -5,6 +5,8 @@ Defines the output format from the RAG-based coding module,
 including code suggestions with evidence and reasoning.
 """
 
+from typing import Optional
+
 from pydantic import BaseModel, Field
 
 
@@ -33,7 +35,7 @@ class CodingResult(BaseModel):
     and sequencing rationale for transparency.
     """
 
-    principal_diagnosis: CodeSuggestion
+    principal_diagnosis: Optional[CodeSuggestion] = None
     secondary_codes: list[CodeSuggestion] = Field(default_factory=list)
     complication_codes: list[CodeSuggestion] = Field(default_factory=list)
     sequencing_rationale: str = Field(default="")
