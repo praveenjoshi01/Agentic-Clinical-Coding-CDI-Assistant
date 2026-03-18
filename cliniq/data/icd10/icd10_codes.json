@@ -1,0 +1,1327 @@
+[
+  {
+    "code": "E10.9",
+    "description": "Type 1 diabetes mellitus without complications",
+    "chapter": "E00-E89"
+  },
+  {
+    "code": "E10.65",
+    "description": "Type 1 diabetes mellitus with hyperglycemia",
+    "chapter": "E00-E89"
+  },
+  {
+    "code": "E10.21",
+    "description": "Type 1 diabetes mellitus with diabetic nephropathy",
+    "chapter": "E00-E89"
+  },
+  {
+    "code": "E10.36",
+    "description": "Type 1 diabetes mellitus with diabetic cataract",
+    "chapter": "E00-E89"
+  },
+  {
+    "code": "E11.9",
+    "description": "Type 2 diabetes mellitus without complications",
+    "chapter": "E00-E89"
+  },
+  {
+    "code": "E11.65",
+    "description": "Type 2 diabetes mellitus with hyperglycemia",
+    "chapter": "E00-E89"
+  },
+  {
+    "code": "E11.21",
+    "description": "Type 2 diabetes mellitus with diabetic nephropathy",
+    "chapter": "E00-E89"
+  },
+  {
+    "code": "E11.22",
+    "description": "Type 2 diabetes mellitus with diabetic chronic kidney disease",
+    "chapter": "E00-E89"
+  },
+  {
+    "code": "E11.36",
+    "description": "Type 2 diabetes mellitus with diabetic cataract",
+    "chapter": "E00-E89"
+  },
+  {
+    "code": "E11.40",
+    "description": "Type 2 diabetes mellitus with diabetic neuropathy, unspecified",
+    "chapter": "E00-E89"
+  },
+  {
+    "code": "E11.42",
+    "description": "Type 2 diabetes mellitus with diabetic polyneuropathy",
+    "chapter": "E00-E89"
+  },
+  {
+    "code": "E11.51",
+    "description": "Type 2 diabetes mellitus with diabetic peripheral angiopathy without gangrene",
+    "chapter": "E00-E89"
+  },
+  {
+    "code": "E11.52",
+    "description": "Type 2 diabetes mellitus with diabetic peripheral angiopathy with gangrene",
+    "chapter": "E00-E89"
+  },
+  {
+    "code": "E11.618",
+    "description": "Type 2 diabetes mellitus with other diabetic arthropathy",
+    "chapter": "E00-E89"
+  },
+  {
+    "code": "E03.9",
+    "description": "Hypothyroidism, unspecified",
+    "chapter": "E00-E89"
+  },
+  {
+    "code": "E05.90",
+    "description": "Thyrotoxicosis, unspecified without thyrotoxic crisis or storm",
+    "chapter": "E00-E89"
+  },
+  {
+    "code": "E06.3",
+    "description": "Autoimmune thyroiditis",
+    "chapter": "E00-E89"
+  },
+  {
+    "code": "E66.9",
+    "description": "Obesity, unspecified",
+    "chapter": "E00-E89"
+  },
+  {
+    "code": "E66.01",
+    "description": "Morbid (severe) obesity due to excess calories",
+    "chapter": "E00-E89"
+  },
+  {
+    "code": "E78.5",
+    "description": "Hyperlipidemia, unspecified",
+    "chapter": "E00-E89"
+  },
+  {
+    "code": "E78.00",
+    "description": "Pure hypercholesterolemia, unspecified",
+    "chapter": "E00-E89"
+  },
+  {
+    "code": "E78.2",
+    "description": "Mixed hyperlipidemia",
+    "chapter": "E00-E89"
+  },
+  {
+    "code": "I10",
+    "description": "Essential (primary) hypertension",
+    "chapter": "I00-I99"
+  },
+  {
+    "code": "I11.0",
+    "description": "Hypertensive heart disease with heart failure",
+    "chapter": "I00-I99"
+  },
+  {
+    "code": "I11.9",
+    "description": "Hypertensive heart disease without heart failure",
+    "chapter": "I00-I99"
+  },
+  {
+    "code": "I12.0",
+    "description": "Hypertensive chronic kidney disease with stage 5 chronic kidney disease or end stage renal disease",
+    "chapter": "I00-I99"
+  },
+  {
+    "code": "I12.9",
+    "description": "Hypertensive chronic kidney disease with stage 1 through stage 4 chronic kidney disease, or unspecified chronic kidney disease",
+    "chapter": "I00-I99"
+  },
+  {
+    "code": "I13.0",
+    "description": "Hypertensive heart and chronic kidney disease with heart failure and stage 1 through stage 4 chronic kidney disease, or unspecified chronic kidney disease",
+    "chapter": "I00-I99"
+  },
+  {
+    "code": "I13.10",
+    "description": "Hypertensive heart and chronic kidney disease without heart failure, with stage 1 through stage 4 chronic kidney disease, or unspecified chronic kidney disease",
+    "chapter": "I00-I99"
+  },
+  {
+    "code": "I13.11",
+    "description": "Hypertensive heart and chronic kidney disease without heart failure, with stage 5 chronic kidney disease, or end stage renal disease",
+    "chapter": "I00-I99"
+  },
+  {
+    "code": "I13.2",
+    "description": "Hypertensive heart and chronic kidney disease with heart failure and with stage 5 chronic kidney disease, or end stage renal disease",
+    "chapter": "I00-I99"
+  },
+  {
+    "code": "I50.9",
+    "description": "Heart failure, unspecified",
+    "chapter": "I00-I99"
+  },
+  {
+    "code": "I50.21",
+    "description": "Acute systolic (congestive) heart failure",
+    "chapter": "I00-I99"
+  },
+  {
+    "code": "I50.22",
+    "description": "Chronic systolic (congestive) heart failure",
+    "chapter": "I00-I99"
+  },
+  {
+    "code": "I50.23",
+    "description": "Acute on chronic systolic (congestive) heart failure",
+    "chapter": "I00-I99"
+  },
+  {
+    "code": "I50.31",
+    "description": "Acute diastolic (congestive) heart failure",
+    "chapter": "I00-I99"
+  },
+  {
+    "code": "I50.32",
+    "description": "Chronic diastolic (congestive) heart failure",
+    "chapter": "I00-I99"
+  },
+  {
+    "code": "I50.33",
+    "description": "Acute on chronic diastolic (congestive) heart failure",
+    "chapter": "I00-I99"
+  },
+  {
+    "code": "I50.41",
+    "description": "Acute combined systolic (congestive) and diastolic (congestive) heart failure",
+    "chapter": "I00-I99"
+  },
+  {
+    "code": "I50.42",
+    "description": "Chronic combined systolic (congestive) and diastolic (congestive) heart failure",
+    "chapter": "I00-I99"
+  },
+  {
+    "code": "I50.43",
+    "description": "Acute on chronic combined systolic (congestive) and diastolic (congestive) heart failure",
+    "chapter": "I00-I99"
+  },
+  {
+    "code": "I25.10",
+    "description": "Atherosclerotic heart disease of native coronary artery without angina pectoris",
+    "chapter": "I00-I99"
+  },
+  {
+    "code": "I25.110",
+    "description": "Atherosclerotic heart disease of native coronary artery with unstable angina pectoris",
+    "chapter": "I00-I99"
+  },
+  {
+    "code": "I25.111",
+    "description": "Atherosclerotic heart disease of native coronary artery with angina pectoris with documented spasm",
+    "chapter": "I00-I99"
+  },
+  {
+    "code": "I25.118",
+    "description": "Atherosclerotic heart disease of native coronary artery with other forms of angina pectoris",
+    "chapter": "I00-I99"
+  },
+  {
+    "code": "I25.119",
+    "description": "Atherosclerotic heart disease of native coronary artery with unspecified angina pectoris",
+    "chapter": "I00-I99"
+  },
+  {
+    "code": "I25.5",
+    "description": "Ischemic cardiomyopathy",
+    "chapter": "I00-I99"
+  },
+  {
+    "code": "I21.3",
+    "description": "ST elevation (STEMI) myocardial infarction of unspecified site",
+    "chapter": "I00-I99"
+  },
+  {
+    "code": "I21.4",
+    "description": "Non-ST elevation (NSTEMI) myocardial infarction",
+    "chapter": "I00-I99"
+  },
+  {
+    "code": "I48.91",
+    "description": "Unspecified atrial fibrillation",
+    "chapter": "I00-I99"
+  },
+  {
+    "code": "I48.0",
+    "description": "Paroxysmal atrial fibrillation",
+    "chapter": "I00-I99"
+  },
+  {
+    "code": "I48.11",
+    "description": "Longstanding persistent atrial fibrillation",
+    "chapter": "I00-I99"
+  },
+  {
+    "code": "I48.20",
+    "description": "Chronic atrial fibrillation, unspecified",
+    "chapter": "I00-I99"
+  },
+  {
+    "code": "I48.21",
+    "description": "Permanent atrial fibrillation",
+    "chapter": "I00-I99"
+  },
+  {
+    "code": "I63.9",
+    "description": "Cerebral infarction, unspecified",
+    "chapter": "I00-I99"
+  },
+  {
+    "code": "I63.50",
+    "description": "Cerebral infarction due to unspecified occlusion or stenosis of unspecified cerebral artery",
+    "chapter": "I00-I99"
+  },
+  {
+    "code": "I69.30",
+    "description": "Unspecified sequelae of cerebral infarction",
+    "chapter": "I00-I99"
+  },
+  {
+    "code": "I69.354",
+    "description": "Hemiplegia and hemiparesis following cerebral infarction affecting left non-dominant side",
+    "chapter": "I00-I99"
+  },
+  {
+    "code": "I69.351",
+    "description": "Hemiplegia and hemiparesis following cerebral infarction affecting right dominant side",
+    "chapter": "I00-I99"
+  },
+  {
+    "code": "J18.9",
+    "description": "Pneumonia, unspecified organism",
+    "chapter": "J00-J99"
+  },
+  {
+    "code": "J18.1",
+    "description": "Lobar pneumonia, unspecified organism",
+    "chapter": "J00-J99"
+  },
+  {
+    "code": "J18.0",
+    "description": "Bronchopneumonia, unspecified organism",
+    "chapter": "J00-J99"
+  },
+  {
+    "code": "J15.9",
+    "description": "Unspecified bacterial pneumonia",
+    "chapter": "J00-J99"
+  },
+  {
+    "code": "J15.211",
+    "description": "Pneumonia due to Methicillin susceptible Staphylococcus aureus",
+    "chapter": "J00-J99"
+  },
+  {
+    "code": "J15.212",
+    "description": "Pneumonia due to Methicillin resistant Staphylococcus aureus",
+    "chapter": "J00-J99"
+  },
+  {
+    "code": "J44.0",
+    "description": "Chronic obstructive pulmonary disease with (acute) lower respiratory infection",
+    "chapter": "J00-J99"
+  },
+  {
+    "code": "J44.1",
+    "description": "Chronic obstructive pulmonary disease with (acute) exacerbation",
+    "chapter": "J00-J99"
+  },
+  {
+    "code": "J44.9",
+    "description": "Chronic obstructive pulmonary disease, unspecified",
+    "chapter": "J00-J99"
+  },
+  {
+    "code": "J43.9",
+    "description": "Emphysema, unspecified",
+    "chapter": "J00-J99"
+  },
+  {
+    "code": "J42",
+    "description": "Unspecified chronic bronchitis",
+    "chapter": "J00-J99"
+  },
+  {
+    "code": "J45.20",
+    "description": "Mild intermittent asthma, uncomplicated",
+    "chapter": "J00-J99"
+  },
+  {
+    "code": "J45.21",
+    "description": "Mild intermittent asthma with (acute) exacerbation",
+    "chapter": "J00-J99"
+  },
+  {
+    "code": "J45.22",
+    "description": "Mild intermittent asthma with status asthmaticus",
+    "chapter": "J00-J99"
+  },
+  {
+    "code": "J45.30",
+    "description": "Mild persistent asthma, uncomplicated",
+    "chapter": "J00-J99"
+  },
+  {
+    "code": "J45.31",
+    "description": "Mild persistent asthma with (acute) exacerbation",
+    "chapter": "J00-J99"
+  },
+  {
+    "code": "J45.40",
+    "description": "Moderate persistent asthma, uncomplicated",
+    "chapter": "J00-J99"
+  },
+  {
+    "code": "J45.41",
+    "description": "Moderate persistent asthma with (acute) exacerbation",
+    "chapter": "J00-J99"
+  },
+  {
+    "code": "J45.50",
+    "description": "Severe persistent asthma, uncomplicated",
+    "chapter": "J00-J99"
+  },
+  {
+    "code": "J45.51",
+    "description": "Severe persistent asthma with (acute) exacerbation",
+    "chapter": "J00-J99"
+  },
+  {
+    "code": "J45.902",
+    "description": "Unspecified asthma with (acute) exacerbation",
+    "chapter": "J00-J99"
+  },
+  {
+    "code": "J96.00",
+    "description": "Acute respiratory failure, unspecified whether with hypoxia or hypercapnia",
+    "chapter": "J00-J99"
+  },
+  {
+    "code": "J96.01",
+    "description": "Acute respiratory failure with hypoxia",
+    "chapter": "J00-J99"
+  },
+  {
+    "code": "J96.02",
+    "description": "Acute respiratory failure with hypercapnia",
+    "chapter": "J00-J99"
+  },
+  {
+    "code": "J96.20",
+    "description": "Acute and chronic respiratory failure, unspecified whether with hypoxia or hypercapnia",
+    "chapter": "J00-J99"
+  },
+  {
+    "code": "M54.5",
+    "description": "Low back pain",
+    "chapter": "M00-M99"
+  },
+  {
+    "code": "M54.2",
+    "description": "Cervicalgia",
+    "chapter": "M00-M99"
+  },
+  {
+    "code": "M54.6",
+    "description": "Pain in thoracic spine",
+    "chapter": "M00-M99"
+  },
+  {
+    "code": "M54.50",
+    "description": "Low back pain, unspecified",
+    "chapter": "M00-M99"
+  },
+  {
+    "code": "M51.26",
+    "description": "Other intervertebral disc displacement, lumbar region",
+    "chapter": "M00-M99"
+  },
+  {
+    "code": "M51.27",
+    "description": "Other intervertebral disc displacement, lumbosacral region",
+    "chapter": "M00-M99"
+  },
+  {
+    "code": "M51.36",
+    "description": "Other intervertebral disc degeneration, lumbar region",
+    "chapter": "M00-M99"
+  },
+  {
+    "code": "M17.0",
+    "description": "Bilateral primary osteoarthritis of knee",
+    "chapter": "M00-M99"
+  },
+  {
+    "code": "M17.11",
+    "description": "Unilateral primary osteoarthritis, right knee",
+    "chapter": "M00-M99"
+  },
+  {
+    "code": "M17.12",
+    "description": "Unilateral primary osteoarthritis, left knee",
+    "chapter": "M00-M99"
+  },
+  {
+    "code": "M17.9",
+    "description": "Osteoarthritis of knee, unspecified",
+    "chapter": "M00-M99"
+  },
+  {
+    "code": "M16.0",
+    "description": "Bilateral primary osteoarthritis of hip",
+    "chapter": "M00-M99"
+  },
+  {
+    "code": "M16.11",
+    "description": "Unilateral primary osteoarthritis, right hip",
+    "chapter": "M00-M99"
+  },
+  {
+    "code": "M16.12",
+    "description": "Unilateral primary osteoarthritis, left hip",
+    "chapter": "M00-M99"
+  },
+  {
+    "code": "M19.90",
+    "description": "Unspecified osteoarthritis, unspecified site",
+    "chapter": "M00-M99"
+  },
+  {
+    "code": "M79.3",
+    "description": "Panniculitis, unspecified",
+    "chapter": "M00-M99"
+  },
+  {
+    "code": "M79.1",
+    "description": "Myalgia",
+    "chapter": "M00-M99"
+  },
+  {
+    "code": "M62.81",
+    "description": "Muscle weakness (generalized)",
+    "chapter": "M00-M99"
+  },
+  {
+    "code": "M25.511",
+    "description": "Pain in right shoulder",
+    "chapter": "M00-M99"
+  },
+  {
+    "code": "M25.512",
+    "description": "Pain in left shoulder",
+    "chapter": "M00-M99"
+  },
+  {
+    "code": "M25.561",
+    "description": "Pain in right knee",
+    "chapter": "M00-M99"
+  },
+  {
+    "code": "M25.562",
+    "description": "Pain in left knee",
+    "chapter": "M00-M99"
+  },
+  {
+    "code": "M81.0",
+    "description": "Age-related osteoporosis without current pathological fracture",
+    "chapter": "M00-M99"
+  },
+  {
+    "code": "N18.3",
+    "description": "Chronic kidney disease, stage 3 (moderate)",
+    "chapter": "N00-N99"
+  },
+  {
+    "code": "N18.30",
+    "description": "Chronic kidney disease, stage 3 unspecified",
+    "chapter": "N00-N99"
+  },
+  {
+    "code": "N18.31",
+    "description": "Chronic kidney disease, stage 3a",
+    "chapter": "N00-N99"
+  },
+  {
+    "code": "N18.32",
+    "description": "Chronic kidney disease, stage 3b",
+    "chapter": "N00-N99"
+  },
+  {
+    "code": "N18.4",
+    "description": "Chronic kidney disease, stage 4 (severe)",
+    "chapter": "N00-N99"
+  },
+  {
+    "code": "N18.5",
+    "description": "Chronic kidney disease, stage 5",
+    "chapter": "N00-N99"
+  },
+  {
+    "code": "N18.6",
+    "description": "End stage renal disease",
+    "chapter": "N00-N99"
+  },
+  {
+    "code": "N18.9",
+    "description": "Chronic kidney disease, unspecified",
+    "chapter": "N00-N99"
+  },
+  {
+    "code": "N39.0",
+    "description": "Urinary tract infection, site not specified",
+    "chapter": "N00-N99"
+  },
+  {
+    "code": "N17.9",
+    "description": "Acute kidney failure, unspecified",
+    "chapter": "N00-N99"
+  },
+  {
+    "code": "N17.0",
+    "description": "Acute kidney failure with tubular necrosis",
+    "chapter": "N00-N99"
+  },
+  {
+    "code": "N17.1",
+    "description": "Acute kidney failure with acute cortical necrosis",
+    "chapter": "N00-N99"
+  },
+  {
+    "code": "N17.2",
+    "description": "Acute kidney failure with medullary necrosis",
+    "chapter": "N00-N99"
+  },
+  {
+    "code": "N40.0",
+    "description": "Benign prostatic hyperplasia without lower urinary tract symptoms",
+    "chapter": "N00-N99"
+  },
+  {
+    "code": "N40.1",
+    "description": "Benign prostatic hyperplasia with lower urinary tract symptoms",
+    "chapter": "N00-N99"
+  },
+  {
+    "code": "F32.0",
+    "description": "Major depressive disorder, single episode, mild",
+    "chapter": "F00-F99"
+  },
+  {
+    "code": "F32.1",
+    "description": "Major depressive disorder, single episode, moderate",
+    "chapter": "F00-F99"
+  },
+  {
+    "code": "F32.2",
+    "description": "Major depressive disorder, single episode, severe without psychotic features",
+    "chapter": "F00-F99"
+  },
+  {
+    "code": "F32.3",
+    "description": "Major depressive disorder, single episode, severe with psychotic features",
+    "chapter": "F00-F99"
+  },
+  {
+    "code": "F32.9",
+    "description": "Major depressive disorder, single episode, unspecified",
+    "chapter": "F00-F99"
+  },
+  {
+    "code": "F33.0",
+    "description": "Major depressive disorder, recurrent, mild",
+    "chapter": "F00-F99"
+  },
+  {
+    "code": "F33.1",
+    "description": "Major depressive disorder, recurrent, moderate",
+    "chapter": "F00-F99"
+  },
+  {
+    "code": "F33.2",
+    "description": "Major depressive disorder, recurrent severe without psychotic features",
+    "chapter": "F00-F99"
+  },
+  {
+    "code": "F33.3",
+    "description": "Major depressive disorder, recurrent, severe with psychotic symptoms",
+    "chapter": "F00-F99"
+  },
+  {
+    "code": "F33.9",
+    "description": "Major depressive disorder, recurrent, unspecified",
+    "chapter": "F00-F99"
+  },
+  {
+    "code": "F41.0",
+    "description": "Panic disorder [episodic paroxysmal anxiety]",
+    "chapter": "F00-F99"
+  },
+  {
+    "code": "F41.1",
+    "description": "Generalized anxiety disorder",
+    "chapter": "F00-F99"
+  },
+  {
+    "code": "F41.9",
+    "description": "Anxiety disorder, unspecified",
+    "chapter": "F00-F99"
+  },
+  {
+    "code": "F43.10",
+    "description": "Post-traumatic stress disorder, unspecified",
+    "chapter": "F00-F99"
+  },
+  {
+    "code": "F43.11",
+    "description": "Post-traumatic stress disorder, acute",
+    "chapter": "F00-F99"
+  },
+  {
+    "code": "F43.12",
+    "description": "Post-traumatic stress disorder, chronic",
+    "chapter": "F00-F99"
+  },
+  {
+    "code": "F10.10",
+    "description": "Alcohol abuse, uncomplicated",
+    "chapter": "F00-F99"
+  },
+  {
+    "code": "F10.20",
+    "description": "Alcohol dependence, uncomplicated",
+    "chapter": "F00-F99"
+  },
+  {
+    "code": "F10.21",
+    "description": "Alcohol dependence, in remission",
+    "chapter": "F00-F99"
+  },
+  {
+    "code": "C50.911",
+    "description": "Malignant neoplasm of unspecified site of right female breast",
+    "chapter": "C00-D49"
+  },
+  {
+    "code": "C50.912",
+    "description": "Malignant neoplasm of unspecified site of left female breast",
+    "chapter": "C00-D49"
+  },
+  {
+    "code": "C61",
+    "description": "Malignant neoplasm of prostate",
+    "chapter": "C00-D49"
+  },
+  {
+    "code": "C34.90",
+    "description": "Malignant neoplasm of unspecified part of unspecified bronchus or lung",
+    "chapter": "C00-D49"
+  },
+  {
+    "code": "C34.91",
+    "description": "Malignant neoplasm of unspecified part of right bronchus or lung",
+    "chapter": "C00-D49"
+  },
+  {
+    "code": "C34.92",
+    "description": "Malignant neoplasm of unspecified part of left bronchus or lung",
+    "chapter": "C00-D49"
+  },
+  {
+    "code": "C18.9",
+    "description": "Malignant neoplasm of colon, unspecified",
+    "chapter": "C00-D49"
+  },
+  {
+    "code": "C20",
+    "description": "Malignant neoplasm of rectum",
+    "chapter": "C00-D49"
+  },
+  {
+    "code": "C67.9",
+    "description": "Malignant neoplasm of bladder, unspecified",
+    "chapter": "C00-D49"
+  },
+  {
+    "code": "C73",
+    "description": "Malignant neoplasm of thyroid gland",
+    "chapter": "C00-D49"
+  },
+  {
+    "code": "C25.9",
+    "description": "Malignant neoplasm of pancreas, unspecified",
+    "chapter": "C00-D49"
+  },
+  {
+    "code": "C22.0",
+    "description": "Liver cell carcinoma",
+    "chapter": "C00-D49"
+  },
+  {
+    "code": "C43.9",
+    "description": "Malignant melanoma of skin, unspecified",
+    "chapter": "C00-D49"
+  },
+  {
+    "code": "D05.10",
+    "description": "Intraductal carcinoma in situ of unspecified breast",
+    "chapter": "C00-D49"
+  },
+  {
+    "code": "C79.51",
+    "description": "Secondary malignant neoplasm of bone",
+    "chapter": "C00-D49"
+  },
+  {
+    "code": "C78.00",
+    "description": "Secondary malignant neoplasm of unspecified lung",
+    "chapter": "C00-D49"
+  },
+  {
+    "code": "C78.7",
+    "description": "Secondary malignant neoplasm of liver and intrahepatic bile duct",
+    "chapter": "C00-D49"
+  },
+  {
+    "code": "C79.31",
+    "description": "Secondary malignant neoplasm of brain",
+    "chapter": "C00-D49"
+  },
+  {
+    "code": "Z51.11",
+    "description": "Encounter for antineoplastic chemotherapy",
+    "chapter": "Z00-Z99"
+  },
+  {
+    "code": "Z85.3",
+    "description": "Personal history of malignant neoplasm of breast",
+    "chapter": "Z00-Z99"
+  },
+  {
+    "code": "S72.001A",
+    "description": "Fracture of unspecified part of neck of right femur, initial encounter for closed fracture",
+    "chapter": "S00-T88"
+  },
+  {
+    "code": "S72.002A",
+    "description": "Fracture of unspecified part of neck of left femur, initial encounter for closed fracture",
+    "chapter": "S00-T88"
+  },
+  {
+    "code": "S42.001A",
+    "description": "Fracture of unspecified part of right clavicle, initial encounter for closed fracture",
+    "chapter": "S00-T88"
+  },
+  {
+    "code": "S42.002A",
+    "description": "Fracture of unspecified part of left clavicle, initial encounter for closed fracture",
+    "chapter": "S00-T88"
+  },
+  {
+    "code": "S52.501A",
+    "description": "Unspecified fracture of the lower end of right radius, initial encounter for closed fracture",
+    "chapter": "S00-T88"
+  },
+  {
+    "code": "S52.502A",
+    "description": "Unspecified fracture of the lower end of left radius, initial encounter for closed fracture",
+    "chapter": "S00-T88"
+  },
+  {
+    "code": "S82.101A",
+    "description": "Unspecified fracture of upper end of right tibia, initial encounter for closed fracture",
+    "chapter": "S00-T88"
+  },
+  {
+    "code": "S82.102A",
+    "description": "Unspecified fracture of upper end of left tibia, initial encounter for closed fracture",
+    "chapter": "S00-T88"
+  },
+  {
+    "code": "S06.0X0A",
+    "description": "Concussion without loss of consciousness, initial encounter",
+    "chapter": "S00-T88"
+  },
+  {
+    "code": "S06.0X1A",
+    "description": "Concussion with loss of consciousness of 30 minutes or less, initial encounter",
+    "chapter": "S00-T88"
+  },
+  {
+    "code": "T20.20XA",
+    "description": "Burn of second degree of head, face, and neck, unspecified site, initial encounter",
+    "chapter": "S00-T88"
+  },
+  {
+    "code": "T21.20XA",
+    "description": "Burn of second degree of trunk, unspecified site, initial encounter",
+    "chapter": "S00-T88"
+  },
+  {
+    "code": "T22.20XA",
+    "description": "Burn of second degree of shoulder and upper limb, except wrist and hand, unspecified site, initial encounter",
+    "chapter": "S00-T88"
+  },
+  {
+    "code": "T40.1X1A",
+    "description": "Poisoning by heroin, accidental (unintentional), initial encounter",
+    "chapter": "S00-T88"
+  },
+  {
+    "code": "T40.2X1A",
+    "description": "Poisoning by other opioids, accidental (unintentional), initial encounter",
+    "chapter": "S00-T88"
+  },
+  {
+    "code": "R07.9",
+    "description": "Chest pain, unspecified",
+    "chapter": "R00-R99"
+  },
+  {
+    "code": "R07.89",
+    "description": "Other chest pain",
+    "chapter": "R00-R99"
+  },
+  {
+    "code": "R07.1",
+    "description": "Chest pain on breathing",
+    "chapter": "R00-R99"
+  },
+  {
+    "code": "R07.2",
+    "description": "Precordial pain",
+    "chapter": "R00-R99"
+  },
+  {
+    "code": "R05.9",
+    "description": "Cough, unspecified",
+    "chapter": "R00-R99"
+  },
+  {
+    "code": "R05.1",
+    "description": "Acute cough",
+    "chapter": "R00-R99"
+  },
+  {
+    "code": "R05.2",
+    "description": "Subacute cough",
+    "chapter": "R00-R99"
+  },
+  {
+    "code": "R05.3",
+    "description": "Chronic cough",
+    "chapter": "R00-R99"
+  },
+  {
+    "code": "R06.00",
+    "description": "Dyspnea, unspecified",
+    "chapter": "R00-R99"
+  },
+  {
+    "code": "R06.02",
+    "description": "Shortness of breath",
+    "chapter": "R00-R99"
+  },
+  {
+    "code": "R06.03",
+    "description": "Acute respiratory distress",
+    "chapter": "R00-R99"
+  },
+  {
+    "code": "R06.09",
+    "description": "Other forms of dyspnea",
+    "chapter": "R00-R99"
+  },
+  {
+    "code": "R50.9",
+    "description": "Fever, unspecified",
+    "chapter": "R00-R99"
+  },
+  {
+    "code": "R51.9",
+    "description": "Headache, unspecified",
+    "chapter": "R00-R99"
+  },
+  {
+    "code": "R10.9",
+    "description": "Unspecified abdominal pain",
+    "chapter": "R00-R99"
+  },
+  {
+    "code": "R10.10",
+    "description": "Upper abdominal pain, unspecified",
+    "chapter": "R00-R99"
+  },
+  {
+    "code": "R10.30",
+    "description": "Lower abdominal pain, unspecified",
+    "chapter": "R00-R99"
+  },
+  {
+    "code": "R10.84",
+    "description": "Generalized abdominal pain",
+    "chapter": "R00-R99"
+  },
+  {
+    "code": "R11.0",
+    "description": "Nausea",
+    "chapter": "R00-R99"
+  },
+  {
+    "code": "R11.2",
+    "description": "Nausea with vomiting, unspecified",
+    "chapter": "R00-R99"
+  },
+  {
+    "code": "R11.10",
+    "description": "Vomiting, unspecified",
+    "chapter": "R00-R99"
+  },
+  {
+    "code": "R19.7",
+    "description": "Diarrhea, unspecified",
+    "chapter": "R00-R99"
+  },
+  {
+    "code": "R53.83",
+    "description": "Other fatigue",
+    "chapter": "R00-R99"
+  },
+  {
+    "code": "R53.1",
+    "description": "Weakness",
+    "chapter": "R00-R99"
+  },
+  {
+    "code": "R63.4",
+    "description": "Abnormal weight loss",
+    "chapter": "R00-R99"
+  },
+  {
+    "code": "R63.5",
+    "description": "Abnormal weight gain",
+    "chapter": "R00-R99"
+  },
+  {
+    "code": "R42",
+    "description": "Dizziness and giddiness",
+    "chapter": "R00-R99"
+  },
+  {
+    "code": "R55",
+    "description": "Syncope and collapse",
+    "chapter": "R00-R99"
+  },
+  {
+    "code": "R26.89",
+    "description": "Other abnormalities of gait and mobility",
+    "chapter": "R00-R99"
+  },
+  {
+    "code": "R73.09",
+    "description": "Other prediabetes",
+    "chapter": "R00-R99"
+  },
+  {
+    "code": "R73.03",
+    "description": "Prediabetes",
+    "chapter": "R00-R99"
+  },
+  {
+    "code": "R94.31",
+    "description": "Abnormal electrocardiogram [ECG] [EKG]",
+    "chapter": "R00-R99"
+  },
+  {
+    "code": "Z79.4",
+    "description": "Long term (current) use of insulin",
+    "chapter": "Z00-Z99"
+  },
+  {
+    "code": "Z79.84",
+    "description": "Long term (current) use of oral hypoglycemic drugs",
+    "chapter": "Z00-Z99"
+  },
+  {
+    "code": "Z79.01",
+    "description": "Long term (current) use of anticoagulants",
+    "chapter": "Z00-Z99"
+  },
+  {
+    "code": "Z79.82",
+    "description": "Long term (current) use of aspirin",
+    "chapter": "Z00-Z99"
+  },
+  {
+    "code": "Z79.899",
+    "description": "Other long term (current) drug therapy",
+    "chapter": "Z00-Z99"
+  },
+  {
+    "code": "Z87.891",
+    "description": "Personal history of nicotine dependence",
+    "chapter": "Z00-Z99"
+  },
+  {
+    "code": "Z68.35",
+    "description": "Body mass index (BMI) 35.0-35.9, adult",
+    "chapter": "Z00-Z99"
+  },
+  {
+    "code": "Z68.41",
+    "description": "Body mass index (BMI) 40.0-44.9, adult",
+    "chapter": "Z00-Z99"
+  },
+  {
+    "code": "G47.33",
+    "description": "Obstructive sleep apnea (adult) (pediatric)",
+    "chapter": "G00-G99"
+  },
+  {
+    "code": "G89.29",
+    "description": "Other chronic pain",
+    "chapter": "G00-G99"
+  },
+  {
+    "code": "G43.909",
+    "description": "Migraine, unspecified, not intractable, without status migrainosus",
+    "chapter": "G00-G99"
+  },
+  {
+    "code": "G43.109",
+    "description": "Migraine with aura, not intractable, without status migrainosus",
+    "chapter": "G00-G99"
+  },
+  {
+    "code": "G44.209",
+    "description": "Tension-type headache, unspecified, not intractable",
+    "chapter": "G00-G99"
+  },
+  {
+    "code": "G20",
+    "description": "Parkinson's disease",
+    "chapter": "G00-G99"
+  },
+  {
+    "code": "G30.9",
+    "description": "Alzheimer's disease, unspecified",
+    "chapter": "G00-G99"
+  },
+  {
+    "code": "G35",
+    "description": "Multiple sclerosis",
+    "chapter": "G00-G99"
+  },
+  {
+    "code": "G40.909",
+    "description": "Epilepsy, unspecified, not intractable, without status epilepticus",
+    "chapter": "G00-G99"
+  },
+  {
+    "code": "K21.9",
+    "description": "Gastro-esophageal reflux disease without esophagitis",
+    "chapter": "K00-K99"
+  },
+  {
+    "code": "K21.0",
+    "description": "Gastro-esophageal reflux disease with esophagitis",
+    "chapter": "K00-K99"
+  },
+  {
+    "code": "K29.70",
+    "description": "Gastritis, unspecified, without bleeding",
+    "chapter": "K00-K99"
+  },
+  {
+    "code": "K58.9",
+    "description": "Irritable bowel syndrome without diarrhea",
+    "chapter": "K00-K99"
+  },
+  {
+    "code": "K58.0",
+    "description": "Irritable bowel syndrome with diarrhea",
+    "chapter": "K00-K99"
+  },
+  {
+    "code": "K80.20",
+    "description": "Calculus of gallbladder without cholecystitis without obstruction",
+    "chapter": "K00-K99"
+  },
+  {
+    "code": "K76.0",
+    "description": "Fatty (change of) liver, not elsewhere classified",
+    "chapter": "K00-K99"
+  },
+  {
+    "code": "K70.30",
+    "description": "Alcoholic cirrhosis of liver without ascites",
+    "chapter": "K00-K99"
+  },
+  {
+    "code": "K74.60",
+    "description": "Unspecified cirrhosis of liver",
+    "chapter": "K00-K99"
+  },
+  {
+    "code": "L03.90",
+    "description": "Cellulitis, unspecified",
+    "chapter": "L00-L99"
+  },
+  {
+    "code": "L03.115",
+    "description": "Cellulitis of right lower limb",
+    "chapter": "L00-L99"
+  },
+  {
+    "code": "L03.116",
+    "description": "Cellulitis of left lower limb",
+    "chapter": "L00-L99"
+  },
+  {
+    "code": "L97.919",
+    "description": "Non-pressure chronic ulcer of unspecified part of unspecified lower leg with unspecified severity",
+    "chapter": "L00-L99"
+  },
+  {
+    "code": "L89.209",
+    "description": "Pressure ulcer of unspecified hip, unspecified stage",
+    "chapter": "L00-L99"
+  },
+  {
+    "code": "L40.0",
+    "description": "Psoriasis vulgaris",
+    "chapter": "L00-L99"
+  },
+  {
+    "code": "L20.9",
+    "description": "Atopic dermatitis, unspecified",
+    "chapter": "L00-L99"
+  },
+  {
+    "code": "D64.9",
+    "description": "Anemia, unspecified",
+    "chapter": "D50-D89"
+  },
+  {
+    "code": "D50.9",
+    "description": "Iron deficiency anemia, unspecified",
+    "chapter": "D50-D89"
+  },
+  {
+    "code": "D62",
+    "description": "Acute posthemorrhagic anemia",
+    "chapter": "D50-D89"
+  },
+  {
+    "code": "D63.1",
+    "description": "Anemia in chronic kidney disease",
+    "chapter": "D50-D89"
+  },
+  {
+    "code": "D68.9",
+    "description": "Coagulation defect, unspecified",
+    "chapter": "D50-D89"
+  },
+  {
+    "code": "A41.9",
+    "description": "Sepsis, unspecified organism",
+    "chapter": "A00-B99"
+  },
+  {
+    "code": "A41.51",
+    "description": "Sepsis due to Escherichia coli [E. coli]",
+    "chapter": "A00-B99"
+  },
+  {
+    "code": "A41.01",
+    "description": "Sepsis due to Methicillin susceptible Staphylococcus aureus",
+    "chapter": "A00-B99"
+  },
+  {
+    "code": "A41.02",
+    "description": "Sepsis due to Methicillin resistant Staphylococcus aureus",
+    "chapter": "A00-B99"
+  },
+  {
+    "code": "R65.20",
+    "description": "Severe sepsis without septic shock",
+    "chapter": "R00-R99"
+  },
+  {
+    "code": "R65.21",
+    "description": "Severe sepsis with septic shock",
+    "chapter": "R00-R99"
+  },
+  {
+    "code": "B20",
+    "description": "Human immunodeficiency virus [HIV] disease",
+    "chapter": "A00-B99"
+  },
+  {
+    "code": "B18.2",
+    "description": "Chronic viral hepatitis C",
+    "chapter": "A00-B99"
+  },
+  {
+    "code": "B18.1",
+    "description": "Chronic viral hepatitis B without delta-agent",
+    "chapter": "A00-B99"
+  },
+  {
+    "code": "B19.20",
+    "description": "Unspecified viral hepatitis C without hepatic coma",
+    "chapter": "A00-B99"
+  },
+  {
+    "code": "O80",
+    "description": "Encounter for full-term uncomplicated delivery",
+    "chapter": "O00-O99"
+  },
+  {
+    "code": "O09.90",
+    "description": "Supervision of high risk pregnancy, unspecified, unspecified trimester",
+    "chapter": "O00-O99"
+  },
+  {
+    "code": "O24.419",
+    "description": "Gestational diabetes mellitus in pregnancy, unspecified control",
+    "chapter": "O00-O99"
+  },
+  {
+    "code": "O10.019",
+    "description": "Pre-existing essential hypertension complicating pregnancy, unspecified trimester",
+    "chapter": "O00-O99"
+  },
+  {
+    "code": "O14.90",
+    "description": "Unspecified pre-eclampsia, unspecified trimester",
+    "chapter": "O00-O99"
+  },
+  {
+    "code": "H25.9",
+    "description": "Unspecified age-related cataract",
+    "chapter": "H00-H59"
+  },
+  {
+    "code": "H40.9",
+    "description": "Unspecified glaucoma",
+    "chapter": "H00-H59"
+  },
+  {
+    "code": "H52.13",
+    "description": "Myopia, bilateral",
+    "chapter": "H00-H59"
+  },
+  {
+    "code": "H91.90",
+    "description": "Unspecified hearing loss, unspecified ear",
+    "chapter": "H60-H95"
+  }
+]
