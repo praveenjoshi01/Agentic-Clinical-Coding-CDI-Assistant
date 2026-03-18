@@ -29,7 +29,7 @@ Progress: [█████████░] 72%
 |-------|-------|-------|----------|
 | 01 | 7 | 28 min | 4 min |
 | 02 | 6 | 14 min | 2.3 min |
-| 04 | 3 | 12 min | 4 min |
+| 04 | 4 | 15 min | 3.75 min |
 
 **Recent Trend:**
 - Last 5 plans: 2 min, 2 min, 2 min, 3 min, 2 min
@@ -46,7 +46,9 @@ Progress: [█████████░] 72%
 | Phase 02 P05 | 3 | 2 tasks | 2 files |
 | Phase 02 P06 | 2 | 2 tasks | 3 files |
 | Phase 04 P01 | 6 | 2 tasks | 18 files |
+| Phase 04 P02 | 3 | 1 tasks | 1 files |
 | Phase 04 P03 | 3 | 2 tasks | 2 files |
+| Phase 04 P04 | 3 | 2 tasks | 2 files |
 
 ## Accumulated Context
 
@@ -103,6 +105,10 @@ Recent decisions affecting current work:
 - 04-01: Entity overlap resolution by confidence then span length for NER highlighting
 - 04-01: 1-hop neighbor expansion with size differentiation for KG subgraph visualization
 - 04-01: 8 pre-seeded QA questions covering all ClinIQ system aspects
+- 04-02: Placeholder clinical note text for text_area usability guidance
+- 04-02: Fallthrough from pre-computed to live pipeline execution when JSON not found
+- 04-02: Entity summary as st.dataframe for built-in sorting and search
+- 04-02: Color legend as inline HTML spans matching ENTITY_COLORS palette
 - 04-03: Two-column (3:1) layout for KG Viewer: graph main area + CDI summary sidebar
 - 04-03: Inline HTML color circles for legend (cross-platform consistent rendering)
 - 04-03: 300-char truncation for evidence spans to prevent layout overflow
