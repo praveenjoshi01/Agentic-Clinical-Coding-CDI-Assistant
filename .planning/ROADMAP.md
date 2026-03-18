@@ -50,11 +50,15 @@ Plans:
   3. System suggests potential missed diagnoses via COMMONLY_CO_CODED graph edges
   4. User clicks any suggested code and sees supporting text span from original clinical note
   5. Every reasoning step has captured chain-of-thought trace for audit compliance
-**Plans**: TBD (split across KG agent and explainability modules)
+**Plans:** 6 plans
 
 Plans:
-- [ ] 02-01: TBD during phase planning
-- [ ] 02-02: TBD during phase planning
+- [ ] 02-01-PLAN.md — CDI/Audit Pydantic schemas, KG schema constants, KG builder with curated rules
+- [ ] 02-02-PLAN.md — KG querier functions (gap detection, conflict detection, co-occurrence) + unit tests
+- [ ] 02-03-PLAN.md — Explainability module (audit trail builder, CoT capture, evidence linking) + unit tests
+- [ ] 02-04-PLAN.md — CDI agent module (physician query generation, CDIReport assembly) + unit tests
+- [ ] 02-05-PLAN.md — Pipeline integration (CDI stage + audit trail instrumentation) + integration tests
+- [ ] 02-06-PLAN.md — LLM-as-judge evaluation (query relevance CDI-06, CoT coherence EXPL-05) + tests
 
 ### Phase 3: Evaluation & Demo UI
 **Goal**: Polished 5-page Streamlit demo with quantitative metrics proving all pipeline stages meet targets
@@ -81,7 +85,7 @@ Phases execute in numeric order: 1 -> 2 -> 3
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Core Pipeline & Test Data Foundation | 7/7 | ✓ Complete | 2026-03-18 |
-| 2. CDI Intelligence Layer | 0/TBD | Not started | - |
+| 2. CDI Intelligence Layer | 0/6 | Not started | - |
 | 3. Evaluation & Demo UI | 0/TBD | Not started | - |
 
 ---
