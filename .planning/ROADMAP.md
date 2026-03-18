@@ -15,6 +15,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 - [x] **Phase 1: Core Pipeline & Test Data Foundation** - Multi-modal ingestion, clinical NER, RAG-based ICD-10 coding, plus comprehensive synthetic test data for all modules
 - [x] **Phase 2: CDI Intelligence Layer** - Knowledge graph reasoning, gap detection, and explainability
 - [ ] **Phase 3: Evaluation & Demo UI** - Quantitative validation suite and 5-page Streamlit demo
+- [ ] **Phase 4: Demo UI for the Whole App** - Polished 7-page Streamlit demo with interactive KG, evaluation charts, and QA bot
 
 ## Phase Details
 
@@ -77,16 +78,38 @@ Plans:
 - [ ] 03-02: TBD during phase planning
 - [ ] 03-03: TBD during phase planning
 
+### Phase 4: Demo UI for the Whole App
+**Goal**: Interview-ready 7-page Streamlit demo showcasing the entire ClinIQ pipeline with interactive visualizations, pre-computed demo results, and a QA chatbot
+**Depends on**: Phases 1 & 2 (requires complete pipeline backend; builds UI from scratch)
+**Requirements**: UI-01, UI-02, UI-03, UI-04, UI-05, UI-06, UI-07, VIZ-01, VIZ-02, VIZ-03, VIZ-04
+**Success Criteria** (what must be TRUE):
+  1. User opens Streamlit app and sees polished landing page with project overview and navigation
+  2. User selects a demo case on Pipeline Runner and sees full pipeline results instantly (NER highlights, ICD-10 cards, CDI findings)
+  3. User views interactive PyVis knowledge graph with green/amber/red nodes and click-to-see-details
+  4. User expands audit trail stages and sees per-stage timing, CoT traces, and evidence spans
+  5. User views evaluation radar chart and per-module bar charts with pass/fail badges
+  6. User asks QA Bot pre-seeded interview questions and gets correct, instant answers
+  7. Session state persists across all page navigations
+**Plans:** 5 plans
+
+Plans:
+- [ ] 04-01-PLAN.md — App shell, theme, reusable components, and pre-computed demo data
+- [ ] 04-02-PLAN.md — Pipeline Runner page (upload, run, NER highlights, code cards, CDI display)
+- [ ] 04-03-PLAN.md — KG Viewer page (PyVis graph) and Audit Trail page (expandable traces)
+- [ ] 04-04-PLAN.md — Eval Dashboard page (Plotly charts) and QA Bot page (chat interface)
+- [ ] 04-05-PLAN.md — Home/Landing page, integration polish, and visual verification
+
 ## Progress
 
 **Execution Order:**
-Phases execute in numeric order: 1 -> 2 -> 3
+Phases execute in numeric order: 1 -> 2 -> 3 -> 4
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Core Pipeline & Test Data Foundation | 7/7 | ✓ Complete | 2026-03-18 |
 | 2. CDI Intelligence Layer | 6/6 | ✓ Complete | 2026-03-18 |
 | 3. Evaluation & Demo UI | 0/TBD | Not started | - |
+| 4. Demo UI for the Whole App | 0/5 | Planned | - |
 
 ---
 *Roadmap created: 2026-03-18*
@@ -97,3 +120,4 @@ Phases execute in numeric order: 1 -> 2 -> 3
 *Phase 1 complete: 2026-03-18 (7/7 plans, verification passed 6/6)*
 *Phase 2 planned: 2026-03-18 (6 plans across 5 waves)*
 *Phase 2 complete: 2026-03-18 (6/6 plans, verification passed 5/5)*
+*Phase 4 planned: 2026-03-18 (5 plans across 3 waves)*
