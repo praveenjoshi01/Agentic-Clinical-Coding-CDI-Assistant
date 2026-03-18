@@ -113,6 +113,10 @@ Recent decisions affecting current work:
 - 04-03: Inline HTML color circles for legend (cross-platform consistent rendering)
 - 04-03: 300-char truncation for evidence spans to prevent layout overflow
 - 04-03: Horizontal bar chart for stage timing breakdown visualization
+- 04-04: Hardcoded demo metrics close to targets for instant display without model downloads
+- 04-04: Jaccard threshold 0.3 for pre-seeded question matching (balances recall vs false positives)
+- 04-04: Chat badges [Pre-seeded] vs [Generated] for answer source transparency
+- 04-04: Primary metric per module for radar chart (Schema, F1, MRR, Query Rel, Trace Comp)
 
 ### Pending Todos
 
@@ -129,10 +133,10 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-03-18
-Stopped at: Completed 04-03-PLAN.md
+Stopped at: Completed 04-04-PLAN.md
 Resume file: None
 
 ---
 *State initialized: 2026-03-18*
-*Last updated: 2026-03-18 after completing 04-03*
-*Next action: Execute 04-04-PLAN.md or 04-05-PLAN.md*
+*Last updated: 2026-03-18 after completing 04-04*
+*Next action: Execute 04-05-PLAN.md (final plan)*
