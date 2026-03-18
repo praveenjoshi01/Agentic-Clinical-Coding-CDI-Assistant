@@ -10,28 +10,28 @@ See: .planning/PROJECT.md (updated 2026-03-18)
 ## Current Position
 
 Phase: 2 of 3 (CDI Intelligence Layer)
-Plan: 4 of 6 in current phase
-Status: Executing — 02-04 complete
-Last activity: 2026-03-18 — Completed 02-04 (CDI agent module)
+Plan: 5 of 6 in current phase
+Status: Executing — 02-05 complete
+Last activity: 2026-03-18 — Completed 02-05 (CDI pipeline integration)
 
-Progress: [████░░░░░░] 30%
+Progress: [██████░░░░] 35%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 11
+- Total plans completed: 12
 - Average duration: 4 min
-- Total execution time: 0.62 hours
+- Total execution time: 0.67 hours
 
 **By Phase:**
 
 | Phase | Plans | Total | Avg/Plan |
 |-------|-------|-------|----------|
 | 01 | 7 | 28 min | 4 min |
-| 02 | 4 | 9 min | 2.3 min |
+| 02 | 5 | 12 min | 2.4 min |
 
 **Recent Trend:**
-- Last 5 plans: 2 min, 3 min, 2 min, 2 min, 2 min
+- Last 5 plans: 3 min, 2 min, 2 min, 2 min, 3 min
 - Trend: Steady pace
 
 *Updated after each plan completion*
@@ -42,6 +42,7 @@ Progress: [████░░░░░░] 30%
 | Phase 02 P02 | 2 | 2 tasks | 3 files |
 | Phase 02 P03 | 2 | 2 tasks | 2 files |
 | Phase 02 P04 | 2 | 2 tasks | 2 files |
+| Phase 02 P05 | 3 | 2 tasks | 2 files |
 
 ## Accumulated Context
 
@@ -86,6 +87,9 @@ Recent decisions affecting current work:
 - 02-04: Template fallback for physician queries ensures valid output when LLM fails
 - 02-04: Gap penalty 10%, conflict penalty 15%, clamped to [0.0, 1.0] for completeness scoring
 - 02-04: Default confidence 0.8 for KG-based documentation gaps
+- 02-05: Separate run_pipeline_audited function instead of modifying run_pipeline to maintain backward compatibility
+- 02-05: Optional cdi_report and audit_trail fields (default None) on PipelineResult for schema backward compatibility
+- 02-05: UUID4 hex[:8] for case_id generation (short, unique, no external dependencies)
 
 ### Pending Todos
 
@@ -98,10 +102,10 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-03-18
-Stopped at: Completed 02-04-PLAN.md
+Stopped at: Completed 02-05-PLAN.md
 Resume file: None
 
 ---
 *State initialized: 2026-03-18*
-*Last updated: 2026-03-18 after completing 02-04*
-*Next action: Execute 02-05-PLAN.md*
+*Last updated: 2026-03-18 after completing 02-05*
+*Next action: Execute 02-06-PLAN.md*
