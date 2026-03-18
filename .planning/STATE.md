@@ -10,27 +10,27 @@ See: .planning/PROJECT.md (updated 2026-03-18)
 ## Current Position
 
 Phase: 1 of 3 (Core Pipeline & Test Data Foundation)
-Plan: 2 of 6 in current phase
+Plan: 3 of 6 in current phase
 Status: Executing
-Last activity: 2026-03-18 — Completed 01-02: ICD-10 knowledge base and RAG infrastructure
+Last activity: 2026-03-18 — Completed 01-03: Multi-modal ingestion module
 
-Progress: [███░░░░░░░] 33%
+Progress: [█████░░░░░] 50%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 2
+- Total plans completed: 3
 - Average duration: 4 min
-- Total execution time: 0.13 hours
+- Total execution time: 0.22 hours
 
 **By Phase:**
 
 | Phase | Plans | Total | Avg/Plan |
 |-------|-------|-------|----------|
-| 01 | 2 | 8 min | 4 min |
+| 01 | 3 | 13 min | 4 min |
 
 **Recent Trend:**
-- Last 5 plans: 3 min, 5 min
+- Last 5 plans: 3 min, 5 min, 5 min
 - Trend: Steady pace
 
 *Updated after each plan completion*
@@ -50,10 +50,9 @@ Recent decisions affecting current work:
 - 01-01: Pydantic v2 for all data schemas (runtime validation, computed properties, JSON serialization)
 - 01-01: Singleton pattern for ModelManager (prevents multiple model loads, reduces memory)
 - 01-01: Lazy loading for all models (downloaded/loaded only when first accessed)
-- 01-02: Curated 265-code ICD-10 dataset instead of full CMS file (faster iteration, same patterns)
-- 01-02: FAISS IndexFlatIP with normalized embeddings (exact cosine similarity for demo scale)
-- 01-02: BGE query prefix on queries only, not documents (asymmetric retrieval pattern)
-- 01-02: Preserve retrieval_score and rerank_score (enables reranking impact analysis)
+- 01-03: FHIR R4B (not R5) for parsing - R4B is standard for clinical systems, avoids R5 compatibility issues
+- 01-03: Confidence heuristic for image OCR based on text length (longer = better quality, clamped 0.4-0.85)
+- 01-03: Removed outlines dependency - requires Rust compiler, not needed for ingestion
 
 ### Pending Todos
 
@@ -66,10 +65,10 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-03-18
-Stopped at: Completed 01-02-PLAN.md - ICD-10 knowledge base and RAG infrastructure
+Stopped at: Completed 01-03-PLAN.md - Multi-modal ingestion module
 Resume file: None
 
 ---
 *State initialized: 2026-03-18*
-*Last updated: 2026-03-18 after completing 01-02*
-*Next action: /gsd:execute-phase 1 (continue with 01-03)*
+*Last updated: 2026-03-18 after completing 01-03*
+*Next action: /gsd:execute-phase 1 (continue with 01-04)*
