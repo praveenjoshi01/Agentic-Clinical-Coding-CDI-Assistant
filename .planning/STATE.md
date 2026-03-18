@@ -10,28 +10,28 @@ See: .planning/PROJECT.md (updated 2026-03-18)
 ## Current Position
 
 Phase: 2 of 3 (CDI Intelligence Layer)
-Plan: 1 of 6 in current phase
-Status: Executing — 02-01 complete
-Last activity: 2026-03-18 — Completed 02-01 (CDI schemas + KG builder)
+Plan: 2 of 6 in current phase
+Status: Executing — 02-02 complete
+Last activity: 2026-03-18 — Completed 02-02 (KG querier + tests)
 
-Progress: [█░░░░░░░░░] 17%
+Progress: [██░░░░░░░░] 21%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 8
+- Total plans completed: 9
 - Average duration: 4 min
-- Total execution time: 0.52 hours
+- Total execution time: 0.55 hours
 
 **By Phase:**
 
 | Phase | Plans | Total | Avg/Plan |
 |-------|-------|-------|----------|
 | 01 | 7 | 28 min | 4 min |
-| 02 | 1 | 3 min | 3 min |
+| 02 | 2 | 5 min | 2.5 min |
 
 **Recent Trend:**
-- Last 5 plans: 2 min, 3 min, 8 min, 2 min, 3 min
+- Last 5 plans: 3 min, 8 min, 2 min, 3 min, 2 min
 - Trend: Steady pace
 
 *Updated after each plan completion*
@@ -39,6 +39,7 @@ Progress: [█░░░░░░░░░] 17%
 | Phase 01 P06 | 8 | 2 tasks | 25 files |
 | Phase 01 P07 | 2 | 2 tasks | 2 files |
 | Phase 02 P01 | 3 | 2 tasks | 7 files |
+| Phase 02 P02 | 2 | 2 tasks | 3 files |
 
 ## Accumulated Context
 
@@ -73,6 +74,9 @@ Recent decisions affecting current work:
 - 02-01: Bidirectional edges for co-occurrence/conflict relationships in KG
 - 02-01: Qualifier nodes as separate graph nodes (qualifier:name pattern) for flexible querying
 - 02-01: HAS_PARENT edges link direct parent only (not transitive) to keep graph sparse
+- 02-02: Read-only query pattern: querier functions never modify frozen graph
+- 02-02: Frozenset deduplication for conflict pairs to avoid (A,B)+(B,A) duplicates
+- 02-02: Weight-based ranking for missed diagnosis suggestions with per-code deduplication
 
 ### Pending Todos
 
@@ -85,10 +89,10 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-03-18
-Stopped at: Completed 02-01-PLAN.md
+Stopped at: Completed 02-02-PLAN.md
 Resume file: None
 
 ---
 *State initialized: 2026-03-18*
-*Last updated: 2026-03-18 after completing 02-01*
-*Next action: Execute 02-02-PLAN.md*
+*Last updated: 2026-03-18 after completing 02-02*
+*Next action: Execute 02-03-PLAN.md*
