@@ -3,7 +3,13 @@ Tests for the end-to-end pipeline orchestrator.
 """
 
 import pytest
-from cliniq.pipeline import run_pipeline, run_pipeline_batch, PipelineResult
+from cliniq.pipeline import (
+    run_pipeline,
+    run_pipeline_batch,
+    run_pipeline_audited,
+    run_pipeline_audited_batch,
+    PipelineResult,
+)
 
 
 # Sample FHIR bundle for testing
@@ -180,3 +186,147 @@ def test_pipeline_batch():
     assert results[0].document.metadata.source_type == "text"
     assert results[1].document.metadata.source_type == "text"
     assert results[2].document.metadata.source_type == "fhir"
+
+
+# ---------------------------------------------------------------------------
+# CDI Pipeline Integration Tests (02-05)
+# ---------------------------------------------------------------------------
+
+
+def test_pipeline_result_has_cdi_fields():
+    """PipelineResult schema has cdi_report and audit_trail as Optional fields defaulting to None."""
+    from cliniq.models import ClinicalDocument, NLUResult, CodingResult, DocumentMetadata
+    from cliniq.models.coding import CodeSuggestion
+
+    result = PipelineResult(
+        document=ClinicalDocument(
+            metadata=DocumentMetadata(
+                source_type="text",
+                patient_id="p-1",
+                encounter_id="e-1",
+            ),
+            raw_narrative="Test note.",
+            modality_confidence=1.0,
+        ),
+        nlu_result=NLUResult(entities=[], processing_time_ms=0),
+        coding_result=CodingResult(
+            principal_diagnosis=None,
+            secondary_codes=[],
+            complication_codes=[],
+            sequencing_rationale="",
+            retrieval_stats={},
+        ),
+        processing_time_ms=100.0,
+    )
+
+    # cdi_report and audit_trail should default to None
+    assert result.cdi_report is None
+    assert result.audit_trail is None
+    # Original fields still present
+    assert result.document is not None
+    assert result.nlu_result is not None
+    assert result.coding_result is not None
+
+
+def test_pipeline_backward_compatible():
+    """Existing run_pipeline function still works and returns cdi_report=None."""
+    result = run_pipeline("")
+
+    assert isinstance(result, PipelineResult)
+    assert result.processing_time_ms > 0
+    # Backward compatibility: CDI fields are None when using original pipeline
+    assert result.cdi_report is None
+    assert result.audit_trail is None
+
+
+@pytest.mark.slow
+def test_pipeline_audited_with_text():
+    """Run run_pipeline_audited on clinical text and verify audit trail completeness (EXPL-01)."""
+    text = "Patient has type 2 diabetes mellitus and hypertension."
+
+    result = run_pipeline_audited(text, use_llm_queries=False)
+
+    assert isinstance(result, PipelineResult)
+    assert result.processing_time_ms > 0
+
+    # audit_trail must be present
+    assert result.audit_trail is not None
+    trail = result.audit_trail
+
+    # EXPL-01: audit trail has traces for all 4 core stages
+    stage_names = {t.stage for t in trail.stages}
+    assert "ingestion" in stage_names
+    assert "ner" in stage_names
+    assert "rag" in stage_names
+    assert "cdi" in stage_names
+
+    # Each stage has processing_time_ms >= 0
+    for trace in trail.stages:
+        assert trace.processing_time_ms >= 0
+
+    # EXPL-02: evidence_spans should have at least 1 entry (if coding produced codes)
+    if result.coding_result.principal_diagnosis is not None:
+        assert len(trail.evidence_spans) >= 1
+
+
+@pytest.mark.slow
+def test_pipeline_audited_with_cdi():
+    """Run run_pipeline_audited on text likely to trigger CDI gaps and verify cdi_report."""
+    text = "Patient has diabetic neuropathy and retinopathy."
+
+    result = run_pipeline_audited(text, use_llm_queries=False)
+
+    assert isinstance(result, PipelineResult)
+
+    # cdi_report should be populated
+    assert result.cdi_report is not None
+    cdi = result.cdi_report
+
+    # completeness_score must be in [0.0, 1.0]
+    assert 0.0 <= cdi.completeness_score <= 1.0
+
+    # CDI report has expected structure (may or may not have gaps depending on KG match)
+    assert isinstance(cdi.documentation_gaps, list)
+    assert isinstance(cdi.missed_diagnoses, list)
+    assert isinstance(cdi.code_conflicts, list)
+
+
+@pytest.mark.slow
+def test_pipeline_audited_skip_cdi():
+    """Run with skip_cdi=True and verify cdi_report is None but audit_trail has ingestion/ner/rag."""
+    text = "Patient has diabetes."
+
+    result = run_pipeline_audited(text, skip_cdi=True, use_llm_queries=False)
+
+    assert isinstance(result, PipelineResult)
+
+    # CDI report should be None when skipped
+    assert result.cdi_report is None
+
+    # Audit trail should still be present with the other stages
+    assert result.audit_trail is not None
+    stage_names = {t.stage for t in result.audit_trail.stages}
+    assert "ingestion" in stage_names
+    assert "ner" in stage_names
+    assert "rag" in stage_names
+    # CDI stage should NOT be present when skipped
+    assert "cdi" not in stage_names
+
+
+@pytest.mark.slow
+def test_pipeline_audited_batch():
+    """Run run_pipeline_audited_batch on 2 inputs and verify each has audit_trail."""
+    inputs = [
+        "Patient has diabetes.",
+        "Patient has hypertension and asthma.",
+    ]
+
+    results = run_pipeline_audited_batch(
+        inputs, use_llm_queries=False
+    )
+
+    assert len(results) == 2
+    for result in results:
+        assert isinstance(result, PipelineResult)
+        assert result.audit_trail is not None
+        assert len(result.audit_trail.stages) >= 3  # At least ingestion, ner, rag
