@@ -29,7 +29,7 @@ Decimal phases appear between their surrounding integers in numeric order.
   4. System sequences codes into principal diagnosis, comorbidities, and complications automatically
   5. All outputs include per-entity and per-code confidence scores above validation threshold (0.80)
   6. Complete gold standard test suite exists with 20 synthetic cases covering all modules: synthetic FHIR bundles, PIL-generated scanned note images, expert-assigned ICD-10 codes, entity labels with negation/qualifiers, CDI gap annotations, sample KG qualification rules, and expected outputs for evaluation fixtures
-**Plans:** 6 plans
+**Plans:** 7 plans
 
 Plans:
 - [ ] 01-01-PLAN.md — Project scaffold, Pydantic schemas, config, and model manager
@@ -38,6 +38,7 @@ Plans:
 - [ ] 01-04-PLAN.md — Clinical NER pipeline with negation detection and qualifier capture
 - [ ] 01-05-PLAN.md — RAG-based ICD-10 coding with retrieval, reranking, and LLM reasoning
 - [ ] 01-06-PLAN.md — Pipeline orchestrator, gold standard test data generation (20 cases)
+- [ ] 01-07-PLAN.md — Gap closure: gold standard completeness + Pydantic validation
 
 ### Phase 2: CDI Intelligence Layer
 **Goal**: Knowledge graph identifies documentation gaps, suggests missed diagnoses, and produces audit trails
