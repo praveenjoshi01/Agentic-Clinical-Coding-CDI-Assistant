@@ -12,7 +12,7 @@ ClinIQ delivers a fully local, multi-modal clinical coding pipeline with explain
 
 Decimal phases appear between their surrounding integers in numeric order.
 
-- [ ] **Phase 1: Core Pipeline & Test Data Foundation** - Multi-modal ingestion, clinical NER, RAG-based ICD-10 coding, plus comprehensive synthetic test data for all modules
+- [x] **Phase 1: Core Pipeline & Test Data Foundation** - Multi-modal ingestion, clinical NER, RAG-based ICD-10 coding, plus comprehensive synthetic test data for all modules
 - [ ] **Phase 2: CDI Intelligence Layer** - Knowledge graph reasoning, gap detection, and explainability
 - [ ] **Phase 3: Evaluation & Demo UI** - Quantitative validation suite and 5-page Streamlit demo
 
@@ -32,13 +32,13 @@ Decimal phases appear between their surrounding integers in numeric order.
 **Plans:** 7 plans
 
 Plans:
-- [ ] 01-01-PLAN.md — Project scaffold, Pydantic schemas, config, and model manager
-- [ ] 01-02-PLAN.md — ICD-10 data loading, FAISS index builder, retriever, and reranker
-- [ ] 01-03-PLAN.md — Multi-modal ingestion module (FHIR, text, image parsers)
-- [ ] 01-04-PLAN.md — Clinical NER pipeline with negation detection and qualifier capture
-- [ ] 01-05-PLAN.md — RAG-based ICD-10 coding with retrieval, reranking, and LLM reasoning
-- [ ] 01-06-PLAN.md — Pipeline orchestrator, gold standard test data generation (20 cases)
-- [ ] 01-07-PLAN.md — Gap closure: gold standard completeness + Pydantic validation
+- [x] 01-01-PLAN.md — Project scaffold, Pydantic schemas, config, and model manager
+- [x] 01-02-PLAN.md — ICD-10 data loading, FAISS index builder, retriever, and reranker
+- [x] 01-03-PLAN.md — Multi-modal ingestion module (FHIR, text, image parsers)
+- [x] 01-04-PLAN.md — Clinical NER pipeline with negation detection and qualifier capture
+- [x] 01-05-PLAN.md — RAG-based ICD-10 coding with retrieval, reranking, and LLM reasoning
+- [x] 01-06-PLAN.md — Pipeline orchestrator, gold standard test data generation (20 cases)
+- [x] 01-07-PLAN.md — Gap closure: gold standard completeness + Pydantic validation
 
 ### Phase 2: CDI Intelligence Layer
 **Goal**: Knowledge graph identifies documentation gaps, suggests missed diagnoses, and produces audit trails
@@ -80,7 +80,7 @@ Phases execute in numeric order: 1 -> 2 -> 3
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Core Pipeline & Test Data Foundation | 0/6 | Planned | - |
+| 1. Core Pipeline & Test Data Foundation | 7/7 | ✓ Complete | 2026-03-18 |
 | 2. CDI Intelligence Layer | 0/TBD | Not started | - |
 | 3. Evaluation & Demo UI | 0/TBD | Not started | - |
 
@@ -90,3 +90,4 @@ Phases execute in numeric order: 1 -> 2 -> 3
 *Phase 1 planned: 2026-03-18 (6 plans across 5 waves)*
 *Depth: quick (3 phases, 1-3 plans each)*
 *Coverage: 45/45 v1 requirements mapped*
+*Phase 1 complete: 2026-03-18 (7/7 plans, verification passed 6/6)*
