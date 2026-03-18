@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cliniq"
+version = "0.1.0"
+description = "Clinical Documentation Integrity - NLU pipeline with explainable ICD-10 coding"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "torch>=2.4.0",
+    "transformers>=4.45.0",
+    "sentence-transformers>=3.0.0",
+    "faiss-cpu>=1.8.0",
+    "pydantic>=2.0.0",
+    "fhir.resources>=7.0.0",
+    "seqeval>=1.2.2",
+    "huggingface-hub",
+    "Pillow>=10.0.0",
+    "negspacy>=1.0.0",
+    "spacy>=3.0.0",
+    "outlines",
+    "numpy>=1.24.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "pytest-cov",
+]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["cliniq*"]
