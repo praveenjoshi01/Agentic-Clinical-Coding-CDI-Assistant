@@ -29,12 +29,15 @@ Decimal phases appear between their surrounding integers in numeric order.
   4. System sequences codes into principal diagnosis, comorbidities, and complications automatically
   5. All outputs include per-entity and per-code confidence scores above validation threshold (0.80)
   6. Complete gold standard test suite exists with 20 synthetic cases covering all modules: synthetic FHIR bundles, PIL-generated scanned note images, expert-assigned ICD-10 codes, entity labels with negation/qualifiers, CDI gap annotations, sample KG qualification rules, and expected outputs for evaluation fixtures
-**Plans**: TBD (split across ingestion, NER, RAG modules, and test data generation)
+**Plans:** 6 plans
 
 Plans:
-- [ ] 01-01: TBD during phase planning
-- [ ] 01-02: TBD during phase planning
-- [ ] 01-03: TBD during phase planning
+- [ ] 01-01-PLAN.md — Project scaffold, Pydantic schemas, config, and model manager
+- [ ] 01-02-PLAN.md — ICD-10 data loading, FAISS index builder, retriever, and reranker
+- [ ] 01-03-PLAN.md — Multi-modal ingestion module (FHIR, text, image parsers)
+- [ ] 01-04-PLAN.md — Clinical NER pipeline with negation detection and qualifier capture
+- [ ] 01-05-PLAN.md — RAG-based ICD-10 coding with retrieval, reranking, and LLM reasoning
+- [ ] 01-06-PLAN.md — Pipeline orchestrator, gold standard test data generation (20 cases)
 
 ### Phase 2: CDI Intelligence Layer
 **Goal**: Knowledge graph identifies documentation gaps, suggests missed diagnoses, and produces audit trails
@@ -72,16 +75,17 @@ Plans:
 ## Progress
 
 **Execution Order:**
-Phases execute in numeric order: 1 → 2 → 3
+Phases execute in numeric order: 1 -> 2 -> 3
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Core Pipeline & Test Data Foundation | 0/TBD | Not started | - |
+| 1. Core Pipeline & Test Data Foundation | 0/6 | Planned | - |
 | 2. CDI Intelligence Layer | 0/TBD | Not started | - |
 | 3. Evaluation & Demo UI | 0/TBD | Not started | - |
 
 ---
 *Roadmap created: 2026-03-18*
 *Roadmap revised: 2026-03-18 (moved EVAL-08 to Phase 1, added comprehensive test data generation)*
+*Phase 1 planned: 2026-03-18 (6 plans across 5 waves)*
 *Depth: quick (3 phases, 1-3 plans each)*
 *Coverage: 45/45 v1 requirements mapped*
