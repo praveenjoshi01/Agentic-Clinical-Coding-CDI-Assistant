@@ -99,7 +99,8 @@ GOLD_STANDARD_CASES = [
         "notes": "Acute myocardial infarction with heart failure",
         "expected_entities": [
             {"text": "acute myocardial infarction", "entity_type": "diagnosis", "start_char": 0, "end_char": 27, "negated": False, "qualifiers": ["acute"]},
-            {"text": "congestive heart failure", "entity_type": "diagnosis", "start_char": 33, "end_char": 57, "negated": False, "qualifiers": []}
+            {"text": "congestive heart failure", "entity_type": "diagnosis", "start_char": 33, "end_char": 57, "negated": False, "qualifiers": []},
+            {"text": "elevated troponin", "entity_type": "lab_finding", "start_char": 62, "end_char": 79, "negated": False, "qualifiers": ["elevated"]}
         ],
         "expected_icd10_codes": ["I21.9", "I50.9"],
         "expected_principal_dx": "I21.9",
@@ -173,7 +174,8 @@ GOLD_STANDARD_CASES = [
         "notes": "COPD exacerbation with pneumonia",
         "expected_entities": [
             {"text": "COPD exacerbation", "entity_type": "diagnosis", "start_char": 0, "end_char": 17, "negated": False, "qualifiers": ["exacerbation"]},
-            {"text": "pneumonia", "entity_type": "diagnosis", "start_char": 23, "end_char": 32, "negated": False, "qualifiers": []}
+            {"text": "pneumonia", "entity_type": "diagnosis", "start_char": 23, "end_char": 32, "negated": False, "qualifiers": []},
+            {"text": "oxygen supplementation", "entity_type": "treatment", "start_char": 37, "end_char": 59, "negated": False, "qualifiers": ["supplemental"]}
         ],
         "expected_icd10_codes": ["J44.1", "J18.9"],
         "expected_principal_dx": "J44.1",
@@ -247,7 +249,8 @@ GOLD_STANDARD_CASES = [
         "notes": "Orthopedic follow-up with multiple procedures",
         "expected_entities": [
             {"text": "total hip replacement", "entity_type": "procedure", "start_char": 0, "end_char": 21, "negated": False, "qualifiers": ["total"]},
-            {"text": "physical therapy", "entity_type": "procedure", "start_char": 27, "end_char": 43, "negated": False, "qualifiers": []}
+            {"text": "physical therapy", "entity_type": "procedure", "start_char": 27, "end_char": 43, "negated": False, "qualifiers": []},
+            {"text": "osteoarthritis", "entity_type": "diagnosis", "start_char": 48, "end_char": 62, "negated": False, "qualifiers": ["hip"]}
         ],
         "expected_icd10_codes": ["Z96.641", "Z47.1"],
         "expected_principal_dx": "Z96.641",
@@ -667,7 +670,8 @@ TEXT_CASE_METADATA = [
         "expected_comorbidities": ["I69.320"],
         "expected_complications": [],
         "negation_test_cases": [
-            {"text": "Patient denies recent falls", "entity": "falls", "negated": True}
+            {"text": "Patient denies recent falls", "entity": "falls", "negated": True},
+            {"text": "no new ischemic events on imaging", "entity": "ischemic events", "negated": True}
         ],
         "cdi_gap_annotations": [
             {"code": "I69.351", "missing_qualifier": "dominant vs non-dominant side", "query_hint": "Is the right side dominant or non-dominant?"}
@@ -689,7 +693,8 @@ TEXT_CASE_METADATA = [
         "expected_comorbidities": [],
         "expected_complications": ["A41.9"],
         "negation_test_cases": [
-            {"text": "Patient denies chest pain when lucid", "entity": "chest pain", "negated": True}
+            {"text": "Patient denies chest pain when lucid", "entity": "chest pain", "negated": True},
+            {"text": "patient is febrile with productive cough", "entity": "productive cough", "negated": False}
         ],
         "cdi_gap_annotations": [
             {"code": "J15.9", "missing_qualifier": "organism", "query_hint": "What organism was identified in sputum culture?"},
@@ -712,7 +717,8 @@ TEXT_CASE_METADATA = [
         "expected_comorbidities": [],
         "expected_complications": [],
         "negation_test_cases": [
-            {"text": "Denies depression", "entity": "depression", "negated": True}
+            {"text": "Denies depression", "entity": "depression", "negated": True},
+            {"text": "no goiter on examination", "entity": "goiter", "negated": True}
         ],
         "cdi_gap_annotations": [
             {"code": "E03.9", "missing_qualifier": "congenital vs acquired", "query_hint": "Is this congenital or acquired hypothyroidism?"}
@@ -978,7 +984,8 @@ IMAGE_CASE_METADATA = [
         "expected_comorbidities": ["I10", "E78.5"],
         "expected_complications": [],
         "negation_test_cases": [
-            {"text": "Denies orthopnea", "entity": "orthopnea", "negated": True}
+            {"text": "Denies orthopnea", "entity": "orthopnea", "negated": True},
+            {"text": "stress test negative for ischemia", "entity": "ischemia", "negated": True}
         ],
         "cdi_gap_annotations": [
             {"code": "R07.9", "missing_qualifier": "rule out CAD results", "query_hint": "What were the stress test results?"}
