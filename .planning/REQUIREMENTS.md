@@ -112,58 +112,58 @@ Deferred to future release. Tracked but not in current roadmap.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| INGS-01 | Phase TBD | Pending |
-| INGS-02 | Phase TBD | Pending |
-| INGS-03 | Phase TBD | Pending |
-| INGS-04 | Phase TBD | Pending |
-| INGS-05 | Phase TBD | Pending |
-| NLU-01 | Phase TBD | Pending |
-| NLU-02 | Phase TBD | Pending |
-| NLU-03 | Phase TBD | Pending |
-| NLU-04 | Phase TBD | Pending |
-| NLU-05 | Phase TBD | Pending |
-| RAG-01 | Phase TBD | Pending |
-| RAG-02 | Phase TBD | Pending |
-| RAG-03 | Phase TBD | Pending |
-| RAG-04 | Phase TBD | Pending |
-| RAG-05 | Phase TBD | Pending |
-| RAG-06 | Phase TBD | Pending |
-| CDI-01 | Phase TBD | Pending |
-| CDI-02 | Phase TBD | Pending |
-| CDI-03 | Phase TBD | Pending |
-| CDI-04 | Phase TBD | Pending |
-| CDI-05 | Phase TBD | Pending |
-| CDI-06 | Phase TBD | Pending |
-| EXPL-01 | Phase TBD | Pending |
-| EXPL-02 | Phase TBD | Pending |
-| EXPL-03 | Phase TBD | Pending |
-| EXPL-04 | Phase TBD | Pending |
-| EXPL-05 | Phase TBD | Pending |
-| VIZ-01 | Phase TBD | Pending |
-| VIZ-02 | Phase TBD | Pending |
-| VIZ-03 | Phase TBD | Pending |
-| VIZ-04 | Phase TBD | Pending |
-| EVAL-01 | Phase TBD | Pending |
-| EVAL-02 | Phase TBD | Pending |
-| EVAL-03 | Phase TBD | Pending |
-| EVAL-04 | Phase TBD | Pending |
-| EVAL-05 | Phase TBD | Pending |
-| EVAL-06 | Phase TBD | Pending |
-| EVAL-07 | Phase TBD | Pending |
-| EVAL-08 | Phase TBD | Pending |
-| UI-01 | Phase TBD | Pending |
-| UI-02 | Phase TBD | Pending |
-| UI-03 | Phase TBD | Pending |
-| UI-04 | Phase TBD | Pending |
-| UI-05 | Phase TBD | Pending |
-| UI-06 | Phase TBD | Pending |
-| UI-07 | Phase TBD | Pending |
+| INGS-01 | Phase 1 | Pending |
+| INGS-02 | Phase 1 | Pending |
+| INGS-03 | Phase 1 | Pending |
+| INGS-04 | Phase 1 | Pending |
+| INGS-05 | Phase 1 | Pending |
+| NLU-01 | Phase 1 | Pending |
+| NLU-02 | Phase 1 | Pending |
+| NLU-03 | Phase 1 | Pending |
+| NLU-04 | Phase 1 | Pending |
+| NLU-05 | Phase 1 | Pending |
+| RAG-01 | Phase 1 | Pending |
+| RAG-02 | Phase 1 | Pending |
+| RAG-03 | Phase 1 | Pending |
+| RAG-04 | Phase 1 | Pending |
+| RAG-05 | Phase 1 | Pending |
+| RAG-06 | Phase 1 | Pending |
+| EVAL-08 | Phase 1 | Pending |
+| CDI-01 | Phase 2 | Pending |
+| CDI-02 | Phase 2 | Pending |
+| CDI-03 | Phase 2 | Pending |
+| CDI-04 | Phase 2 | Pending |
+| CDI-05 | Phase 2 | Pending |
+| CDI-06 | Phase 2 | Pending |
+| EXPL-01 | Phase 2 | Pending |
+| EXPL-02 | Phase 2 | Pending |
+| EXPL-03 | Phase 2 | Pending |
+| EXPL-04 | Phase 2 | Pending |
+| EXPL-05 | Phase 2 | Pending |
+| VIZ-01 | Phase 3 | Pending |
+| VIZ-02 | Phase 3 | Pending |
+| VIZ-03 | Phase 3 | Pending |
+| VIZ-04 | Phase 3 | Pending |
+| EVAL-01 | Phase 3 | Pending |
+| EVAL-02 | Phase 3 | Pending |
+| EVAL-03 | Phase 3 | Pending |
+| EVAL-04 | Phase 3 | Pending |
+| EVAL-05 | Phase 3 | Pending |
+| EVAL-06 | Phase 3 | Pending |
+| EVAL-07 | Phase 3 | Pending |
+| UI-01 | Phase 3 | Pending |
+| UI-02 | Phase 3 | Pending |
+| UI-03 | Phase 3 | Pending |
+| UI-04 | Phase 3 | Pending |
+| UI-05 | Phase 3 | Pending |
+| UI-06 | Phase 3 | Pending |
+| UI-07 | Phase 3 | Pending |
 
 **Coverage:**
 - v1 requirements: 45 total
-- Mapped to phases: 0
-- Unmapped: 45 (pending roadmap)
+- Mapped to phases: 45
+- Unmapped: 0
 
 ---
 *Requirements defined: 2026-03-18*
-*Last updated: 2026-03-18 after initial definition*
+*Last updated: 2026-03-18 after roadmap revision (EVAL-08 moved to Phase 1)*
