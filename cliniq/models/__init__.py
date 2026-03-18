@@ -6,6 +6,8 @@ These schemas define the contracts between pipeline modules:
 - entities.py: NER output schemas
 - coding.py: ICD-10 coding result schemas
 - evaluation.py: Gold standard and evaluation schemas
+- cdi.py: CDI report schemas (documentation gaps, missed diagnoses, conflicts)
+- audit.py: Audit trail schemas (stage traces, retrieval logs)
 """
 
 from cliniq.models.document import ClinicalDocument, DocumentMetadata
@@ -16,6 +18,13 @@ from cliniq.models.evaluation import (
     GoldStandardEntity,
     EvalResult,
 )
+from cliniq.models.cdi import (
+    CDIReport,
+    DocumentationGap,
+    MissedDiagnosis,
+    CodeConflict,
+)
+from cliniq.models.audit import AuditTrail, StageTrace, RetrievalLog
 
 __all__ = [
     "ClinicalDocument",
@@ -28,4 +37,11 @@ __all__ = [
     "GoldStandardCase",
     "GoldStandardEntity",
     "EvalResult",
+    "CDIReport",
+    "DocumentationGap",
+    "MissedDiagnosis",
+    "CodeConflict",
+    "AuditTrail",
+    "StageTrace",
+    "RetrievalLog",
 ]
