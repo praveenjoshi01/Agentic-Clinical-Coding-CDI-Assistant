@@ -10,28 +10,28 @@ See: .planning/PROJECT.md (updated 2026-03-18)
 ## Current Position
 
 Phase: 2 of 3 (CDI Intelligence Layer)
-Plan: 3 of 6 in current phase
-Status: Executing — 02-03 complete
-Last activity: 2026-03-18 — Completed 02-03 (Explainability module)
+Plan: 4 of 6 in current phase
+Status: Executing — 02-04 complete
+Last activity: 2026-03-18 — Completed 02-04 (CDI agent module)
 
-Progress: [███░░░░░░░] 25%
+Progress: [████░░░░░░] 30%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 10
+- Total plans completed: 11
 - Average duration: 4 min
-- Total execution time: 0.58 hours
+- Total execution time: 0.62 hours
 
 **By Phase:**
 
 | Phase | Plans | Total | Avg/Plan |
 |-------|-------|-------|----------|
 | 01 | 7 | 28 min | 4 min |
-| 02 | 3 | 7 min | 2.3 min |
+| 02 | 4 | 9 min | 2.3 min |
 
 **Recent Trend:**
-- Last 5 plans: 8 min, 2 min, 3 min, 2 min, 2 min
+- Last 5 plans: 2 min, 3 min, 2 min, 2 min, 2 min
 - Trend: Steady pace
 
 *Updated after each plan completion*
@@ -41,6 +41,7 @@ Progress: [███░░░░░░░] 25%
 | Phase 02 P01 | 3 | 2 tasks | 7 files |
 | Phase 02 P02 | 2 | 2 tasks | 3 files |
 | Phase 02 P03 | 2 | 2 tasks | 2 files |
+| Phase 02 P04 | 2 | 2 tasks | 2 files |
 
 ## Accumulated Context
 
@@ -81,6 +82,10 @@ Recent decisions affecting current work:
 - 02-03: Builder pattern for AuditTrailBuilder wrapping AuditTrail Pydantic model
 - 02-03: Case-insensitive substring matching with +/- 50 char window for evidence linking
 - 02-03: Outermost brace extraction (first '{' to last '}') for CoT/JSON separation
+- 02-04: Module-level KG caching via global _KG_CACHE to avoid rebuilding per call
+- 02-04: Template fallback for physician queries ensures valid output when LLM fails
+- 02-04: Gap penalty 10%, conflict penalty 15%, clamped to [0.0, 1.0] for completeness scoring
+- 02-04: Default confidence 0.8 for KG-based documentation gaps
 
 ### Pending Todos
 
@@ -93,10 +98,10 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-03-18
-Stopped at: Completed 02-03-PLAN.md
+Stopped at: Completed 02-04-PLAN.md
 Resume file: None
 
 ---
 *State initialized: 2026-03-18*
-*Last updated: 2026-03-18 after completing 02-03*
-*Next action: Execute 02-04-PLAN.md*
+*Last updated: 2026-03-18 after completing 02-04*
+*Next action: Execute 02-05-PLAN.md*
