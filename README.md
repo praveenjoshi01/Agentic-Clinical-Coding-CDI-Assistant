@@ -206,7 +206,57 @@ scripts/
 ├── demo.py                   # Demo script (2 scenarios)
 ├── generate_test_data.py     # Gold standard data generator
 └── generate_test_images.py   # Test image generator
+ui/
+├── app.py                    # Streamlit entry point (multipage navigation)
+├── pages/
+│   ├── home.py               # Landing page with architecture overview
+│   ├── pipeline_runner.py    # Run pipeline on demo cases or uploaded docs
+│   ├── kg_viewer.py          # Interactive PyVis knowledge graph viewer
+│   ├── audit_trail.py        # Per-stage decision trace and evidence
+│   ├── eval_dashboard.py     # Evaluation metrics with radar/bar charts
+│   └── qa_bot.py             # Chat-based Q&A with pre-seeded answers
+├── components/
+│   ├── theme.py              # Entity color palette and styling
+│   ├── metric_cards.py       # Reusable metric display cards
+│   ├── entity_highlight.py   # NER annotation rendering
+│   ├── code_display.py       # ICD-10 code cards and principal dx display
+│   ├── graph_embed.py        # PyVis graph embedding in Streamlit
+│   └── pipeline_status.py    # Pipeline execution with progress indicators
+└── demo_data/                # Pre-computed results and demo Q&A bank
 ```
+
+## Interactive UI
+
+ClinIQ includes a Streamlit-based web interface for exploring the pipeline interactively.
+
+### Running the UI
+
+```bash
+streamlit run ui/app.py
+```
+
+The UI launches in the browser with sidebar navigation organized into three groups: Overview, Pipeline, and Analysis.
+
+### Pages
+
+| Page | Description |
+|------|-------------|
+| **Home** | Landing page with project overview, architecture diagram, OSS model registry, and quick-start navigation links. |
+| **Pipeline Runner** | Primary interactive page. Upload a clinical document (text, FHIR JSON, or scanned image) or select a demo case, then run the full pipeline. Results are displayed across four tabs: Overview, NER Entities, ICD-10 Codes, and CDI Analysis. Supports both live execution and instant pre-computed results. |
+| **Knowledge Graph** | Interactive PyVis visualization of the case-relevant ICD-10 knowledge subgraph. Nodes are color-coded by CDI status: green (well documented), amber (needs CDI query), red (conflict detected). Includes a sidebar with documentation gaps, conflicts, and missed diagnoses. |
+| **Audit Trail** | Complete pipeline decision trace with expandable per-stage views showing timing, input/output summaries, chain-of-thought reasoning, retrieval logs, and evidence attribution spans. Includes a processing time breakdown chart. |
+| **Evaluation Dashboard** | Quantitative validation of all five pipeline modules. Displays radar and grouped bar charts comparing actual vs. target metrics (precision, recall, F1, MRR, etc.) with per-module pass/fail status. |
+| **QA Bot** | Chat interface with a three-tier answer strategy: pre-seeded verified answers for system questions, template-based answers from the active pipeline result for patient-specific questions, and optional LLM fallback. Includes 8 pre-seeded patient questions and sidebar quick-access buttons. |
+
+### Demo Cases
+
+The Pipeline Runner page provides three pre-loaded clinical scenarios:
+
+- **Case 004: CKD + Hypertension** -- 68-year-old male with stage 3 CKD and hypertension (text note)
+- **Case 010: CHF + AFib** -- 75-year-old male with CHF (LVEF 30%) and chronic atrial fibrillation (text note)
+- **Case 001: Diabetes + Neuropathy** -- Diabetes with neuropathy case (FHIR bundle)
+
+Select a demo case and click "Run Pipeline" to view NER annotations, ICD-10 code assignments, CDI findings, and the full audit trail. Pre-computed results are available for instant loading without model downloads.
 
 ## Pipeline Stages
 
