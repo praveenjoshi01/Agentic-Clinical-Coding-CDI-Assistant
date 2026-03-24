@@ -19,9 +19,9 @@ Progress: [██████████] 100%
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 19
-- Average duration: 3.4 min
-- Total execution time: 1.03 hours
+- Total plans completed: 20
+- Average duration: 3.5 min
+- Total execution time: 1.11 hours
 
 **By Phase:**
 
@@ -30,10 +30,10 @@ Progress: [██████████] 100%
 | 01 | 7 | 28 min | 4 min |
 | 02 | 6 | 14 min | 2.3 min |
 | 04 | 4 | 15 min | 3.75 min |
-| 05 | 2 | 6 min | 3 min |
+| 05 | 3 | 11 min | 3.7 min |
 
 **Recent Trend:**
-- Last 5 plans: 2 min, 3 min, 2 min, 3 min, 3 min
+- Last 5 plans: 3 min, 2 min, 3 min, 5 min, 3 min
 - Trend: Steady pace
 
 *Updated after each plan completion*
@@ -51,6 +51,7 @@ Progress: [██████████] 100%
 | Phase 04 P03 | 3 | 2 tasks | 2 files |
 | Phase 04 P04 | 3 | 2 tasks | 2 files |
 | Phase 05 P01 | 3 | 2 tasks | 4 files |
+| Phase 05 P02 | 5 | 2 tasks | 3 files |
 | Phase 05 P03 | 3 | 2 tasks | 2 files |
 
 ## Accumulated Context
@@ -124,6 +125,9 @@ Recent decisions affecting current work:
 - 05-01: Simple string-based SOAP section parsing for LLM output robustness
 - 05-01: Raw transcript fallback as note text when LLM generation fails
 - 05-01: DisambiguationItem confidence sourced directly from CDI report item confidence values
+- 05-02: Handcrafted JSON over pipeline-generated for demo data (clinical realism for interviews)
+- 05-02: SOAP note (generated_note) as pipeline input for precompute regeneration script
+- 05-02: 9 disambiguation items across 2 encounters covering gap, missed_diagnosis, conflict, and ambiguity categories
 - 05-03: Session state stored as dicts (not Pydantic models) for Streamlit serialization safety
 - 05-03: st.fragment(run_every=1.0) for live session timer (avoids full page rerun)
 - 05-03: PipelineResult reconstructed from dict only when rendering Clinical Findings tab
@@ -150,5 +154,5 @@ Resume file: None
 
 ---
 *State initialized: 2026-03-18*
-*Last updated: 2026-03-24 after completing 05-03*
+*Last updated: 2026-03-24 after completing 05-02 (backfill)*
 *Next action: All plans complete for Phase 5*
