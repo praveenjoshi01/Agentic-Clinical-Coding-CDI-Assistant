@@ -41,6 +41,11 @@ qa_bot = st.Page(
     title="QA Bot",
     icon=":material/chat:",
 )
+ambient_mode = st.Page(
+    "pages/ambient_mode.py",
+    title="Ambient Mode",
+    icon=":material/mic:",
+)
 
 # -- Group pages in sidebar navigation --------------------------------------
 pg = st.navigation(
@@ -48,6 +53,7 @@ pg = st.navigation(
         "Overview": [home],
         "Pipeline": [pipeline_runner, kg_viewer, audit_trail],
         "Analysis": [eval_dashboard, qa_bot],
+        "Ambient": [ambient_mode],
     }
 )
 
@@ -60,6 +66,14 @@ if "messages" not in st.session_state:
     st.session_state["messages"] = []
 if "eval_results" not in st.session_state:
     st.session_state["eval_results"] = None
+if "ambient_state" not in st.session_state:
+    st.session_state["ambient_state"] = "idle"
+if "ambient_session_id" not in st.session_state:
+    st.session_state["ambient_session_id"] = None
+if "ambient_pipeline_result" not in st.session_state:
+    st.session_state["ambient_pipeline_result"] = None
+if "ambient_disambiguation" not in st.session_state:
+    st.session_state["ambient_disambiguation"] = []
 
 # -- Sidebar: How to Demo ---------------------------------------------------
 with st.sidebar.expander("How to Demo", expanded=False):
@@ -68,6 +82,7 @@ with st.sidebar.expander("How to Demo", expanded=False):
 1. **Start on Pipeline Runner** -- select a demo case and run the pipeline
 2. **Explore KG Viewer and Audit Trail** -- drill into the knowledge graph and decision trace
 3. **Check Eval Dashboard** for metrics, then ask the **QA Bot** questions
+4. **Try Ambient Mode** -- select a demo encounter to see auto-generated notes with CDI analysis
 """
     )
 
@@ -82,6 +97,15 @@ if pipeline is not None:
     st.sidebar.success("Pipeline result loaded", icon=":material/check_circle:")
 else:
     st.sidebar.caption("No pipeline result in session")
+
+# Ambient session info
+ambient_state = st.session_state.get("ambient_state", "idle")
+ambient_session_id = st.session_state.get("ambient_session_id")
+if ambient_state != "idle" and ambient_session_id:
+    st.sidebar.markdown(f"**Ambient Session:** `{ambient_session_id}`")
+    state_colors = {"recording": "red", "processing": "orange", "results": "green"}
+    color = state_colors.get(ambient_state, "gray")
+    st.sidebar.markdown(f"Status: :{color}[{ambient_state.upper()}]")
 
 # -- Sidebar footer ----------------------------------------------------------
 st.sidebar.markdown("---")
