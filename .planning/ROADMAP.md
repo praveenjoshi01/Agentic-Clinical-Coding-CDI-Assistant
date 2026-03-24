@@ -16,6 +16,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 - [x] **Phase 2: CDI Intelligence Layer** - Knowledge graph reasoning, gap detection, and explainability
 - [ ] **Phase 3: Evaluation & Demo UI** - Quantitative validation suite and 5-page Streamlit demo
 - [ ] **Phase 4: Demo UI for the Whole App** - Polished 7-page Streamlit demo with interactive KG, evaluation charts, and QA bot
+- [ ] **Phase 5: Ambient Listening Mode** - Real-time session recording with auto-generated clinical notes, documentation gap detection, and coding disambiguation
 
 ## Phase Details
 
@@ -99,10 +100,28 @@ Plans:
 - [ ] 04-04-PLAN.md — Eval Dashboard page (Plotly charts) and QA Bot page (chat interface)
 - [ ] 04-05-PLAN.md — Home/Landing page, integration polish, and visual verification
 
+### Phase 5: Ambient Listening Mode
+**Goal**: Enable passive real-time audio listening during physician-patient encounters, with automatic generation of structured clinical notes, documentation gap detection, missed diagnosis flagging, and coding disambiguation upon session completion
+**Depends on**: Phase 4 (requires complete pipeline backend and UI framework)
+**Requirements**: AMB-01, AMB-02, AMB-03, AMB-04, AMB-05, AMB-06
+**Success Criteria** (what must be TRUE):
+  1. User clicks "Start Ambient Mode" and system begins passively listening to doctor-patient conversation with visible session timer
+  2. User clicks "End Session" and system automatically generates structured clinical notes from the encounter transcript
+  3. System identifies documentation gaps — missing or incomplete clinical information required for accurate documentation
+  4. System flags missed or potential diagnoses discussed or implied during the encounter but not formally captured
+  5. System detects coding ambiguities (unclear clinical language for ICD/CPT assignment) and code conflicts (contradictory documentation)
+  6. System presents disambiguation suggestions and recommended clarifications in a reviewable, actionable format before provider finalizes the note
+**Plans:** 3 plans
+
+Plans:
+- [ ] 05-01-PLAN.md — Ambient Pydantic schemas, backend module (transcription + note gen + pipeline), dependency setup
+- [ ] 05-02-PLAN.md — Pre-computed ambient demo encounters (2 scenarios) and regeneration script
+- [ ] 05-03-PLAN.md — Ambient Mode UI page (session lifecycle, dual-path, disambiguation) and app integration
+
 ## Progress
 
 **Execution Order:**
-Phases execute in numeric order: 1 -> 2 -> 3 -> 4
+Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
@@ -110,6 +129,7 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4
 | 2. CDI Intelligence Layer | 6/6 | ✓ Complete | 2026-03-18 |
 | 3. Evaluation & Demo UI | 0/TBD | Not started | - |
 | 4. Demo UI for the Whole App | 0/5 | Planned | - |
+| 5. Ambient Listening Mode | 0/3 | Planned | - |
 
 ---
 *Roadmap created: 2026-03-18*
@@ -121,3 +141,4 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4
 *Phase 2 planned: 2026-03-18 (6 plans across 5 waves)*
 *Phase 2 complete: 2026-03-18 (6/6 plans, verification passed 5/5)*
 *Phase 4 planned: 2026-03-18 (5 plans across 3 waves)*
+*Phase 5 planned: 2026-03-24 (3 plans across 2 waves)*
