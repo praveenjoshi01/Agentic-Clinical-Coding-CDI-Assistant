@@ -25,6 +25,13 @@ from cliniq.models.cdi import (
     CodeConflict,
 )
 from cliniq.models.audit import AuditTrail, StageTrace, RetrievalLog
+from cliniq.models.ambient import (
+    AmbientSession,
+    EncounterTranscript,
+    StructuredNote,
+    DisambiguationItem,
+    AmbientEncounterDemo,
+)
 
 __all__ = [
     "ClinicalDocument",
@@ -44,4 +51,9 @@ __all__ = [
     "AuditTrail",
     "StageTrace",
     "RetrievalLog",
+    "AmbientSession",
+    "EncounterTranscript",
+    "StructuredNote",
+    "DisambiguationItem",
+    "AmbientEncounterDemo",
 ]
