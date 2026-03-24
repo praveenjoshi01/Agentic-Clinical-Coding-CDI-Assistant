@@ -5,23 +5,23 @@
 See: .planning/PROJECT.md (updated 2026-03-18)
 
 **Core value:** Every clinical note produces correctly sequenced ICD-10 codes with full explainability — from entity extraction through RAG retrieval through KG-based CDI gap detection — all running locally on OSS models.
-**Current focus:** Phase 4 in progress. Building demo UI.
+**Current focus:** Phase 5 in progress. Building ambient listening mode.
 
 ## Current Position
 
-Phase: 4 of 4 (Demo UI for the Whole App)
-Plan: 4 of 5 in current phase
-Status: Plan 04-04 complete
-Last activity: 2026-03-18 — Completed 04-04-PLAN.md (Eval Dashboard + QA Bot pages)
+Phase: 5 of 5 (Ambient Listening Mode)
+Plan: 1 of 3 in current phase
+Status: Plan 05-01 complete
+Last activity: 2026-03-24 — Completed 05-01-PLAN.md (Ambient schemas and backend module)
 
-Progress: [█████████░] 72%
+Progress: [█████████░] 78%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 17
+- Total plans completed: 18
 - Average duration: 3.4 min
-- Total execution time: 0.93 hours
+- Total execution time: 0.98 hours
 
 **By Phase:**
 
@@ -30,9 +30,10 @@ Progress: [█████████░] 72%
 | 01 | 7 | 28 min | 4 min |
 | 02 | 6 | 14 min | 2.3 min |
 | 04 | 4 | 15 min | 3.75 min |
+| 05 | 1 | 3 min | 3 min |
 
 **Recent Trend:**
-- Last 5 plans: 2 min, 2 min, 2 min, 3 min, 2 min
+- Last 5 plans: 2 min, 2 min, 3 min, 2 min, 3 min
 - Trend: Steady pace
 
 *Updated after each plan completion*
@@ -49,6 +50,7 @@ Progress: [█████████░] 72%
 | Phase 04 P02 | 3 | 1 tasks | 1 files |
 | Phase 04 P03 | 3 | 2 tasks | 2 files |
 | Phase 04 P04 | 3 | 2 tasks | 2 files |
+| Phase 05 P01 | 3 | 2 tasks | 4 files |
 
 ## Accumulated Context
 
@@ -117,6 +119,10 @@ Recent decisions affecting current work:
 - 04-04: Jaccard threshold 0.3 for pre-seeded question matching (balances recall vs false positives)
 - 04-04: Chat badges [Pre-seeded] vs [Generated] for answer source transparency
 - 04-04: Primary metric per module for radar chart (Schema, F1, MRR, Query Rel, Trace Comp)
+- 05-01: Lazy whisper model loading with module-level _whisper_model cache (same pattern as _KG_CACHE)
+- 05-01: Simple string-based SOAP section parsing for LLM output robustness
+- 05-01: Raw transcript fallback as note text when LLM generation fails
+- 05-01: DisambiguationItem confidence sourced directly from CDI report item confidence values
 
 ### Pending Todos
 
@@ -125,6 +131,7 @@ None yet.
 ### Roadmap Evolution
 
 - Phase 4 added: demo UI for the whole app
+- Phase 5 added: Ambient Listening Mode – real-time session recording with auto-generated clinical notes, documentation gap detection, and coding disambiguation
 
 ### Blockers/Concerns
 
@@ -132,11 +139,11 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-18
-Stopped at: Completed 04-04-PLAN.md
+Last session: 2026-03-24
+Stopped at: Completed 05-01-PLAN.md
 Resume file: None
 
 ---
 *State initialized: 2026-03-18*
-*Last updated: 2026-03-18 after completing 04-04*
-*Next action: Execute 04-05-PLAN.md (final plan)*
+*Last updated: 2026-03-24 after completing 05-01*
+*Next action: Execute 05-02-PLAN.md (pre-compute demo data)*
