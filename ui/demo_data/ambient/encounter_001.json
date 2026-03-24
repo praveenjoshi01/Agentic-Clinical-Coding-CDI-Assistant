@@ -1,0 +1,350 @@
+{
+  "encounter_id": "encounter_001",
+  "encounter_label": "Primary Care Follow-Up: CKD Stage 3 with HTN and DM2",
+  "scenario_description": "68-year-old male presenting for routine follow-up of chronic kidney disease, hypertension, and diabetes. Reports worsening fatigue and bilateral leg swelling over past 2 weeks.",
+  "specialty": "Primary Care",
+  "transcript": "Dr. Martinez: Good morning, Mr. Thompson. How are you feeling today?\n\nMr. Thompson: Well, doctor, to be honest, I've been pretty tired lately. More than usual. And my legs have been swelling up, especially toward the end of the day.\n\nDr. Martinez: I'm sorry to hear that. When did you first notice the swelling and the fatigue getting worse?\n\nMr. Thompson: The swelling started about two weeks ago. At first I thought it was just from being on my feet too long, but it's been happening every day now. Both legs, right around my ankles. And the tiredness... I'd say that's been creeping up for about three weeks. I have to take a nap in the afternoon now, which I never used to do.\n\nDr. Martinez: Okay, that's important to note. Let me review your current medications. You're on lisinopril 10 milligrams daily, metformin 1000 milligrams twice a day, and amlodipine 5 milligrams daily. Is that correct? Are you taking everything as prescribed?\n\nMr. Thompson: Yes, I haven't missed any doses. I take the lisinopril and amlodipine in the morning, and the metformin with breakfast and dinner.\n\nDr. Martinez: Good. Have you been checking your blood pressure at home like we discussed last visit?\n\nMr. Thompson: I have. It's been running a bit high. Most of the time it's around 155 over 92. A couple of times it got up to 160 over 95, and the lowest I've seen was maybe 148 over 88.\n\nDr. Martinez: Those readings are concerning. Your target should be below 130 over 80, especially given your kidney disease and diabetes. Let me ask you about some other symptoms. Have you had any chest pain or pressure?\n\nMr. Thompson: No, no chest pain at all.\n\nDr. Martinez: Any shortness of breath?\n\nMr. Thompson: Well, I do get a little winded when I climb the stairs now. That's new in the last couple of weeks. But when I'm just sitting or walking on flat ground, I'm fine.\n\nDr. Martinez: Any fever, chills, or night sweats?\n\nMr. Thompson: No, nothing like that.\n\nDr. Martinez: Changes in urination? Going more or less frequently, any changes in color?\n\nMr. Thompson: Now that you mention it, I think I'm going a little less than I used to. And maybe it looks a bit foamy sometimes, but I wasn't sure if that was anything.\n\nDr. Martinez: That's actually a significant finding. Foamy urine can indicate protein in the urine, which we want to check. Any nausea, vomiting, or loss of appetite?\n\nMr. Thompson: My appetite has been a little off, but nothing major. No nausea or vomiting.\n\nDr. Martinez: Alright. Let me examine you. Your blood pressure today is reading 158 over 94. Heart rate is 82. I can see the edema you mentioned -- you have 2-plus pitting edema in both lower legs. Your lungs sound clear, which is good. Heart sounds are regular, no murmurs. Your abdomen is soft and non-tender.\n\nMr. Thompson: So what do you think is going on, doctor?\n\nDr. Martinez: I have a few concerns. First, your chronic kidney disease may be progressing. The combination of worsening fatigue, bilateral leg swelling, decreased urine output, and foamy urine are all signs that your kidneys may not be filtering as well as they were. Your blood pressure being poorly controlled despite medication is also a factor -- both as a cause and a consequence of kidney function decline.\n\nSecond, your hypertension is not adequately controlled on your current regimen. We need to get those numbers down to protect your kidneys and heart.\n\nThird, we need to monitor your diabetes more closely in the context of these changes. Diabetes and kidney disease are closely linked, and worsening kidney function can affect how we manage your blood sugar.\n\nHere's what I'd like to do. I'm ordering a comprehensive metabolic panel to check your kidney function markers -- BUN and creatinine, along with your electrolytes. I also want a hemoglobin A1C to see where your blood sugar has been over the last three months, a urinalysis to check for protein, and a lipid panel since cardiovascular risk goes up with kidney disease.\n\nFor your blood pressure, I'm increasing your lisinopril from 10 to 20 milligrams daily. The ACE inhibitors are particularly beneficial for kidney protection. I'm also considering adding a low-dose furosemide, 20 milligrams daily, to help with the fluid retention and the edema.\n\nI'm also going to refer you to a nephrologist. With your CKD showing signs of progression, it's important to have a kidney specialist involved in your care.\n\nMr. Thompson: A kidney specialist? That sounds serious. Is there anything I can do on my end? Like dietary changes?\n\nDr. Martinez: It's a good question, and yes, diet plays a big role. I'd recommend you focus on a low-sodium diet -- aim for less than 2 grams of sodium per day. This will help with your blood pressure and the fluid retention. Make sure you're staying adequately hydrated, but don't overdo it on fluids. And this is very important -- please avoid any over-the-counter anti-inflammatory medications like ibuprofen or naproxen. Those NSAIDs can further damage the kidneys.\n\nMr. Thompson: What about the Aleve I sometimes take for my back pain?\n\nDr. Martinez: Naproxen is an NSAID, so yes, you'll need to stop taking that. If you need pain relief, acetaminophen, or Tylenol, is a safer option for your kidneys. We can discuss other options at your follow-up.\n\nLet's schedule you to come back in four weeks so we can review your lab results, see how you're responding to the medication changes, and make sure that referral to nephrology is set up. Does that sound okay?\n\nMr. Thompson: Yes, doctor. Four weeks. I'll be here. Thank you for explaining everything.\n\nDr. Martinez: Of course, Mr. Thompson. If the swelling gets significantly worse, or if you develop any chest pain, severe shortness of breath, or notice very dark or decreased urine, please call us right away or go to the emergency room. Don't wait for the follow-up.\n\nMr. Thompson: I will. Thank you, doctor.",
+  "generated_note": "Chief Complaint: Worsening fatigue and bilateral lower extremity edema x 2 weeks\n\nHistory of Present Illness:\nMr. Thompson is a 68-year-old male with a history of chronic kidney disease stage 3, essential hypertension, and type 2 diabetes mellitus who presents for routine follow-up. He reports progressive fatigue over the past three weeks, now requiring daily afternoon naps. He also notes bilateral lower extremity swelling that began approximately two weeks ago, initially intermittent but now persistent, affecting both ankles. He reports his home blood pressure readings have been averaging 155/92 mmHg with occasional readings as high as 160/95. He denies chest pain. He endorses mild dyspnea on exertion, particularly when climbing stairs, which is a new symptom. He reports decreased urine output and occasional foamy urine. Appetite is mildly decreased. He denies nausea, vomiting, fever, chills, or night sweats.\n\nCurrent medications include lisinopril 10 mg daily, metformin 1000 mg twice daily, and amlodipine 5 mg daily. Patient reports good medication compliance.\n\nReview of Systems:\n- Constitutional: Fatigue, decreased appetite. No fever, chills, night sweats, or unintentional weight changes.\n- Cardiovascular: No chest pain or palpitations.\n- Respiratory: Mild dyspnea on exertion (stairs). No cough or orthopnea.\n- Gastrointestinal: Mild appetite decrease. No nausea, vomiting, diarrhea, or abdominal pain.\n- Genitourinary: Decreased urine frequency, foamy urine. No dysuria or hematuria.\n- Musculoskeletal: Bilateral lower extremity edema. Chronic low back pain managed with occasional naproxen (to be discontinued).\n\nPhysical Examination:\n- Vitals: BP 158/94 mmHg, HR 82 bpm, regular\n- General: Alert, oriented, in no acute distress, appears mildly fatigued\n- Cardiovascular: Regular rate and rhythm, no murmurs, rubs, or gallops\n- Respiratory: Lungs clear to auscultation bilaterally, no wheezes or crackles\n- Abdomen: Soft, non-tender, non-distended, normal bowel sounds\n- Extremities: 2+ pitting edema bilateral lower extremities, ankles and lower legs\n\nAssessment:\n1. Chronic kidney disease, stage 3 - worsening symptoms concerning for progression (fatigue, edema, decreased urine output, foamy urine)\n2. Essential hypertension - poorly controlled despite current therapy (home readings averaging 155/92, office 158/94)\n3. Type 2 diabetes mellitus - monitoring needed in context of possible CKD progression\n4. Peripheral edema, bilateral - likely related to CKD progression and/or inadequately controlled hypertension\n\nPlan:\n1. Laboratory studies: Basic metabolic panel (BUN, creatinine, electrolytes), hemoglobin A1C, urinalysis with protein quantification, fasting lipid panel\n2. Increase lisinopril from 10 mg to 20 mg daily for improved BP control and renal protection\n3. Start furosemide 20 mg daily for fluid overload and edema management\n4. Refer to nephrology for CKD progression evaluation and co-management\n5. Dietary counseling: low-sodium diet (<2 g/day), adequate hydration, strict avoidance of NSAIDs (discontinue naproxen for back pain, switch to acetaminophen)\n6. Follow-up in 4 weeks to review lab results, assess medication response, and confirm nephrology referral\n7. Precautions discussed: return to clinic or ED for worsening edema, chest pain, severe dyspnea, or significant change in urine output or color",
+  "pipeline_result": {
+    "document": {
+      "metadata": {
+        "patient_id": "ambient_001",
+        "encounter_id": "encounter_001",
+        "source_type": "text",
+        "timestamp": "2026-03-24T10:00:00"
+      },
+      "raw_narrative": "Chief Complaint: Worsening fatigue and bilateral lower extremity edema x 2 weeks\n\nHistory of Present Illness:\nMr. Thompson is a 68-year-old male with a history of chronic kidney disease stage 3, essential hypertension, and type 2 diabetes mellitus who presents for routine follow-up.",
+      "structured_facts": [],
+      "modality_confidence": 1.0,
+      "extraction_trace": "Ambient pipeline: SOAP note from audio transcription"
+    },
+    "nlu_result": {
+      "entities": [
+        {
+          "text": "chronic kidney disease",
+          "entity_type": "diagnosis",
+          "start_char": 112,
+          "end_char": 134,
+          "confidence": 0.94,
+          "negated": false,
+          "qualifiers": ["chronic", "stage 3"]
+        },
+        {
+          "text": "hypertension",
+          "entity_type": "diagnosis",
+          "start_char": 147,
+          "end_char": 159,
+          "confidence": 0.95,
+          "negated": false,
+          "qualifiers": ["essential"]
+        },
+        {
+          "text": "type 2 diabetes mellitus",
+          "entity_type": "diagnosis",
+          "start_char": 165,
+          "end_char": 189,
+          "confidence": 0.93,
+          "negated": false,
+          "qualifiers": []
+        },
+        {
+          "text": "fatigue",
+          "entity_type": "diagnosis",
+          "start_char": 44,
+          "end_char": 51,
+          "confidence": 0.88,
+          "negated": false,
+          "qualifiers": ["worsening", "progressive"]
+        },
+        {
+          "text": "peripheral edema",
+          "entity_type": "diagnosis",
+          "start_char": 56,
+          "end_char": 72,
+          "confidence": 0.91,
+          "negated": false,
+          "qualifiers": ["bilateral", "lower extremity", "2+ pitting"]
+        },
+        {
+          "text": "dyspnea",
+          "entity_type": "diagnosis",
+          "start_char": 498,
+          "end_char": 505,
+          "confidence": 0.85,
+          "negated": false,
+          "qualifiers": ["on exertion", "mild"]
+        },
+        {
+          "text": "chest pain",
+          "entity_type": "diagnosis",
+          "start_char": 480,
+          "end_char": 490,
+          "confidence": 0.90,
+          "negated": true,
+          "qualifiers": []
+        },
+        {
+          "text": "lisinopril",
+          "entity_type": "medication",
+          "start_char": 620,
+          "end_char": 630,
+          "confidence": 0.95,
+          "negated": false,
+          "qualifiers": ["10 mg daily"]
+        },
+        {
+          "text": "metformin",
+          "entity_type": "medication",
+          "start_char": 645,
+          "end_char": 654,
+          "confidence": 0.95,
+          "negated": false,
+          "qualifiers": ["1000 mg twice daily"]
+        },
+        {
+          "text": "amlodipine",
+          "entity_type": "medication",
+          "start_char": 678,
+          "end_char": 688,
+          "confidence": 0.94,
+          "negated": false,
+          "qualifiers": ["5 mg daily"]
+        },
+        {
+          "text": "decreased urine output",
+          "entity_type": "diagnosis",
+          "start_char": 535,
+          "end_char": 557,
+          "confidence": 0.82,
+          "negated": false,
+          "qualifiers": []
+        }
+      ],
+      "processing_time_ms": 345.2
+    },
+    "coding_result": {
+      "principal_diagnosis": {
+        "icd10_code": "N18.3",
+        "description": "Chronic kidney disease, stage 3 (moderate)",
+        "confidence": 0.92,
+        "evidence_text": "chronic kidney disease stage 3 - worsening symptoms concerning for progression (fatigue, edema, decreased urine output, foamy urine)",
+        "reasoning": "Patient has documented CKD stage 3 with symptoms of disease progression including worsening fatigue, bilateral edema, decreased urine output, and foamy urine. CKD is the primary focus of this encounter and drives the diagnostic workup and referral plan.",
+        "needs_specificity": false,
+        "alternatives": [
+          {"code": "N18.30", "description": "CKD stage 3 unspecified", "confidence": 0.84}
+        ]
+      },
+      "secondary_codes": [
+        {
+          "icd10_code": "I10",
+          "description": "Essential (primary) hypertension",
+          "confidence": 0.91,
+          "evidence_text": "Essential hypertension - poorly controlled despite current therapy (home readings averaging 155/92, office 158/94)",
+          "reasoning": "Documented essential hypertension with poor control on current medications. Medication adjustment planned (lisinopril increase). Contributing factor to CKD progression.",
+          "needs_specificity": false,
+          "alternatives": []
+        },
+        {
+          "icd10_code": "E11.65",
+          "description": "Type 2 diabetes mellitus with hyperglycemia",
+          "confidence": 0.85,
+          "evidence_text": "Type 2 diabetes mellitus - monitoring needed in context of possible CKD progression",
+          "reasoning": "Documented type 2 diabetes under monitoring. A1C ordered to assess glycemic control. E11.65 used given uncontrolled status implied by need for close monitoring alongside CKD progression.",
+          "needs_specificity": true,
+          "alternatives": [
+            {"code": "E11.9", "description": "Type 2 DM without complications", "confidence": 0.78}
+          ]
+        },
+        {
+          "icd10_code": "R60.0",
+          "description": "Localized edema",
+          "confidence": 0.88,
+          "evidence_text": "2+ pitting edema bilateral lower extremities, ankles and lower legs",
+          "reasoning": "Bilateral lower extremity pitting edema documented on exam. Coded as localized edema affecting the lower extremities.",
+          "needs_specificity": false,
+          "alternatives": [
+            {"code": "R60.9", "description": "Edema, unspecified", "confidence": 0.72}
+          ]
+        },
+        {
+          "icd10_code": "R53.1",
+          "description": "Weakness",
+          "confidence": 0.78,
+          "evidence_text": "Worsening fatigue ... progressive fatigue over the past three weeks, now requiring daily afternoon naps",
+          "reasoning": "Progressive fatigue and weakness are documented as presenting symptoms and are likely related to CKD progression. Coded to capture the symptom as a distinct clinical finding.",
+          "needs_specificity": false,
+          "alternatives": [
+            {"code": "R53.83", "description": "Other fatigue", "confidence": 0.75}
+          ]
+        }
+      ],
+      "complication_codes": [],
+      "sequencing_rationale": "N18.3 (CKD stage 3) is sequenced as principal diagnosis as it is the primary reason for the encounter with evidence of progression driving the workup. I10, E11.65, R60.0, and R53.1 are secondary diagnoses contributing to clinical presentation and management decisions.",
+      "retrieval_stats": {
+        "total_retrieval_time_ms": 1185.6,
+        "candidates_retrieved": 28,
+        "candidates_reranked": 12
+      }
+    },
+    "processing_time_ms": 2400.0,
+    "errors": [],
+    "cdi_report": {
+      "documentation_gaps": [
+        {
+          "code": "N18.3",
+          "description": "CKD stage 3 lacks sub-stage specificity",
+          "missing_qualifier": "stage 3a vs 3b (eGFR sub-range not documented)",
+          "physician_query": "The patient has CKD stage 3 but the eGFR value is not documented in the note. Could you specify whether this is stage 3a (eGFR 45-59) or stage 3b (eGFR 30-44) to allow more specific coding with N18.31 or N18.32?",
+          "evidence_text": "chronic kidney disease stage 3 - worsening symptoms concerning for progression",
+          "confidence": 0.88,
+          "cot_trace": "Step 1: N18.3 maps to CKD stage 3 unspecified. Step 2: ICD-10-CM provides N18.31 (stage 3a) and N18.32 (stage 3b). Step 3: The note says 'stage 3' but does not include an eGFR value in the SOAP note. Step 4: Clarification of sub-stage would improve coding specificity."
+        },
+        {
+          "code": "E11.65",
+          "description": "DM2 complication linkage needs specificity",
+          "missing_qualifier": "diabetes complication type (nephropathy, neuropathy, or unspecified)",
+          "physician_query": "The patient has both type 2 diabetes and CKD. Is the kidney disease considered a complication of the diabetes (diabetic nephropathy)? If so, E11.22 (DM2 with diabetic chronic kidney disease) would be more appropriate than E11.65.",
+          "evidence_text": "Type 2 diabetes mellitus - monitoring needed in context of possible CKD progression",
+          "confidence": 0.85,
+          "cot_trace": "Step 1: E11.65 codes DM2 with hyperglycemia. Step 2: Patient has concurrent CKD. Step 3: ICD-10-CM guidelines require linking DM to CKD if causal. Step 4: Documentation does not clarify whether DM is the cause of CKD. Step 5: Physician should clarify causal relationship."
+        }
+      ],
+      "missed_diagnoses": [
+        {
+          "suggested_code": "E11.22",
+          "description": "Type 2 diabetes mellitus with diabetic chronic kidney disease",
+          "co_coded_with": "N18.3",
+          "co_occurrence_weight": 0.82,
+          "evidence_text": "Patient has both DM2 and CKD stage 3 with progression. ICD-10-CM coding guidelines state that when a patient has both DM and CKD, the provider should document whether the CKD is related to the diabetes. E11.22 with N18.3 is the standard co-coding pair for diabetic CKD."
+        }
+      ],
+      "code_conflicts": [],
+      "completeness_score": 0.75,
+      "processing_time_ms": 812.4
+    },
+    "audit_trail": {
+      "case_id": "amb-001",
+      "timestamp": "2026-03-24T10:00:00",
+      "stages": [
+        {
+          "stage": "ingestion",
+          "processing_time_ms": 48.2,
+          "input_summary": "str",
+          "output_summary": "text, confidence=1.00",
+          "details": {},
+          "cot_traces": [],
+          "retrieval_logs": []
+        },
+        {
+          "stage": "ner",
+          "processing_time_ms": 345.2,
+          "input_summary": "2847 chars",
+          "output_summary": "11 entities",
+          "details": {
+            "diagnoses": 7,
+            "medications": 3,
+            "procedures": 0,
+            "total_entities": 11
+          },
+          "cot_traces": [],
+          "retrieval_logs": []
+        },
+        {
+          "stage": "rag",
+          "processing_time_ms": 1185.6,
+          "input_summary": "11 entities",
+          "output_summary": "principal=N18.3, 4 secondary",
+          "details": {},
+          "cot_traces": [],
+          "retrieval_logs": []
+        },
+        {
+          "stage": "cdi",
+          "processing_time_ms": 812.4,
+          "input_summary": "5 codes",
+          "output_summary": "2 gaps, 0 conflicts, 1 missed dx",
+          "details": {},
+          "cot_traces": [
+            "Step 1: N18.3 maps to CKD stage 3 unspecified. Step 2: ICD-10-CM provides N18.31 (stage 3a) and N18.32 (stage 3b). Step 3: The note says 'stage 3' but does not include an eGFR value in the SOAP note. Step 4: Clarification of sub-stage would improve coding specificity.",
+            "Step 1: E11.65 codes DM2 with hyperglycemia. Step 2: Patient has concurrent CKD. Step 3: ICD-10-CM guidelines require linking DM to CKD if causal. Step 4: Documentation does not clarify whether DM is the cause of CKD. Step 5: Physician should clarify causal relationship."
+          ],
+          "retrieval_logs": []
+        }
+      ],
+      "evidence_spans": {
+        "N18.3": [
+          "chronic kidney disease stage 3",
+          "CKD stage 3 - worsening symptoms concerning for progression"
+        ],
+        "I10": [
+          "Essential hypertension - poorly controlled despite current therapy",
+          "home readings averaging 155/92, office 158/94"
+        ],
+        "E11.65": [
+          "Type 2 diabetes mellitus - monitoring needed",
+          "hemoglobin A1C ordered"
+        ],
+        "R60.0": [
+          "2+ pitting edema bilateral lower extremities"
+        ],
+        "R53.1": [
+          "Worsening fatigue",
+          "progressive fatigue over the past three weeks"
+        ]
+      }
+    }
+  },
+  "disambiguation_items": [
+    {
+      "item_id": "a1b2c3d4",
+      "category": "gap",
+      "title": "Documentation Gap: CKD Sub-stage Not Specified",
+      "description": "The patient has CKD stage 3 but the eGFR value is not documented in the SOAP note. Specifying stage 3a (eGFR 45-59) vs 3b (eGFR 30-44) would allow more specific coding with N18.31 or N18.32.",
+      "suggested_action": "Clarify CKD sub-stage (3a vs 3b) by documenting the most recent eGFR value for N18.3 specificity",
+      "source_code": "N18.3",
+      "confidence": 0.88,
+      "status": "pending"
+    },
+    {
+      "item_id": "e5f6a7b8",
+      "category": "gap",
+      "title": "Documentation Gap: DM2-CKD Causal Relationship",
+      "description": "The patient has both type 2 diabetes and CKD. ICD-10-CM guidelines require documentation of whether the kidney disease is a complication of diabetes. If causal, E11.22 (DM2 with diabetic CKD) should replace E11.65.",
+      "suggested_action": "Clarify whether CKD is a complication of diabetes (diabetic nephropathy) for accurate E11.xx coding",
+      "source_code": "E11.65",
+      "confidence": 0.85,
+      "status": "pending"
+    },
+    {
+      "item_id": "c9d0e1f2",
+      "category": "missed_diagnosis",
+      "title": "Potential Missed Dx: DM2 with Diabetic Chronic Kidney Disease (E11.22)",
+      "description": "Patient has concurrent DM2 and CKD stage 3 with signs of progression. E11.22 paired with N18.3 is the standard co-coding for diabetic chronic kidney disease per ICD-10-CM guidelines. This combination captures the clinical relationship and may affect reimbursement.",
+      "suggested_action": "Consider documenting E11.22 (DM2 with diabetic CKD) if diabetes is contributing to kidney disease progression",
+      "source_code": "E11.22",
+      "confidence": 0.82,
+      "status": "pending"
+    },
+    {
+      "item_id": "a3b4c5d6",
+      "category": "ambiguity",
+      "title": "Edema Etiology Ambiguous",
+      "description": "Bilateral lower extremity edema is documented but the underlying cause is not specified. Edema in this patient could be CKD-related (renal fluid retention), cardiac in origin, medication-related (amlodipine is known to cause peripheral edema), or multifactorial. Specifying the etiology affects code selection and clinical decision-making.",
+      "suggested_action": "Specify the most likely etiology of peripheral edema: renal (CKD-related fluid retention), medication-induced (amlodipine), cardiac, or multifactorial",
+      "source_code": "R60.0",
+      "confidence": 0.79,
+      "status": "pending"
+    },
+    {
+      "item_id": "e7f8a9b0",
+      "category": "ambiguity",
+      "title": "Proteinuria Assessment Pending",
+      "description": "Patient reports foamy urine suggesting possible proteinuria, and urinalysis with protein quantification has been ordered. If confirmed, proteinuria would affect CKD staging and may warrant additional coding (R80.x). The current coding does not capture this pending finding.",
+      "suggested_action": "After urinalysis results, document proteinuria status and consider adding R80.1 (persistent proteinuria) or adjusting CKD specificity",
+      "source_code": "N18.3",
+      "confidence": 0.76,
+      "status": "pending"
+    }
+  ],
+  "session_duration_seconds": 195
+}

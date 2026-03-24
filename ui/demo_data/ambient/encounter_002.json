@@ -1,0 +1,328 @@
+{
+  "encounter_id": "encounter_002",
+  "encounter_label": "Urgent Care Visit: Acute Chest Pain with Shortness of Breath",
+  "scenario_description": "52-year-old female presenting to urgent care with acute-onset chest pain and shortness of breath. History of GERD, anxiety, and obesity.",
+  "specialty": "Urgent Care",
+  "transcript": "Dr. Chen: Good afternoon. I'm Dr. Chen. I understand you're having some chest pain today. Can you tell me what's going on?\n\nMs. Rivera: Yes, I've had this pressure in my chest since this morning. It started around 8 AM and it hasn't gone away. It's like a tightness, right here in the center of my chest.\n\nDr. Chen: Can you describe the pain a bit more? Is it sharp, dull, pressure-like?\n\nMs. Rivera: It's more of a pressure. Like something heavy sitting on my chest. And it does go into my left arm sometimes, like a tingling or aching down my arm.\n\nDr. Chen: On a scale of 1 to 10, where would you rate this pain?\n\nMs. Rivera: It's been about a 6 or 7 most of the day. It went up to maybe an 8 right before I decided to come in.\n\nDr. Chen: And are you having any shortness of breath?\n\nMs. Rivera: Yes, especially when I try to do anything. Even just walking from the car to the building I was out of breath. Normally I get a little winded with exercise, but this is different. This feels like I can't get a deep breath.\n\nDr. Chen: When did the shortness of breath start? Same time as the chest pain?\n\nMs. Rivera: It started around the same time, maybe a little after. I noticed it when I was getting ready for work this morning.\n\nDr. Chen: Have you had any nausea, vomiting, sweating, or dizziness?\n\nMs. Rivera: I did feel a little nauseous earlier, and I was sweating, but I thought maybe it was because I was nervous. I've been really stressed at work lately. My department is going through layoffs and I've been working 12-hour days.\n\nDr. Chen: I understand that must be stressful. Let me ask about your medical history. What conditions do you have?\n\nMs. Rivera: I have GERD -- acid reflux -- I take omeprazole for that. And I've been treated for anxiety. I take sertraline. I'm also overweight, my doctor says I'm in the obese category. My last BMI was 41, I think.\n\nDr. Chen: Any history of heart disease, high blood pressure, high cholesterol, or diabetes?\n\nMs. Rivera: No heart disease. My cholesterol was a little high last time they checked, but my doctor said we'd watch it. No diabetes. My blood pressure has been normal.\n\nDr. Chen: Does anyone in your family have heart disease?\n\nMs. Rivera: My father had a heart attack at 58. And my older brother has high blood pressure.\n\nDr. Chen: That's important. Do you smoke or use tobacco?\n\nMs. Rivera: I quit smoking about 5 years ago. I smoked for about 15 years before that.\n\nDr. Chen: Okay. Have you had chest pain like this before?\n\nMs. Rivera: I get heartburn a lot, and sometimes it can feel like chest pressure. But this feels different. It's more intense, and the arm thing is new. And the heartburn usually gets better if I take a couple of Tums, but I took some this morning and it didn't help at all.\n\nDr. Chen: That's an important distinction. Let me examine you. Your blood pressure is 142 over 88, heart rate is 96 and regular. Oxygen saturation is 97 percent on room air. Temperature is normal at 98.4. On auscultation, your heart sounds are regular rate and rhythm, I don't hear any murmurs. Your lungs have a few scattered wheezes in the lower bases but are otherwise clear. Your chest wall is non-tender to palpation. Abdomen is soft, obese habitus, non-tender. No lower extremity edema. Skin is warm and mildly diaphoretic.\n\nMs. Rivera: So what do you think? Is this my anxiety? Or my acid reflux acting up?\n\nDr. Chen: I want to be very careful here. You have several features that concern me for a cardiac cause of your chest pain. The substernal pressure radiating to your left arm, the associated shortness of breath and diaphoresis, the duration of over four hours, the lack of response to antacids, your family history of premature coronary artery disease, your history of smoking, and your obesity are all risk factors. Even though you're 52 and female, women can and do have heart attacks, and the presentation can be atypical.\n\nNow, it could also be a GERD exacerbation, and stress and anxiety can certainly cause chest tightness and shortness of breath. But given the risk factors, I cannot safely rule out an acute coronary event here in the urgent care.\n\nHere's what I'm going to do. I'm ordering a stat EKG to look at your heart rhythm and check for any signs of ischemia. I'm drawing a troponin level, which is a blood marker that goes up when the heart muscle is being damaged. And I'm ordering a portable chest X-ray to check your lungs and heart silhouette.\n\nMs. Rivera: Okay, that sounds serious.\n\nDr. Chen: I want to be thorough. While we wait for those results, I'm also going to give you a baby aspirin to chew, 325 milligrams, and we'll place you on a cardiac monitor. Based on the initial results, I am strongly recommending that you be transferred to the emergency department at the main hospital for a complete cardiac workup. They can do serial troponins, continuous monitoring, and advanced imaging if needed. This is not something we can fully evaluate in an urgent care setting.\n\nMs. Rivera: You really think it could be my heart?\n\nDr. Chen: I think we need to make sure it's not your heart. The consequences of missing a cardiac event are too serious. It may turn out to be your GERD or anxiety, and that would be great news. But we need the full workup to be certain. I'll have our team arrange the transfer and I'll call ahead to the ED so they're expecting you.\n\nMs. Rivera: Alright, doctor. I appreciate you taking this seriously. My husband is in the waiting room, I'll have him come back.\n\nDr. Chen: Absolutely. We'll take good care of you. The EKG tech is coming right now.",
+  "generated_note": "Chief Complaint: Acute-onset chest pain and shortness of breath x 4 hours\n\nHistory of Present Illness:\nMs. Rivera is a 52-year-old female presenting to urgent care with substernal chest pressure that began approximately 4 hours ago (around 8:00 AM). She describes the pain as a constant pressure-like sensation in the center of her chest, rated 6-7/10, with intermittent radiation to the left arm described as tingling and aching. The pain escalated to 8/10 prior to presentation. She reports associated shortness of breath that began concurrently, worse with minimal exertion (unable to walk short distances without dyspnea). She also reports mild nausea and diaphoresis. She attempted self-treatment with antacids without relief. She has a history of GERD with chronic heartburn but states this episode feels different in character and intensity from her usual reflux symptoms, and the left arm radiation is new.\n\nShe reports significant recent psychosocial stress (workplace layoffs, working 12-hour days). Past medical history includes GERD (on omeprazole), generalized anxiety disorder (on sertraline), and morbid obesity (BMI 41). She has borderline hyperlipidemia (not yet treated). Family history is significant for premature coronary artery disease (father with MI at age 58, brother with hypertension). Former smoker with 15 pack-year history, quit 5 years ago. No personal history of heart disease, hypertension, or diabetes.\n\nReview of Systems:\n- Constitutional: Mild diaphoresis. No fever or weight changes.\n- Cardiovascular: Substernal chest pressure with left arm radiation. No palpitations or syncope.\n- Respiratory: Dyspnea on minimal exertion. No cough, hemoptysis, or orthopnea.\n- Gastrointestinal: Mild nausea. No vomiting, diarrhea, or melena. Antacids ineffective for current symptoms.\n- Neurological: No headache, dizziness, or focal weakness.\n- Psychiatric: Reports increased anxiety related to work stress.\n\nPhysical Examination:\n- Vitals: BP 142/88 mmHg, HR 96 bpm (regular), SpO2 97% on room air, Temp 98.4F\n- General: Alert, oriented, mildly anxious, mildly diaphoretic, obese habitus\n- Cardiovascular: Regular rate and rhythm, no murmurs, rubs, or gallops, no JVD\n- Respiratory: Scattered wheezes bilateral lower bases, otherwise clear to auscultation\n- Chest wall: Non-tender to palpation\n- Abdomen: Soft, non-tender, non-distended, obese\n- Extremities: No edema, no calf tenderness\n- Skin: Warm, mildly diaphoretic\n\nAssessment:\n1. Acute chest pain, substernal with left arm radiation - concerning for possible acute coronary syndrome given risk factor profile (family hx of premature CAD, former smoker, morbid obesity, borderline hyperlipidemia), duration >4 hours, and associated diaphoresis. Must rule out ACS.\n2. Shortness of breath - concurrent with chest pain, concerning for cardiac etiology vs anxiety-related\n3. GERD - chronic, on omeprazole, but current symptoms atypical for reflux (arm radiation, no antacid response)\n4. Generalized anxiety disorder - may be contributing to symptoms but cannot attribute chest pain to anxiety without cardiac workup\n5. Morbid obesity (BMI 41) - cardiovascular risk factor\n\nPlan:\n1. Stat 12-lead EKG to evaluate for ST changes or ischemia\n2. Stat troponin I level to assess for myocardial injury\n3. Portable chest X-ray (PA and lateral) to evaluate cardiac silhouette and pulmonary fields\n4. Administer aspirin 325 mg PO (chewed) as empiric antiplatelet therapy\n5. Continuous cardiac monitoring during evaluation\n6. Transfer to Emergency Department at main hospital for complete cardiac workup (serial troponins, continuous telemetry, possible stress test or coronary CTA)\n7. Call ahead to receiving ED with clinical summary\n8. GERD and anxiety management deferred pending cardiac evaluation outcome",
+  "pipeline_result": {
+    "document": {
+      "metadata": {
+        "patient_id": "ambient_002",
+        "encounter_id": "encounter_002",
+        "source_type": "text",
+        "timestamp": "2026-03-24T14:30:00"
+      },
+      "raw_narrative": "Chief Complaint: Acute-onset chest pain and shortness of breath x 4 hours\n\nHistory of Present Illness:\nMs. Rivera is a 52-year-old female presenting to urgent care with substernal chest pressure that began approximately 4 hours ago.",
+      "structured_facts": [],
+      "modality_confidence": 1.0,
+      "extraction_trace": "Ambient pipeline: SOAP note from audio transcription"
+    },
+    "nlu_result": {
+      "entities": [
+        {
+          "text": "chest pain",
+          "entity_type": "diagnosis",
+          "start_char": 38,
+          "end_char": 48,
+          "confidence": 0.93,
+          "negated": false,
+          "qualifiers": ["acute-onset", "substernal", "pressure-like", "radiating to left arm"]
+        },
+        {
+          "text": "shortness of breath",
+          "entity_type": "diagnosis",
+          "start_char": 53,
+          "end_char": 72,
+          "confidence": 0.91,
+          "negated": false,
+          "qualifiers": ["on minimal exertion"]
+        },
+        {
+          "text": "GERD",
+          "entity_type": "diagnosis",
+          "start_char": 685,
+          "end_char": 689,
+          "confidence": 0.94,
+          "negated": false,
+          "qualifiers": ["chronic", "on omeprazole"]
+        },
+        {
+          "text": "anxiety disorder",
+          "entity_type": "diagnosis",
+          "start_char": 720,
+          "end_char": 736,
+          "confidence": 0.90,
+          "negated": false,
+          "qualifiers": ["generalized"]
+        },
+        {
+          "text": "morbid obesity",
+          "entity_type": "diagnosis",
+          "start_char": 765,
+          "end_char": 779,
+          "confidence": 0.92,
+          "negated": false,
+          "qualifiers": ["BMI 41"]
+        },
+        {
+          "text": "nausea",
+          "entity_type": "diagnosis",
+          "start_char": 420,
+          "end_char": 426,
+          "confidence": 0.85,
+          "negated": false,
+          "qualifiers": ["mild"]
+        },
+        {
+          "text": "diaphoresis",
+          "entity_type": "diagnosis",
+          "start_char": 432,
+          "end_char": 443,
+          "confidence": 0.87,
+          "negated": false,
+          "qualifiers": ["mild"]
+        },
+        {
+          "text": "omeprazole",
+          "entity_type": "medication",
+          "start_char": 700,
+          "end_char": 710,
+          "confidence": 0.95,
+          "negated": false,
+          "qualifiers": []
+        },
+        {
+          "text": "sertraline",
+          "entity_type": "medication",
+          "start_char": 750,
+          "end_char": 760,
+          "confidence": 0.94,
+          "negated": false,
+          "qualifiers": []
+        },
+        {
+          "text": "hyperlipidemia",
+          "entity_type": "diagnosis",
+          "start_char": 805,
+          "end_char": 819,
+          "confidence": 0.83,
+          "negated": false,
+          "qualifiers": ["borderline", "not yet treated"]
+        }
+      ],
+      "processing_time_ms": 378.9
+    },
+    "coding_result": {
+      "principal_diagnosis": {
+        "icd10_code": "R07.9",
+        "description": "Chest pain, unspecified",
+        "confidence": 0.80,
+        "evidence_text": "substernal chest pressure with left arm radiation, rated 6-7/10, duration >4 hours, no relief with antacids",
+        "reasoning": "Patient presents with acute chest pain as primary complaint. Coded as R07.9 (unspecified) pending definitive workup. The clinical presentation raises concern for ACS but no definitive diagnosis established at this point.",
+        "needs_specificity": true,
+        "alternatives": [
+          {"code": "R07.2", "description": "Precordial pain", "confidence": 0.72},
+          {"code": "R07.89", "description": "Other chest pain", "confidence": 0.68}
+        ]
+      },
+      "secondary_codes": [
+        {
+          "icd10_code": "R06.02",
+          "description": "Shortness of breath",
+          "confidence": 0.89,
+          "evidence_text": "Dyspnea on minimal exertion, unable to walk short distances without dyspnea",
+          "reasoning": "Documented shortness of breath concurrent with chest pain presentation. Worse with minimal exertion.",
+          "needs_specificity": false,
+          "alternatives": []
+        },
+        {
+          "icd10_code": "K21.0",
+          "description": "Gastro-esophageal reflux disease with esophagitis",
+          "confidence": 0.87,
+          "evidence_text": "GERD - chronic, on omeprazole, but current symptoms atypical for reflux",
+          "reasoning": "Documented GERD under treatment with omeprazole. Included as active comorbidity though current symptoms are atypical for reflux presentation.",
+          "needs_specificity": false,
+          "alternatives": [
+            {"code": "K21.9", "description": "GERD without esophagitis", "confidence": 0.82}
+          ]
+        },
+        {
+          "icd10_code": "F41.1",
+          "description": "Generalized anxiety disorder",
+          "confidence": 0.86,
+          "evidence_text": "Generalized anxiety disorder - may be contributing to symptoms",
+          "reasoning": "Documented GAD under treatment with sertraline. May contribute to symptom presentation but cardiac etiology must be excluded first.",
+          "needs_specificity": false,
+          "alternatives": []
+        },
+        {
+          "icd10_code": "E66.01",
+          "description": "Morbid (severe) obesity due to excess calories",
+          "confidence": 0.90,
+          "evidence_text": "Morbid obesity (BMI 41) - cardiovascular risk factor",
+          "reasoning": "BMI 41 documented, classifying as morbid obesity. Significant cardiovascular risk factor relevant to current presentation.",
+          "needs_specificity": false,
+          "alternatives": [
+            {"code": "E66.09", "description": "Other obesity due to excess calories", "confidence": 0.70}
+          ]
+        }
+      ],
+      "complication_codes": [],
+      "sequencing_rationale": "R07.9 (chest pain) is the principal diagnosis as it is the chief complaint driving the urgent evaluation and ED transfer. R06.02 (SOB) is closely associated. K21.0, F41.1, and E66.01 are active comorbidities relevant to differential diagnosis.",
+      "retrieval_stats": {
+        "total_retrieval_time_ms": 1342.1,
+        "candidates_retrieved": 32,
+        "candidates_reranked": 14
+      }
+    },
+    "processing_time_ms": 2850.0,
+    "errors": [],
+    "cdi_report": {
+      "documentation_gaps": [
+        {
+          "code": "R07.9",
+          "description": "Chest pain type too vague for optimal coding",
+          "missing_qualifier": "chest pain laterality and character specificity",
+          "physician_query": "The chest pain is documented as 'substernal pressure with left arm radiation' but coded as R07.9 (unspecified). Clinical details suggest R07.89 (other chest pain) or potentially I20.9 (angina pectoris) if ischemic etiology is suspected. Could you specify the chest pain type to support more precise coding?",
+          "evidence_text": "Acute chest pain, substernal with left arm radiation - concerning for possible acute coronary syndrome",
+          "confidence": 0.86,
+          "cot_trace": "Step 1: R07.9 is chest pain unspecified. Step 2: Clinical note describes substernal pressure with left arm radiation. Step 3: R07.2 (precordial pain) or R07.89 (other chest pain) may be more specific. Step 4: If ACS suspected, I20.x or I21.x codes may apply after workup. Step 5: Current documentation supports more specific chest pain coding."
+        }
+      ],
+      "missed_diagnoses": [
+        {
+          "suggested_code": "I25.10",
+          "description": "Atherosclerotic heart disease of native coronary artery without angina pectoris",
+          "co_coded_with": "R07.9",
+          "co_occurrence_weight": 0.74,
+          "evidence_text": "Patient has multiple CAD risk factors: family history of premature MI (father at 58), former 15 pack-year smoker, morbid obesity (BMI 41), borderline hyperlipidemia, and now presenting with substernal chest pain with arm radiation. Atherosclerotic heart disease should be considered and documented if suspected."
+        }
+      ],
+      "code_conflicts": [
+        {
+          "code_a": "R07.9",
+          "code_b": "K21.0",
+          "conflict_reason": "Chest pain etiology ambiguous: R07.9 (chest pain unspecified) is coded alongside K21.0 (GERD), but the note states current symptoms are atypical for reflux and antacids were ineffective. If the chest pain is determined to be non-cardiac after workup, GERD may be the etiology and R07.9 would be replaced by the GERD code. If cardiac, R07.9 would be replaced by the specific cardiac diagnosis.",
+          "recommendation": "After cardiac workup results are available, reassign chest pain code: if cardiac etiology confirmed, replace R07.9 with appropriate I20-I25 code; if GERD-related, remove R07.9 as K21.0 captures the diagnosis; if anxiety-related, replace with F41.1 as primary."
+        }
+      ],
+      "completeness_score": 0.70,
+      "processing_time_ms": 925.8
+    },
+    "audit_trail": {
+      "case_id": "amb-002",
+      "timestamp": "2026-03-24T14:30:00",
+      "stages": [
+        {
+          "stage": "ingestion",
+          "processing_time_ms": 52.1,
+          "input_summary": "str",
+          "output_summary": "text, confidence=1.00",
+          "details": {},
+          "cot_traces": [],
+          "retrieval_logs": []
+        },
+        {
+          "stage": "ner",
+          "processing_time_ms": 378.9,
+          "input_summary": "3215 chars",
+          "output_summary": "10 entities",
+          "details": {
+            "diagnoses": 7,
+            "medications": 2,
+            "procedures": 0,
+            "total_entities": 10
+          },
+          "cot_traces": [],
+          "retrieval_logs": []
+        },
+        {
+          "stage": "rag",
+          "processing_time_ms": 1342.1,
+          "input_summary": "10 entities",
+          "output_summary": "principal=R07.9, 4 secondary",
+          "details": {},
+          "cot_traces": [],
+          "retrieval_logs": []
+        },
+        {
+          "stage": "cdi",
+          "processing_time_ms": 925.8,
+          "input_summary": "5 codes",
+          "output_summary": "1 gaps, 1 conflicts, 1 missed dx",
+          "details": {},
+          "cot_traces": [
+            "Step 1: R07.9 is chest pain unspecified. Step 2: Clinical note describes substernal pressure with left arm radiation. Step 3: R07.2 (precordial pain) or R07.89 (other chest pain) may be more specific. Step 4: If ACS suspected, I20.x or I21.x codes may apply after workup. Step 5: Current documentation supports more specific chest pain coding."
+          ],
+          "retrieval_logs": []
+        }
+      ],
+      "evidence_spans": {
+        "R07.9": [
+          "substernal chest pressure with left arm radiation",
+          "chest pain, rated 6-7/10, duration >4 hours"
+        ],
+        "R06.02": [
+          "Dyspnea on minimal exertion",
+          "shortness of breath concurrent with chest pain"
+        ],
+        "K21.0": [
+          "GERD - chronic, on omeprazole",
+          "current symptoms atypical for reflux"
+        ],
+        "F41.1": [
+          "Generalized anxiety disorder",
+          "may be contributing to symptoms"
+        ],
+        "E66.01": [
+          "Morbid obesity (BMI 41)",
+          "cardiovascular risk factor"
+        ]
+      }
+    }
+  },
+  "disambiguation_items": [
+    {
+      "item_id": "f1a2b3c4",
+      "category": "gap",
+      "title": "Chest Pain Specificity: R07.9 Too Vague",
+      "description": "Chest pain is coded as R07.9 (unspecified) but the clinical documentation describes substernal pressure with left arm radiation. More specific coding such as R07.89 (other chest pain) or R07.2 (precordial pain) is supported by the documentation. If ACS is confirmed after workup, an I20-I25 code should replace the symptom code.",
+      "suggested_action": "Specify chest pain type: consider R07.89 for documented substernal pressure with radiation, or update to cardiac diagnosis code after ED workup results",
+      "source_code": "R07.9",
+      "confidence": 0.86,
+      "status": "pending"
+    },
+    {
+      "item_id": "d5e6f7a8",
+      "category": "ambiguity",
+      "title": "GERD vs Cardiac Chest Pain Differentiation",
+      "description": "Patient has chronic GERD (K21.0) and is presenting with chest pain. The note documents that current symptoms are atypical for reflux (arm radiation, no antacid response, duration >4 hours). Coding both R07.9 and K21.0 creates ambiguity about the chest pain etiology. After cardiac workup, the chest pain code should be reassigned based on findings.",
+      "suggested_action": "After cardiac workup: if cardiac, replace R07.9 with specific cardiac code and keep K21.0 as separate comorbidity; if non-cardiac, clarify if GERD is the chest pain etiology",
+      "source_code": "R07.9,K21.0",
+      "confidence": 0.83,
+      "status": "pending"
+    },
+    {
+      "item_id": "b9c0d1e2",
+      "category": "missed_diagnosis",
+      "title": "Potential Missed Dx: Atherosclerotic Heart Disease (I25.10)",
+      "description": "Patient has multiple cardiovascular risk factors: family history of premature MI (father at 58), former 15 pack-year smoker, morbid obesity (BMI 41), and borderline hyperlipidemia. Current presentation with substernal chest pain and arm radiation is consistent with possible ischemic heart disease. If workup confirms CAD, I25.10 should be documented.",
+      "suggested_action": "If coronary artery disease is confirmed on workup, document I25.10 (atherosclerotic heart disease of native coronary artery) or more specific code based on findings",
+      "source_code": "I25.10",
+      "confidence": 0.74,
+      "status": "pending"
+    },
+    {
+      "item_id": "f3a4b5c6",
+      "category": "ambiguity",
+      "title": "Obesity BMI Documentation for E66.01",
+      "description": "Morbid obesity is coded as E66.01 with BMI 41 noted. ICD-10-CM guidelines require a separate BMI code (Z68.41 for BMI 40.0-44.9) to be reported alongside the obesity code. The BMI code is currently missing from the coding.",
+      "suggested_action": "Add Z68.41 (BMI 40.0-44.9) as an additional code to accompany E66.01 per ICD-10-CM guidelines",
+      "source_code": "E66.01",
+      "confidence": 0.90,
+      "status": "pending"
+    }
+  ],
+  "session_duration_seconds": 240
+}
