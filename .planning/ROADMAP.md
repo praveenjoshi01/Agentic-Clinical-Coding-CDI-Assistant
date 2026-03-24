@@ -16,7 +16,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 - [x] **Phase 2: CDI Intelligence Layer** - Knowledge graph reasoning, gap detection, and explainability
 - [ ] **Phase 3: Evaluation & Demo UI** - Quantitative validation suite and 5-page Streamlit demo
 - [ ] **Phase 4: Demo UI for the Whole App** - Polished 7-page Streamlit demo with interactive KG, evaluation charts, and QA bot
-- [ ] **Phase 5: Ambient Listening Mode** - Real-time session recording with auto-generated clinical notes, documentation gap detection, and coding disambiguation
+- [x] **Phase 5: Ambient Listening Mode** - Real-time session recording with auto-generated clinical notes, documentation gap detection, and coding disambiguation
 
 ## Phase Details
 
@@ -114,9 +114,9 @@ Plans:
 **Plans:** 3 plans
 
 Plans:
-- [ ] 05-01-PLAN.md — Ambient Pydantic schemas, backend module (transcription + note gen + pipeline), dependency setup
-- [ ] 05-02-PLAN.md — Pre-computed ambient demo encounters (2 scenarios) and regeneration script
-- [ ] 05-03-PLAN.md — Ambient Mode UI page (session lifecycle, dual-path, disambiguation) and app integration
+- [x] 05-01-PLAN.md — Ambient Pydantic schemas, backend module (transcription + note gen + pipeline), dependency setup
+- [x] 05-02-PLAN.md — Pre-computed ambient demo encounters (2 scenarios) and regeneration script
+- [x] 05-03-PLAN.md — Ambient Mode UI page (session lifecycle, dual-path, disambiguation) and app integration
 
 ## Progress
 
@@ -129,7 +129,7 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5
 | 2. CDI Intelligence Layer | 6/6 | ✓ Complete | 2026-03-18 |
 | 3. Evaluation & Demo UI | 0/TBD | Not started | - |
 | 4. Demo UI for the Whole App | 0/5 | Planned | - |
-| 5. Ambient Listening Mode | 0/3 | Planned | - |
+| 5. Ambient Listening Mode | 3/3 | ✓ Complete | 2026-03-24 |
 
 ---
 *Roadmap created: 2026-03-18*
@@ -142,3 +142,4 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5
 *Phase 2 complete: 2026-03-18 (6/6 plans, verification passed 5/5)*
 *Phase 4 planned: 2026-03-18 (5 plans across 3 waves)*
 *Phase 5 planned: 2026-03-24 (3 plans across 2 waves)*
+*Phase 5 complete: 2026-03-24 (3/3 plans, verification passed 6/6)*
