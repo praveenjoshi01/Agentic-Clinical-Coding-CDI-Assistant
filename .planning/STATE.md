@@ -5,23 +5,23 @@
 See: .planning/PROJECT.md (updated 2026-03-18)
 
 **Core value:** Every clinical note produces correctly sequenced ICD-10 codes with full explainability — from entity extraction through RAG retrieval through KG-based CDI gap detection — all running locally on OSS models.
-**Current focus:** Phase 5 complete. All planned phases delivered.
+**Current focus:** Phase 6 in progress. ClinIQ v2 OpenAI backend.
 
 ## Current Position
 
-Phase: 5 of 5 (Ambient Listening Mode)
-Plan: 3 of 3 in current phase
-Status: Plan 05-03 complete
-Last activity: 2026-03-24 — Completed 05-03-PLAN.md (Ambient Listening Mode UI page)
+Phase: 6 of 6 (ClinIQ v2 OpenAI Backend)
+Plan: 1 of 5 in current phase
+Status: Plan 06-01 complete
+Last activity: 2026-03-26 — Completed 06-01-PLAN.md (Package Foundation + Ingestion/NLU)
 
-Progress: [██████████] 100%
+Progress: [████████████████████░] 84%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 20
+- Total plans completed: 21
 - Average duration: 3.5 min
-- Total execution time: 1.11 hours
+- Total execution time: 1.18 hours
 
 **By Phase:**
 
@@ -31,9 +31,10 @@ Progress: [██████████] 100%
 | 02 | 6 | 14 min | 2.3 min |
 | 04 | 4 | 15 min | 3.75 min |
 | 05 | 3 | 11 min | 3.7 min |
+| 06 | 1 | 4 min | 4 min |
 
 **Recent Trend:**
-- Last 5 plans: 3 min, 2 min, 3 min, 5 min, 3 min
+- Last 5 plans: 2 min, 3 min, 5 min, 3 min, 4 min
 - Trend: Steady pace
 
 *Updated after each plan completion*
@@ -53,6 +54,7 @@ Progress: [██████████] 100%
 | Phase 05 P01 | 3 | 2 tasks | 4 files |
 | Phase 05 P02 | 5 | 2 tasks | 3 files |
 | Phase 05 P03 | 3 | 2 tasks | 2 files |
+| Phase 06 P01 | 4 | 2 tasks | 6 files |
 
 ## Accumulated Context
 
@@ -125,13 +127,18 @@ Recent decisions affecting current work:
 - 05-01: Simple string-based SOAP section parsing for LLM output robustness
 - 05-01: Raw transcript fallback as note text when LLM generation fails
 - 05-01: DisambiguationItem confidence sourced directly from CDI report item confidence values
-- 05-02: Handcrafted JSON over pipeline-generated for demo data (clinical realism for interviews)
+- 05-02: Handcrafted JSON over pipeline-generated for demo data (clinical realism)
 - 05-02: SOAP note (generated_note) as pipeline input for precompute regeneration script
 - 05-02: 9 disambiguation items across 2 encounters covering gap, missed_diagnosis, conflict, and ambiguity categories
 - 05-03: Session state stored as dicts (not Pydantic models) for Streamlit serialization safety
 - 05-03: st.fragment(run_every=1.0) for live session timer (avoids full page rerun)
 - 05-03: PipelineResult reconstructed from dict only when rendering Clinical Findings tab
 - 05-03: Category badge colors: gap=amber, missed_diagnosis=blue, conflict=red, ambiguity=orange
+- 06-01: Singleton OpenAIClient with runtime configure() + validate_key() pattern
+- 06-01: Reuse cliniq.models Pydantic schemas directly (no duplication)
+- 06-01: Post-hoc offset computation for NER entities (GPT-4o returns text only, offsets computed by string search)
+- 06-01: GPT-4o handles negation and qualifiers in single NER call (no separate detect_negation)
+- 06-01: Separate cache directory (~/.cache/cliniq_v2/) to avoid v1 conflicts
 
 ### Pending Todos
 
@@ -141,6 +148,7 @@ None yet.
 
 - Phase 4 added: demo UI for the whole app
 - Phase 5 added: Ambient Listening Mode – real-time session recording with auto-generated clinical notes, documentation gap detection, and coding disambiguation
+- Phase 6 added: ClinIQ v2 OpenAI backend – replace all local OSS models with OpenAI API calls
 
 ### Blockers/Concerns
 
@@ -148,11 +156,11 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-24
-Stopped at: Completed 05-03-PLAN.md
+Last session: 2026-03-26
+Stopped at: Completed 06-01-PLAN.md
 Resume file: None
 
 ---
 *State initialized: 2026-03-18*
-*Last updated: 2026-03-24 after completing Phase 5*
-*Next action: Phase 5 verified (6/6 passed). All milestone phases complete.*
+*Last updated: 2026-03-26 after completing 06-01*
+*Next action: Execute 06-02-PLAN.md (RAG coding module with OpenAI embeddings)*
