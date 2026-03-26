@@ -17,6 +17,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 - [ ] **Phase 3: Evaluation & Demo UI** - Quantitative validation suite and 5-page Streamlit demo
 - [ ] **Phase 4: Demo UI for the Whole App** - Polished 7-page Streamlit demo with interactive KG, evaluation charts, and QA bot
 - [x] **Phase 5: Ambient Listening Mode** - Real-time session recording with auto-generated clinical notes, documentation gap detection, and coding disambiguation
+- [ ] **Phase 6: ClinIQ v2 — OpenAI Backend** - Create cliniq_v2 package mirroring all capabilities with OpenAI models replacing local OSS models, plus API key configuration at UI startup
 
 ## Phase Details
 
@@ -70,7 +71,7 @@ Plans:
   1. User runs automated eval suite and sees metrics table showing all targets met (NER F1 >= 0.80, Top-3 >= 0.85, MRR >= 0.75)
   2. User navigates 5-page Streamlit app (Pipeline Runner, Eval Dashboard, KG Viewer, Audit Trail, QA Bot) with persistent session state
   3. User clicks node in interactive PyVis knowledge graph and sees code description, evidence text, and CDI query
-  4. User asks QA Bot 5 standard interview questions and receives correct answers via RAG over project docs
+  4. User asks QA Bot 5 standard clinical questions and receives correct answers via RAG over project docs
   5. All 20 synthetic test cases pass validation (100% schema compliance, FHIR parse accuracy >= 95%)
 **Plans**: TBD (split across evaluation harness and UI pages)
 
@@ -80,7 +81,7 @@ Plans:
 - [ ] 03-03: TBD during phase planning
 
 ### Phase 4: Demo UI for the Whole App
-**Goal**: Interview-ready 7-page Streamlit demo showcasing the entire ClinIQ pipeline with interactive visualizations, pre-computed demo results, and a QA chatbot
+**Goal**: Production-ready 7-page Streamlit application showcasing the entire ClinIQ pipeline with interactive visualizations, pre-computed demo results, and a QA chatbot
 **Depends on**: Phases 1 & 2 (requires complete pipeline backend; builds UI from scratch)
 **Requirements**: UI-01, UI-02, UI-03, UI-04, UI-05, UI-06, UI-07, VIZ-01, VIZ-02, VIZ-03, VIZ-04
 **Success Criteria** (what must be TRUE):
@@ -89,7 +90,7 @@ Plans:
   3. User views interactive PyVis knowledge graph with green/amber/red nodes and click-to-see-details
   4. User expands audit trail stages and sees per-stage timing, CoT traces, and evidence spans
   5. User views evaluation radar chart and per-module bar charts with pass/fail badges
-  6. User asks QA Bot pre-seeded interview questions and gets correct, instant answers
+  6. User asks QA Bot pre-seeded clinical questions and gets correct, instant answers
   7. Session state persists across all page navigations
 **Plans:** 5 plans
 
@@ -118,10 +119,29 @@ Plans:
 - [x] 05-02-PLAN.md — Pre-computed ambient demo encounters (2 scenarios) and regeneration script
 - [x] 05-03-PLAN.md — Ambient Mode UI page (session lifecycle, dual-path, disambiguation) and app integration
 
+### Phase 6: ClinIQ v2 — OpenAI Backend
+**Goal**: Create cliniq_v2 package that mirrors all ClinIQ capabilities but replaces local OSS models (Qwen, bge-small, SmolVLM, d4data NER, cross-encoder, whisper) with OpenAI API calls (GPT-4o, text-embedding-3-small, Whisper API), plus UI-level API key configuration at startup
+**Depends on**: Phase 5 (requires complete pipeline and UI as reference implementation)
+**Requirements**: OAI-01, OAI-02, OAI-03, OAI-04, OAI-05, OAI-06
+**Success Criteria** (what must be TRUE):
+  1. cliniq_v2 folder exists with all pipeline modules (ingestion, NER, RAG coding, CDI, explainability, ambient) using OpenAI API instead of local models
+  2. UI prompts for OpenAI API key on startup and validates it before allowing access to any page
+  3. All existing UI pages work with cliniq_v2 backend (pipeline runner, KG viewer, audit trail, eval dashboard, QA bot, ambient mode)
+  4. No local model downloads required — all inference via OpenAI API (GPT-4o for reasoning/NER/CDI, text-embedding-3-small for embeddings, Whisper API for audio)
+  5. Original cliniq package remains unchanged and functional (backward compatible)
+**Plans:** 5 plans
+
+Plans:
+- [ ] 06-01-PLAN.md — cliniq_v2 package foundation (config, api_client) + m1_ingest + m2_nlu
+- [ ] 06-02-PLAN.md — RAG infrastructure (FAISS index builder, retriever) + m3_rag_coding
+- [ ] 06-03-PLAN.md — m4_cdi (GPT-4o queries) + m5_explainability (re-export) + m6_ambient (Whisper API)
+- [ ] 06-04-PLAN.md — Pipeline orchestrator + evaluation/llm_judge (GPT-4o judge)
+- [ ] 06-05-PLAN.md — UI API key gate + backend selector + page import updates
+
 ## Progress
 
 **Execution Order:**
-Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5
+Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
@@ -130,6 +150,7 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5
 | 3. Evaluation & Demo UI | 0/TBD | Not started | - |
 | 4. Demo UI for the Whole App | 0/5 | Planned | - |
 | 5. Ambient Listening Mode | 3/3 | ✓ Complete | 2026-03-24 |
+| 6. ClinIQ v2 — OpenAI Backend | 0/5 | Planned | - |
 
 ---
 *Roadmap created: 2026-03-18*
