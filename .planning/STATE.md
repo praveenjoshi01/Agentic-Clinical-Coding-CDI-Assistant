@@ -10,18 +10,18 @@ See: .planning/PROJECT.md (updated 2026-03-18)
 ## Current Position
 
 Phase: 6 of 6 (ClinIQ v2 OpenAI Backend)
-Plan: 1 of 5 in current phase
-Status: Plan 06-01 complete
-Last activity: 2026-03-26 — Completed 06-01-PLAN.md (Package Foundation + Ingestion/NLU)
+Plan: 2 of 5 in current phase
+Status: Plan 06-02 complete
+Last activity: 2026-03-26 — Completed 06-02-PLAN.md (RAG Infrastructure + Coding Module)
 
-Progress: [████████████████████░] 84%
+Progress: [█████████████████████] 88%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 21
+- Total plans completed: 22
 - Average duration: 3.5 min
-- Total execution time: 1.18 hours
+- Total execution time: 1.25 hours
 
 **By Phase:**
 
@@ -31,10 +31,10 @@ Progress: [████████████████████░] 84%
 | 02 | 6 | 14 min | 2.3 min |
 | 04 | 4 | 15 min | 3.75 min |
 | 05 | 3 | 11 min | 3.7 min |
-| 06 | 1 | 4 min | 4 min |
+| 06 | 2 | 8 min | 4 min |
 
 **Recent Trend:**
-- Last 5 plans: 2 min, 3 min, 5 min, 3 min, 4 min
+- Last 5 plans: 3 min, 5 min, 3 min, 4 min, 4 min
 - Trend: Steady pace
 
 *Updated after each plan completion*
@@ -55,6 +55,7 @@ Progress: [████████████████████░] 84%
 | Phase 05 P02 | 5 | 2 tasks | 3 files |
 | Phase 05 P03 | 3 | 2 tasks | 2 files |
 | Phase 06 P01 | 4 | 2 tasks | 6 files |
+| Phase 06 P02 | 4 | 2 tasks | 4 files |
 
 ## Accumulated Context
 
@@ -139,6 +140,11 @@ Recent decisions affecting current work:
 - 06-01: Post-hoc offset computation for NER entities (GPT-4o returns text only, offsets computed by string search)
 - 06-01: GPT-4o handles negation and qualifiers in single NER call (no separate detect_negation)
 - 06-01: Separate cache directory (~/.cache/cliniq_v2/) to avoid v1 conflicts
+- 06-02: OpenAI embeddings API in batches of 2048 for FAISS index building (1536d)
+- 06-02: All 20 FAISS candidates sent to GPT-4o for combined reranking + selection + reasoning (eliminates cross-encoder)
+- 06-02: Direct GPT-4o confidence (no blending with reranker score)
+- 06-02: sequence_codes reused from cliniq v1 via import (model-agnostic, pure rule-based)
+- 06-02: response_format json_object for structured output (no retry logic needed)
 
 ### Pending Todos
 
@@ -157,10 +163,10 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-03-26
-Stopped at: Completed 06-01-PLAN.md
+Stopped at: Completed 06-02-PLAN.md
 Resume file: None
 
 ---
 *State initialized: 2026-03-18*
-*Last updated: 2026-03-26 after completing 06-01*
-*Next action: Execute 06-02-PLAN.md (RAG coding module with OpenAI embeddings)*
+*Last updated: 2026-03-26 after completing 06-02*
+*Next action: Execute 06-03-PLAN.md (CDI + Explainability + Ambient modules)*
