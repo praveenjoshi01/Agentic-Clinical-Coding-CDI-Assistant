@@ -6,7 +6,7 @@ via GPT-4o, and full ambient pipeline integration with cliniq_v2 CDI analysis.
 
 Replaces:
 - faster-whisper local model with OpenAI Whisper API (whisper-1)
-- Qwen LLM with GPT-4o for SOAP note generation
+- Local LLM with GPT-4o for SOAP note generation
 - cliniq.pipeline with cliniq_v2.pipeline for CDI analysis
 
 Reuses:

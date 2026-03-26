@@ -5,7 +5,7 @@ Orchestrates KG queries and GPT-4o-based physician query generation to produce
 CDIReports with documentation gaps, code conflicts, missed diagnoses,
 and completeness scoring.
 
-Replaces Qwen LLM with OpenAI GPT-4o for physician query generation.
+Uses OpenAI GPT-4o for physician query generation instead of local models.
 All KG infrastructure, Pydantic models, and helper functions are reused
 from cliniq (model-agnostic).
 
@@ -64,7 +64,7 @@ def _get_kg() -> nx.DiGraph:
 
 
 # ---------------------------------------------------------------------------
-# Physician query generation (CDI-02) -- GPT-4o replaces Qwen
+# Physician query generation (CDI-02) -- GPT-4o via OpenAI API
 # ---------------------------------------------------------------------------
 
 
