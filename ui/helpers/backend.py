@@ -14,6 +14,11 @@ def is_v2_backend() -> bool:
     return bool(st.session_state.get("openai_api_key"))
 
 
+def is_pinecone_backend() -> bool:
+    """Check if Pinecone vector DB is active (API key configured)."""
+    return bool(st.session_state.get("pinecone_api_key"))
+
+
 def get_pipeline_module():
     """Return the appropriate pipeline module (cliniq or cliniq_v2)."""
     if is_v2_backend():

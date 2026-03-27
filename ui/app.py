@@ -20,6 +20,8 @@ if "openai_api_key" not in st.session_state:
     st.session_state["openai_api_key"] = None
 if "skip_api_key" not in st.session_state:
     st.session_state["skip_api_key"] = False
+if "pinecone_api_key" not in st.session_state:
+    st.session_state["pinecone_api_key"] = None
 
 # -- API Key Gate -----------------------------------------------------------
 # Block page rendering until the user provides an OpenAI API key or
@@ -39,6 +41,14 @@ if not st.session_state.get("openai_api_key") and not st.session_state.get("skip
         placeholder="sk-...",
     )
 
+    pinecone_key_input = st.text_input(
+        "Pinecone API Key (optional)",
+        type="password",
+        placeholder="pcsk_...",
+        help="Optional: enables cloud-hosted vector search instead of local FAISS index. "
+             "Get a free key at https://app.pinecone.io",
+    )
+
     col_connect, col_skip = st.columns(2)
     with col_connect:
         if st.button("Connect with OpenAI", type="primary", use_container_width=True):
@@ -51,6 +61,18 @@ if not st.session_state.get("openai_api_key") and not st.session_state.get("skip
                     client.configure(api_key_input.strip())
                     if client.validate_key():
                         st.session_state["openai_api_key"] = api_key_input.strip()
+                        # Handle optional Pinecone key
+                        if pinecone_key_input and pinecone_key_input.strip():
+                            try:
+                                from cliniq_v2.pinecone_client import PineconeClient
+                                pc = PineconeClient()
+                                pc.configure(pinecone_key_input.strip())
+                                if pc.validate_key():
+                                    st.session_state["pinecone_api_key"] = pinecone_key_input.strip()
+                                else:
+                                    st.warning("Pinecone API key invalid. Continuing with FAISS.")
+                            except (ImportError, Exception) as exc:
+                                st.warning(f"Pinecone setup skipped: {exc}. Continuing with FAISS.")
                         st.rerun()
                     else:
                         st.error("Invalid API key. Please check your key and try again.")
@@ -77,6 +99,19 @@ if st.session_state.get("openai_api_key"):
             _ = client.client  # test if already configured
         except RuntimeError:
             client.configure(st.session_state["openai_api_key"])
+    except ImportError:
+        pass
+
+# -- If we have a Pinecone API key, ensure PineconeClient is configured ----
+if st.session_state.get("pinecone_api_key"):
+    try:
+        from cliniq_v2.pinecone_client import PineconeClient
+
+        pc = PineconeClient()
+        try:
+            _ = pc.client  # test if already configured
+        except RuntimeError:
+            pc.configure(st.session_state["pinecone_api_key"])
     except ImportError:
         pass
 
@@ -177,7 +212,10 @@ if ambient_state != "idle" and ambient_session_id:
 st.sidebar.markdown("---")
 if st.session_state.get("openai_api_key"):
     st.sidebar.markdown("**ClinIQ v2.0.0 | OpenAI Backend**")
-    st.sidebar.caption("Powered by GPT-4o")
+    if st.session_state.get("pinecone_api_key"):
+        st.sidebar.caption("Powered by GPT-4o | Vector DB: Pinecone")
+    else:
+        st.sidebar.caption("Powered by GPT-4o | Vector DB: FAISS (local)")
 else:
     st.sidebar.markdown("**ClinIQ v0.1.0 | Local Models**")
     st.sidebar.caption("Powered by OSS Models")
