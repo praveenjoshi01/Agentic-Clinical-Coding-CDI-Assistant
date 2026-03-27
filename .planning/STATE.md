@@ -5,23 +5,23 @@
 See: .planning/PROJECT.md (updated 2026-03-18)
 
 **Core value:** Every clinical note produces correctly sequenced ICD-10 codes with full explainability — from entity extraction through RAG retrieval through KG-based CDI gap detection — all running locally on OSS models.
-**Current focus:** Phase 7 in progress. Optional Pinecone vector DB integration.
+**Current focus:** All 7 phases complete. Optional Pinecone vector DB integration finished.
 
 ## Current Position
 
 Phase: 7 of 7 (Optional Pinecone Vector DB)
-Plan: 1 of 2 in current phase
-Status: Executing Phase 07 — plan 01 complete
-Last activity: 2026-03-27 — Completed 07-01-PLAN.md (Pinecone Retriever and Factory Wiring)
+Plan: 2 of 2 in current phase
+Status: All phases complete
+Last activity: 2026-03-27 — Completed 07-02-PLAN.md (Pinecone Population Script and UI Integration)
 
-Progress: [████████████████████████░] 96%
+Progress: [█████████████████████████] 100%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 27
-- Average duration: 3.2 min
-- Total execution time: 1.46 hours
+- Total plans completed: 28
+- Average duration: 3.1 min
+- Total execution time: 1.49 hours
 
 **By Phase:**
 
@@ -32,10 +32,10 @@ Progress: [███████████████████████
 | 04 | 4 | 15 min | 3.75 min |
 | 05 | 3 | 11 min | 3.7 min |
 | 06 | 6 | 19 min | 3.2 min |
-| 07 | 1 | 2 min | 2 min |
+| 07 | 2 | 4 min | 2 min |
 
 **Recent Trend:**
-- Last 5 plans: 5 min, 3 min, 2 min, 1 min, 2 min
+- Last 5 plans: 3 min, 2 min, 1 min, 2 min, 2 min
 - Trend: Consistently fast execution
 
 *Updated after each plan completion*
@@ -62,6 +62,7 @@ Progress: [███████████████████████
 | Phase 06 P05 | 2 | 2 tasks | 6 files |
 | Phase 06 P06 | 1 | 1 tasks | 1 files |
 | Phase 07 P01 | 2 | 2 tasks | 8 files |
+| Phase 07 P02 | 2 | 2 tasks | 3 files |
 
 ## Accumulated Context
 
@@ -170,6 +171,10 @@ Recent decisions affecting current work:
 - 07-01: Factory catches RuntimeError and ImportError to fall back to FAISS transparently
 - 07-01: PineconeRetriever uses lazy index connection matching FAISS lazy-load pattern
 - 07-01: Pinecone import wrapped in try/except at module level for graceful missing-package handling
+- 07-02: Batch size 200 for embedding and upsert (manageable for 265 ICD-10 codes)
+- 07-02: Pinecone key validation in Connect button handler before st.rerun() to show warning on same page
+- 07-02: Post-gate PineconeClient configuration mirrors OpenAIClient pattern (singleton, idempotent)
+- 07-02: Sidebar caption extended (not replaced) to show vector DB backend alongside model info
 
 ### Pending Todos
 
@@ -189,10 +194,10 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-03-27
-Stopped at: Completed 07-01-PLAN.md (Pinecone Retriever and Factory Wiring)
+Stopped at: Completed 07-02-PLAN.md (Pinecone Population Script and UI Integration) -- ALL PHASES COMPLETE
 Resume file: None
 
 ---
 *State initialized: 2026-03-18*
-*Last updated: 2026-03-27 after completing 07-01*
-*Next action: Execute 07-02-PLAN.md (tests and population script)*
+*Last updated: 2026-03-27 after completing 07-02*
+*All 28 plans across 7 phases executed successfully*
