@@ -129,14 +129,15 @@ Plans:
   3. All existing UI pages work with cliniq_v2 backend (pipeline runner, KG viewer, audit trail, eval dashboard, QA bot, ambient mode)
   4. No local model downloads required — all inference via OpenAI API (GPT-4o for reasoning/NER/CDI, text-embedding-3-small for embeddings, Whisper API for audio)
   5. Original cliniq package remains unchanged and functional (backward compatible)
-**Plans:** 5 plans
+**Plans:** 6 plans
 
 Plans:
-- [ ] 06-01-PLAN.md — cliniq_v2 package foundation (config, api_client) + m1_ingest + m2_nlu
-- [ ] 06-02-PLAN.md — RAG infrastructure (FAISS index builder, retriever) + m3_rag_coding
-- [ ] 06-03-PLAN.md — m4_cdi (GPT-4o queries) + m5_explainability (re-export) + m6_ambient (Whisper API)
-- [ ] 06-04-PLAN.md — Pipeline orchestrator + evaluation/llm_judge (GPT-4o judge)
+- [x] 06-01-PLAN.md — cliniq_v2 package foundation (config, api_client) + m1_ingest + m2_nlu
+- [x] 06-02-PLAN.md — RAG infrastructure (FAISS index builder, retriever) + m3_rag_coding
+- [x] 06-03-PLAN.md — m4_cdi (GPT-4o queries) + m5_explainability (re-export) + m6_ambient (Whisper API)
+- [x] 06-04-PLAN.md — Pipeline orchestrator + evaluation/llm_judge (GPT-4o judge)
 - [ ] 06-05-PLAN.md — UI API key gate + backend selector + page import updates
+- [ ] 06-06-PLAN.md — v2 FAISS index build script + backend-aware pipeline execution components
 
 ## Progress
 
@@ -150,7 +151,7 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6
 | 3. Evaluation & Demo UI | 0/TBD | Not started | - |
 | 4. Demo UI for the Whole App | 0/5 | Planned | - |
 | 5. Ambient Listening Mode | 3/3 | ✓ Complete | 2026-03-24 |
-| 6. ClinIQ v2 — OpenAI Backend | 0/5 | Planned | - |
+| 6. ClinIQ v2 — OpenAI Backend | 4/6 | In progress | - |
 
 ---
 *Roadmap created: 2026-03-18*
@@ -164,3 +165,4 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6
 *Phase 4 planned: 2026-03-18 (5 plans across 3 waves)*
 *Phase 5 planned: 2026-03-24 (3 plans across 2 waves)*
 *Phase 5 complete: 2026-03-24 (3/3 plans, verification passed 6/6)*
+*Phase 6 planned: 2026-03-27 (6 plans across 4 waves, plan 06-06 added for FAISS build script + backend-aware execution)*
