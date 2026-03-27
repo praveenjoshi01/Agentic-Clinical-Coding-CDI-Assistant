@@ -15,7 +15,7 @@ from typing import Optional
 
 from cliniq_v2.config import RETRIEVAL_TOP_K
 from cliniq.models import ClinicalEntity, NLUResult, CodeSuggestion, CodingResult
-from cliniq_v2.rag import FAISSRetriever
+from cliniq_v2.rag import get_retriever
 
 # Reuse sequence_codes from cliniq v1 (model-agnostic, pure rule-based)
 from cliniq.modules.m3_rag_coding import sequence_codes
@@ -50,16 +50,16 @@ def build_coding_query(entity: ClinicalEntity, context_window: str = "") -> str:
 
 
 def retrieve_candidates(
-    query: str, retriever: FAISSRetriever
+    query: str, retriever
 ) -> list[dict]:
     """
-    Single-stage retrieval: FAISS with OpenAI embeddings (no reranking).
+    Single-stage retrieval via configured retriever (no reranking).
 
     All 20 candidates go directly to GPT-4o for selection.
 
     Args:
         query: The clinical search query.
-        retriever: FAISSRetriever instance using OpenAI embeddings.
+        retriever: Retriever instance (FAISSRetriever or PineconeRetriever).
 
     Returns:
         List of candidate dicts with code, description, score, rank.
@@ -247,9 +247,9 @@ def code_entities(
             },
         )
 
-    # Initialize retrieval infrastructure (FAISSRetriever only, no CrossEncoderReranker)
-    logger.info("Initializing FAISSRetriever (OpenAI embeddings)")
-    retriever = FAISSRetriever()
+    # Initialize retrieval infrastructure via factory (Pinecone if configured, else FAISS)
+    logger.info("Initializing retriever")
+    retriever = get_retriever()
 
     # Ensure FAISS index is built
     retriever.ensure_index_built()
