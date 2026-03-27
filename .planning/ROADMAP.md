@@ -152,6 +152,7 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6
 | 4. Demo UI for the Whole App | 0/5 | Planned | - |
 | 5. Ambient Listening Mode | 3/3 | ✓ Complete | 2026-03-24 |
 | 6. ClinIQ v2 — OpenAI Backend | 6/6 | ✓ Complete | 2026-03-27 |
+| 7. Optional Pinecone Vector DB | 2/2 | ✓ Complete | 2026-03-27 |
 
 ### Phase 7: Optional Pinecone vector DB instead of FAISS when API key provided
 
@@ -160,8 +161,8 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6
 **Plans:** 2 plans
 
 Plans:
-- [ ] 07-01-PLAN.md — Retriever abstraction (BaseRetriever Protocol), PineconeClient singleton, PineconeRetriever, factory, m3_rag_coding wiring
-- [ ] 07-02-PLAN.md — Pinecone index population script, UI API key gate with optional Pinecone field, sidebar indicator
+- [x] 07-01-PLAN.md — Retriever abstraction (BaseRetriever Protocol), PineconeClient singleton, PineconeRetriever, factory, m3_rag_coding wiring
+- [x] 07-02-PLAN.md — Pinecone index population script, UI API key gate with optional Pinecone field, sidebar indicator
 
 ---
 *Roadmap created: 2026-03-18*
@@ -179,3 +180,4 @@ Plans:
 *Phase 6 revised: 2026-03-27 (moved FAISS index check from 06-06 to 06-05, eliminated file overlap)*
 *Phase 6 complete: 2026-03-27 (6/6 plans, verification passed 31/31)*
 *Phase 7 planned: 2026-03-27 (2 plans across 2 waves)*
+*Phase 7 complete: 2026-03-27 (2/2 plans, verification passed 5/5)*
