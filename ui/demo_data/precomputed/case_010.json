@@ -1,0 +1,249 @@
+{
+  "document": {
+    "metadata": {
+      "patient_id": "demo-patient-010",
+      "encounter_id": "demo-encounter-010",
+      "source_type": "text",
+      "timestamp": "2026-03-20T10:00:00"
+    },
+    "raw_narrative": "Chief Complaint: Heart failure and atrial fibrillation management.\n\nHistory of Present Illness: 75-year-old male with congestive heart failure (LVEF 30%) and chronic atrial fibrillation presents for routine follow-up. Patient reports mild dyspnea on exertion, controlled with current diuretic regimen. No orthopnea. Denies chest pain. Weight stable. Patient compliant with furosemide 40mg daily and carvedilol 25mg BID. On apixaban for anticoagulation.\n\nPhysical Exam: Cardiovascular: irregular rhythm, no murmurs. Lungs: clear to auscultation. Extremities: trace bilateral lower extremity edema.\n\nAssessment and Plan:\n1. Congestive heart failure, chronic systolic (I50.22) - compensated\n2. Chronic atrial fibrillation (I48.20) - rate controlled\n3. Continue current medications\n4. Low sodium diet counseling\n5. Daily weights monitoring\n6. Follow up in 3 months",
+    "structured_facts": [],
+    "modality_confidence": 1.0,
+    "extraction_trace": "Direct text input"
+  },
+  "nlu_result": {
+    "entities": [
+      {
+        "text": "congestive heart failure",
+        "entity_type": "diagnosis",
+        "start_char": 102,
+        "end_char": 126,
+        "confidence": 0.96,
+        "negated": false,
+        "qualifiers": ["chronic systolic"]
+      },
+      {
+        "text": "atrial fibrillation",
+        "entity_type": "diagnosis",
+        "start_char": 149,
+        "end_char": 168,
+        "confidence": 0.97,
+        "negated": false,
+        "qualifiers": ["chronic"]
+      },
+      {
+        "text": "dyspnea on exertion",
+        "entity_type": "diagnosis",
+        "start_char": 224,
+        "end_char": 243,
+        "confidence": 0.91,
+        "negated": false,
+        "qualifiers": ["mild"]
+      },
+      {
+        "text": "orthopnea",
+        "entity_type": "diagnosis",
+        "start_char": 292,
+        "end_char": 301,
+        "confidence": 0.90,
+        "negated": true,
+        "qualifiers": []
+      },
+      {
+        "text": "chest pain",
+        "entity_type": "diagnosis",
+        "start_char": 310,
+        "end_char": 320,
+        "confidence": 0.93,
+        "negated": true,
+        "qualifiers": []
+      },
+      {
+        "text": "furosemide",
+        "entity_type": "medication",
+        "start_char": 367,
+        "end_char": 377,
+        "confidence": 0.98,
+        "negated": false,
+        "qualifiers": ["40mg daily"]
+      },
+      {
+        "text": "carvedilol",
+        "entity_type": "medication",
+        "start_char": 392,
+        "end_char": 402,
+        "confidence": 0.98,
+        "negated": false,
+        "qualifiers": ["25mg BID"]
+      },
+      {
+        "text": "apixaban",
+        "entity_type": "medication",
+        "start_char": 410,
+        "end_char": 418,
+        "confidence": 0.97,
+        "negated": false,
+        "qualifiers": ["anticoagulation"]
+      },
+      {
+        "text": "edema",
+        "entity_type": "diagnosis",
+        "start_char": 535,
+        "end_char": 540,
+        "confidence": 0.88,
+        "negated": false,
+        "qualifiers": ["trace", "bilateral lower extremity"]
+      },
+      {
+        "text": "irregular rhythm",
+        "entity_type": "diagnosis",
+        "start_char": 470,
+        "end_char": 486,
+        "confidence": 0.85,
+        "negated": false,
+        "qualifiers": []
+      }
+    ],
+    "processing_time_ms": 387.2
+  },
+  "coding_result": {
+    "principal_diagnosis": {
+      "icd10_code": "I50.22",
+      "description": "Chronic systolic (congestive) heart failure",
+      "confidence": 0.95,
+      "evidence_text": "congestive heart failure (LVEF 30%) ... chronic systolic (I50.22) - compensated",
+      "reasoning": "Patient has documented chronic systolic heart failure with LVEF 30%, indicating reduced ejection fraction. I50.22 is specific to chronic systolic CHF.",
+      "needs_specificity": false,
+      "alternatives": [
+        {"code": "I50.20", "description": "Unspecified systolic heart failure", "confidence": 0.75}
+      ]
+    },
+    "secondary_codes": [
+      {
+        "icd10_code": "I48.20",
+        "description": "Chronic atrial fibrillation, unspecified",
+        "confidence": 0.94,
+        "evidence_text": "chronic atrial fibrillation ... rate controlled",
+        "reasoning": "Documented chronic atrial fibrillation managed with rate control strategy. I48.20 codes chronic AFib without further paroxysmal/persistent specification.",
+        "needs_specificity": true,
+        "alternatives": [
+          {"code": "I48.21", "description": "Permanent atrial fibrillation", "confidence": 0.60}
+        ]
+      },
+      {
+        "icd10_code": "R06.09",
+        "description": "Other forms of dyspnea",
+        "confidence": 0.82,
+        "evidence_text": "mild dyspnea on exertion",
+        "reasoning": "Patient reports mild DOE as a symptom of underlying CHF. Coded separately as an active symptom under management.",
+        "needs_specificity": false,
+        "alternatives": []
+      }
+    ],
+    "complication_codes": [],
+    "sequencing_rationale": "I50.22 (chronic systolic CHF) is sequenced as principal diagnosis as the primary condition driving the encounter and treatment plan. I48.20 (chronic AFib) is a significant comorbidity under concurrent management. R06.09 (dyspnea) is a symptom of the CHF.",
+    "retrieval_stats": {
+      "total_retrieval_time_ms": 156.7,
+      "candidates_retrieved": 18,
+      "candidates_reranked": 7
+    }
+  },
+  "processing_time_ms": 1532.6,
+  "errors": [],
+  "cdi_report": {
+    "documentation_gaps": [
+      {
+        "code": "I50.22",
+        "description": "Heart failure NYHA class not documented",
+        "missing_qualifier": "NYHA functional class",
+        "physician_query": "The patient has chronic systolic heart failure with LVEF 30% and mild dyspnea on exertion. Can you specify the NYHA functional class (I-IV) for this patient?",
+        "evidence_text": "congestive heart failure (LVEF 30%) ... mild dyspnea on exertion",
+        "confidence": 0.91,
+        "cot_trace": "Step 1: I50.22 codes chronic systolic CHF. Step 2: NYHA class affects severity coding and reimbursement. Step 3: LVEF 30% + mild DOE suggests Class II but not documented. Step 4: Query physician for explicit NYHA classification."
+      },
+      {
+        "code": "I48.20",
+        "description": "Atrial fibrillation type not fully specified",
+        "missing_qualifier": "paroxysmal vs persistent vs permanent",
+        "physician_query": "The atrial fibrillation is documented as 'chronic.' Can you specify if this is persistent or permanent atrial fibrillation for more precise coding?",
+        "evidence_text": "chronic atrial fibrillation (I48.20) - rate controlled",
+        "confidence": 0.85,
+        "cot_trace": "Step 1: I48.20 is 'chronic atrial fibrillation, unspecified.' Step 2: ICD-10 has specific codes for persistent (I48.19) and permanent (I48.21). Step 3: Rate control strategy may suggest permanent AFib. Step 4: Clarification needed."
+      }
+    ],
+    "missed_diagnoses": [
+      {
+        "suggested_code": "Z79.01",
+        "description": "Long-term (current) use of anticoagulants",
+        "co_coded_with": "I48.20",
+        "co_occurrence_weight": 0.85,
+        "evidence_text": "On apixaban for anticoagulation. Patients with chronic AFib on anticoagulants should have Z79.01 coded."
+      }
+    ],
+    "code_conflicts": [],
+    "completeness_score": 0.80,
+    "processing_time_ms": 248.9
+  },
+  "audit_trail": {
+    "case_id": "demo-010",
+    "timestamp": "2026-03-20T10:00:00",
+    "stages": [
+      {
+        "stage": "ingestion",
+        "processing_time_ms": 8.7,
+        "input_summary": "str",
+        "output_summary": "text, confidence=1.00",
+        "details": {},
+        "cot_traces": [],
+        "retrieval_logs": []
+      },
+      {
+        "stage": "ner",
+        "processing_time_ms": 387.2,
+        "input_summary": "712 chars",
+        "output_summary": "10 entities",
+        "details": {
+          "diagnoses": 6,
+          "procedures": 0,
+          "total_entities": 10
+        },
+        "cot_traces": [],
+        "retrieval_logs": []
+      },
+      {
+        "stage": "rag",
+        "processing_time_ms": 156.7,
+        "input_summary": "10 entities",
+        "output_summary": "principal=I50.22, 2 secondary",
+        "details": {},
+        "cot_traces": [],
+        "retrieval_logs": []
+      },
+      {
+        "stage": "cdi",
+        "processing_time_ms": 248.9,
+        "input_summary": "3 codes",
+        "output_summary": "2 gaps, 0 conflicts, 1 missed dx",
+        "details": {},
+        "cot_traces": [
+          "Step 1: I50.22 codes chronic systolic CHF. Step 2: NYHA class affects severity coding and reimbursement. Step 3: LVEF 30% + mild DOE suggests Class II but not documented. Step 4: Query physician for explicit NYHA classification.",
+          "Step 1: I48.20 is 'chronic atrial fibrillation, unspecified.' Step 2: ICD-10 has specific codes for persistent (I48.19) and permanent (I48.21). Step 3: Rate control strategy may suggest permanent AFib. Step 4: Clarification needed."
+        ],
+        "retrieval_logs": []
+      }
+    ],
+    "evidence_spans": {
+      "I50.22": [
+        "congestive heart failure (LVEF 30%)",
+        "Congestive heart failure, chronic systolic (I50.22) - compensated"
+      ],
+      "I48.20": [
+        "chronic atrial fibrillation",
+        "Chronic atrial fibrillation (I48.20) - rate controlled"
+      ],
+      "R06.09": [
+        "mild dyspnea on exertion"
+      ]
+    }
+  }
+}

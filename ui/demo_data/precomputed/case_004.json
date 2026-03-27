@@ -1,0 +1,198 @@
+{
+  "document": {
+    "metadata": {
+      "patient_id": "demo-patient-004",
+      "encounter_id": "demo-encounter-004",
+      "source_type": "text",
+      "timestamp": "2026-03-20T10:00:00"
+    },
+    "raw_narrative": "Chief Complaint: Follow-up for chronic kidney disease and hypertension.\n\nHistory of Present Illness: Patient is a 68-year-old male with stage 3 chronic kidney disease (eGFR 45 mL/min/1.73m\u00b2) and hypertension. He reports good blood pressure control on current medications (lisinopril 20mg daily, amlodipine 5mg daily). Denies chest pain, denies shortness of breath. No edema noted. Patient reports compliance with low-sodium diet and medication regimen.\n\nAssessment and Plan:\n1. Chronic kidney disease, stage 3 (N18.3) - stable, continue current management\n2. Essential hypertension (I10) - well controlled, continue medications\n3. Follow up in 3 months with repeat labs (BMP, eGFR)",
+    "structured_facts": [],
+    "modality_confidence": 1.0,
+    "extraction_trace": "Direct text input"
+  },
+  "nlu_result": {
+    "entities": [
+      {
+        "text": "chronic kidney disease",
+        "entity_type": "diagnosis",
+        "start_char": 48,
+        "end_char": 70,
+        "confidence": 0.95,
+        "negated": false,
+        "qualifiers": ["chronic", "stage 3"]
+      },
+      {
+        "text": "hypertension",
+        "entity_type": "diagnosis",
+        "start_char": 75,
+        "end_char": 87,
+        "confidence": 0.97,
+        "negated": false,
+        "qualifiers": ["essential"]
+      },
+      {
+        "text": "lisinopril",
+        "entity_type": "medication",
+        "start_char": 253,
+        "end_char": 263,
+        "confidence": 0.98,
+        "negated": false,
+        "qualifiers": ["20mg daily"]
+      },
+      {
+        "text": "amlodipine",
+        "entity_type": "medication",
+        "start_char": 276,
+        "end_char": 286,
+        "confidence": 0.98,
+        "negated": false,
+        "qualifiers": ["5mg daily"]
+      },
+      {
+        "text": "chest pain",
+        "entity_type": "diagnosis",
+        "start_char": 307,
+        "end_char": 317,
+        "confidence": 0.92,
+        "negated": true,
+        "qualifiers": []
+      },
+      {
+        "text": "shortness of breath",
+        "entity_type": "diagnosis",
+        "start_char": 326,
+        "end_char": 345,
+        "confidence": 0.91,
+        "negated": true,
+        "qualifiers": []
+      },
+      {
+        "text": "edema",
+        "entity_type": "diagnosis",
+        "start_char": 350,
+        "end_char": 355,
+        "confidence": 0.89,
+        "negated": true,
+        "qualifiers": []
+      }
+    ],
+    "processing_time_ms": 342.5
+  },
+  "coding_result": {
+    "principal_diagnosis": {
+      "icd10_code": "N18.3",
+      "description": "Chronic kidney disease, stage 3 (moderate)",
+      "confidence": 0.96,
+      "evidence_text": "stage 3 chronic kidney disease (eGFR 45 mL/min/1.73m\u00b2)",
+      "reasoning": "Patient has documented stage 3 CKD with eGFR of 45 mL/min/1.73m\u00b2, which falls within the stage 3 range (30-59). N18.3 is the most specific code for this stage.",
+      "needs_specificity": false,
+      "alternatives": [
+        {"code": "N18.30", "description": "CKD stage 3 unspecified", "confidence": 0.85}
+      ]
+    },
+    "secondary_codes": [
+      {
+        "icd10_code": "I10",
+        "description": "Essential (primary) hypertension",
+        "confidence": 0.97,
+        "evidence_text": "hypertension ... well controlled, continue medications",
+        "reasoning": "Documented hypertension managed with lisinopril and amlodipine. No secondary cause identified, coded as essential hypertension.",
+        "needs_specificity": false,
+        "alternatives": []
+      }
+    ],
+    "complication_codes": [],
+    "sequencing_rationale": "N18.3 (CKD stage 3) sequenced as principal diagnosis as it is the primary reason for the encounter and drives the monitoring plan. I10 (hypertension) is a contributing comorbidity under active management.",
+    "retrieval_stats": {
+      "total_retrieval_time_ms": 128.3,
+      "candidates_retrieved": 12,
+      "candidates_reranked": 5
+    }
+  },
+  "processing_time_ms": 1245.8,
+  "errors": [],
+  "cdi_report": {
+    "documentation_gaps": [
+      {
+        "code": "N18.3",
+        "description": "CKD stage 3 lacks specificity qualifier",
+        "missing_qualifier": "stage 3a vs 3b (eGFR sub-range)",
+        "physician_query": "The eGFR of 45 mL/min/1.73m\u00b2 falls within stage 3b (30-44). Can you confirm the CKD sub-stage as 3b for more specific coding?",
+        "evidence_text": "stage 3 chronic kidney disease (eGFR 45 mL/min/1.73m\u00b2)",
+        "confidence": 0.88,
+        "cot_trace": "Step 1: N18.3 maps to CKD stage 3. Step 2: ICD-10-CM distinguishes 3a (N18.31) vs 3b (N18.32). Step 3: eGFR 45 is borderline 3a/3b (cutoff at 45). Step 4: Clarification needed for maximal specificity."
+      }
+    ],
+    "missed_diagnoses": [
+      {
+        "suggested_code": "E11.22",
+        "description": "Type 2 diabetes mellitus with diabetic chronic kidney disease",
+        "co_coded_with": "N18.3",
+        "co_occurrence_weight": 0.72,
+        "evidence_text": "CKD with hypertension in a 68-year-old male is frequently associated with diabetic nephropathy. No diabetes documented but should be ruled out."
+      }
+    ],
+    "code_conflicts": [],
+    "completeness_score": 0.90,
+    "processing_time_ms": 215.4
+  },
+  "audit_trail": {
+    "case_id": "demo-004",
+    "timestamp": "2026-03-20T10:00:00",
+    "stages": [
+      {
+        "stage": "ingestion",
+        "processing_time_ms": 12.3,
+        "input_summary": "str",
+        "output_summary": "text, confidence=1.00",
+        "details": {},
+        "cot_traces": [],
+        "retrieval_logs": []
+      },
+      {
+        "stage": "ner",
+        "processing_time_ms": 342.5,
+        "input_summary": "523 chars",
+        "output_summary": "7 entities",
+        "details": {
+          "diagnoses": 4,
+          "procedures": 0,
+          "total_entities": 7
+        },
+        "cot_traces": [],
+        "retrieval_logs": []
+      },
+      {
+        "stage": "rag",
+        "processing_time_ms": 128.3,
+        "input_summary": "7 entities",
+        "output_summary": "principal=N18.3, 1 secondary",
+        "details": {},
+        "cot_traces": [],
+        "retrieval_logs": []
+      },
+      {
+        "stage": "cdi",
+        "processing_time_ms": 215.4,
+        "input_summary": "2 codes",
+        "output_summary": "1 gaps, 0 conflicts, 1 missed dx",
+        "details": {},
+        "cot_traces": [
+          "Step 1: N18.3 maps to CKD stage 3. Step 2: ICD-10-CM distinguishes 3a (N18.31) vs 3b (N18.32). Step 3: eGFR 45 is borderline 3a/3b (cutoff at 45). Step 4: Clarification needed for maximal specificity."
+        ],
+        "retrieval_logs": []
+      }
+    ],
+    "evidence_spans": {
+      "N18.3": [
+        "stage 3 chronic kidney disease (eGFR 45 mL/min/1.73m\u00b2)",
+        "Chronic kidney disease, stage 3 (N18.3) - stable"
+      ],
+      "I10": [
+        "hypertension",
+        "Essential hypertension (I10) - well controlled"
+      ]
+    }
+  }
+}

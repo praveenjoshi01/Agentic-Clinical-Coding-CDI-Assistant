@@ -1,0 +1,190 @@
+{
+  "document": {
+    "metadata": {
+      "patient_id": "patient-001",
+      "encounter_id": "encounter-001",
+      "source_type": "fhir",
+      "timestamp": "2026-03-20T10:00:00"
+    },
+    "raw_narrative": "Condition: Type 2 diabetes mellitus with neuropathy\nCondition: Type 2 diabetes mellitus with diabetic retinopathy",
+    "structured_facts": [
+      {
+        "type": "condition",
+        "text": "Type 2 diabetes mellitus with neuropathy",
+        "resource_type": "Condition",
+        "codings": [
+          {
+            "system": "http://hl7.org/fhir/sid/icd-10-cm",
+            "code": "E11.40",
+            "display": "Type 2 diabetes mellitus with diabetic neuropathy"
+          }
+        ]
+      },
+      {
+        "type": "condition",
+        "text": "Type 2 diabetes mellitus with diabetic retinopathy",
+        "resource_type": "Condition",
+        "codings": [
+          {
+            "system": "http://hl7.org/fhir/sid/icd-10-cm",
+            "code": "E11.311",
+            "display": "Type 2 diabetes mellitus with unspecified diabetic retinopathy with macular edema"
+          }
+        ]
+      }
+    ],
+    "modality_confidence": 1.0,
+    "extraction_trace": "Parsed from FHIR R4B Bundle"
+  },
+  "nlu_result": {
+    "entities": [
+      {
+        "text": "Type 2 diabetes mellitus",
+        "entity_type": "diagnosis",
+        "start_char": 11,
+        "end_char": 35,
+        "confidence": 0.96,
+        "negated": false,
+        "qualifiers": ["type 2"]
+      },
+      {
+        "text": "neuropathy",
+        "entity_type": "diagnosis",
+        "start_char": 41,
+        "end_char": 51,
+        "confidence": 0.94,
+        "negated": false,
+        "qualifiers": ["diabetic"]
+      },
+      {
+        "text": "diabetic retinopathy",
+        "entity_type": "diagnosis",
+        "start_char": 93,
+        "end_char": 113,
+        "confidence": 0.95,
+        "negated": false,
+        "qualifiers": []
+      }
+    ],
+    "processing_time_ms": 298.4
+  },
+  "coding_result": {
+    "principal_diagnosis": {
+      "icd10_code": "E11.40",
+      "description": "Type 2 diabetes mellitus with diabetic neuropathy, unspecified",
+      "confidence": 0.94,
+      "evidence_text": "Type 2 diabetes mellitus with neuropathy",
+      "reasoning": "Patient has documented Type 2 diabetes with neuropathy complication. E11.40 is the combination code per ICD-10-CM convention of coding diabetes with its complications using a single code.",
+      "needs_specificity": true,
+      "alternatives": [
+        {"code": "E11.41", "description": "Type 2 DM with diabetic mononeuropathy", "confidence": 0.55},
+        {"code": "E11.42", "description": "Type 2 DM with diabetic polyneuropathy", "confidence": 0.60}
+      ]
+    },
+    "secondary_codes": [
+      {
+        "icd10_code": "E11.311",
+        "description": "Type 2 diabetes mellitus with unspecified diabetic retinopathy with macular edema",
+        "confidence": 0.92,
+        "evidence_text": "Type 2 diabetes mellitus with diabetic retinopathy",
+        "reasoning": "FHIR bundle includes coded condition for diabetic retinopathy with macular edema (E11.311). This is a separate diabetic complication requiring its own code.",
+        "needs_specificity": true,
+        "alternatives": [
+          {"code": "E11.319", "description": "Type 2 DM with unspecified diabetic retinopathy without macular edema", "confidence": 0.70}
+        ]
+      }
+    ],
+    "complication_codes": [],
+    "sequencing_rationale": "E11.40 (Type 2 DM with neuropathy) is sequenced as principal diagnosis. E11.311 (Type 2 DM with retinopathy) is secondary. Both are diabetic complications coded with combination codes per ICD-10-CM guidelines.",
+    "retrieval_stats": {
+      "total_retrieval_time_ms": 142.1,
+      "candidates_retrieved": 15,
+      "candidates_reranked": 6
+    }
+  },
+  "processing_time_ms": 1108.3,
+  "errors": [],
+  "cdi_report": {
+    "documentation_gaps": [
+      {
+        "code": "E11.40",
+        "description": "Diabetic neuropathy type not specified",
+        "missing_qualifier": "severity and type of neuropathy",
+        "physician_query": "The documentation indicates diabetic neuropathy. Can you specify the type (mononeuropathy, polyneuropathy, autonomic neuropathy) and severity for more precise coding?",
+        "evidence_text": "Type 2 diabetes mellitus with neuropathy",
+        "confidence": 0.90,
+        "cot_trace": "Step 1: E11.40 is 'unspecified' diabetic neuropathy. Step 2: ICD-10-CM has specific codes: E11.41 (mononeuropathy), E11.42 (polyneuropathy), E11.43 (autonomic). Step 3: Type of neuropathy not documented. Step 4: Query needed for specificity."
+      },
+      {
+        "code": "E11.311",
+        "description": "Diabetic retinopathy severity not specified",
+        "missing_qualifier": "retinopathy severity (mild/moderate/severe nonproliferative or proliferative)",
+        "physician_query": "The diabetic retinopathy is coded as 'unspecified.' Can you document the severity stage (mild, moderate, or severe nonproliferative; or proliferative) based on the latest ophthalmology exam?",
+        "evidence_text": "Type 2 diabetes mellitus with diabetic retinopathy",
+        "confidence": 0.92,
+        "cot_trace": "Step 1: E11.311 codes unspecified retinopathy with macular edema. Step 2: ICD-10-CM has specific severity codes (E11.321x for mild NPDR, E11.331x for moderate, etc.). Step 3: Severity stage not documented. Step 4: Ophthalmology findings needed."
+      }
+    ],
+    "missed_diagnoses": [],
+    "code_conflicts": [],
+    "completeness_score": 0.80,
+    "processing_time_ms": 198.6
+  },
+  "audit_trail": {
+    "case_id": "demo-001",
+    "timestamp": "2026-03-20T10:00:00",
+    "stages": [
+      {
+        "stage": "ingestion",
+        "processing_time_ms": 45.2,
+        "input_summary": "dict",
+        "output_summary": "fhir, confidence=1.00",
+        "details": {},
+        "cot_traces": [],
+        "retrieval_logs": []
+      },
+      {
+        "stage": "ner",
+        "processing_time_ms": 298.4,
+        "input_summary": "113 chars",
+        "output_summary": "3 entities",
+        "details": {
+          "diagnoses": 3,
+          "procedures": 0,
+          "total_entities": 3
+        },
+        "cot_traces": [],
+        "retrieval_logs": []
+      },
+      {
+        "stage": "rag",
+        "processing_time_ms": 142.1,
+        "input_summary": "3 entities",
+        "output_summary": "principal=E11.40, 1 secondary",
+        "details": {},
+        "cot_traces": [],
+        "retrieval_logs": []
+      },
+      {
+        "stage": "cdi",
+        "processing_time_ms": 198.6,
+        "input_summary": "2 codes",
+        "output_summary": "2 gaps, 0 conflicts, 0 missed dx",
+        "details": {},
+        "cot_traces": [
+          "Step 1: E11.40 is 'unspecified' diabetic neuropathy. Step 2: ICD-10-CM has specific codes: E11.41 (mononeuropathy), E11.42 (polyneuropathy), E11.43 (autonomic). Step 3: Type of neuropathy not documented. Step 4: Query needed for specificity.",
+          "Step 1: E11.311 codes unspecified retinopathy with macular edema. Step 2: ICD-10-CM has specific severity codes (E11.321x for mild NPDR, E11.331x for moderate, etc.). Step 3: Severity stage not documented. Step 4: Ophthalmology findings needed."
+        ],
+        "retrieval_logs": []
+      }
+    ],
+    "evidence_spans": {
+      "E11.40": [
+        "Type 2 diabetes mellitus with neuropathy"
+      ],
+      "E11.311": [
+        "Type 2 diabetes mellitus with diabetic retinopathy"
+      ]
+    }
+  }
+}
