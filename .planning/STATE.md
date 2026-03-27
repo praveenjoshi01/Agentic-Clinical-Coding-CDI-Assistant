@@ -10,18 +10,18 @@ See: .planning/PROJECT.md (updated 2026-03-18)
 ## Current Position
 
 Phase: 6 of 6 (ClinIQ v2 OpenAI Backend)
-Plan: 4 of 5 in current phase
-Status: Plan 06-04 complete
-Last activity: 2026-03-26 — Completed 06-04-PLAN.md (Pipeline Orchestrator + Evaluation)
+Plan: 5 of 6 in current phase
+Status: Plan 06-05 complete
+Last activity: 2026-03-27 — Completed 06-05-PLAN.md (UI Integration)
 
-Progress: [███████████████████████] 96%
+Progress: [████████████████████████] 97%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 24
-- Average duration: 3.5 min
-- Total execution time: 1.38 hours
+- Total plans completed: 25
+- Average duration: 3.4 min
+- Total execution time: 1.41 hours
 
 **By Phase:**
 
@@ -31,10 +31,10 @@ Progress: [███████████████████████
 | 02 | 6 | 14 min | 2.3 min |
 | 04 | 4 | 15 min | 3.75 min |
 | 05 | 3 | 11 min | 3.7 min |
-| 06 | 4 | 16 min | 4.0 min |
+| 06 | 5 | 18 min | 3.6 min |
 
 **Recent Trend:**
-- Last 5 plans: 3 min, 4 min, 4 min, 5 min, 3 min
+- Last 5 plans: 4 min, 4 min, 5 min, 3 min, 2 min
 - Trend: Steady pace
 
 *Updated after each plan completion*
@@ -58,6 +58,7 @@ Progress: [███████████████████████
 | Phase 06 P02 | 4 | 2 tasks | 4 files |
 | Phase 06 P03 | 5 | 2 tasks | 3 files |
 | Phase 06 P04 | 3 | 2 tasks | 3 files |
+| Phase 06 P05 | 2 | 2 tasks | 6 files |
 
 ## Accumulated Context
 
@@ -155,6 +156,10 @@ Recent decisions affecting current work:
 - 06-04: GPT-4o judge with max_tokens=128 and temperature=0.1 for consistent evaluation scoring
 - 06-04: Same prompt templates, rubrics, and aggregation logic as v1 (only model call changes)
 - 06-04: Lazy import of OpenAIClient inside _generate_judge_response (not module-level)
+- 06-05: Backend selection via session state key presence (not explicit toggle)
+- 06-05: TYPE_CHECKING imports preserved for IDE support; only runtime imports made dynamic
+- 06-05: FAISS index check returns None (not crash) when v2 index missing
+- 06-05: _get_model_manager() retained for v1 fallback (lazy import inside cached function)
 
 ### Pending Todos
 
@@ -172,11 +177,11 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-26
-Stopped at: Completed 06-04-PLAN.md
+Last session: 2026-03-27
+Stopped at: Completed 06-05-PLAN.md
 Resume file: None
 
 ---
 *State initialized: 2026-03-18*
-*Last updated: 2026-03-26 after completing 06-04*
-*Next action: Execute 06-05-PLAN.md (UI Integration)*
+*Last updated: 2026-03-27 after completing 06-05*
+*Next action: Execute 06-06-PLAN.md (v2 FAISS Index Build Script)*
