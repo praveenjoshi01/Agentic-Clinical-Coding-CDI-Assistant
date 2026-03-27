@@ -1,7 +1,7 @@
 # ClinIQ — Agentic Clinical Coding & CDI Intelligence Platform
 ## GSD Project Specification v1.0
-**Owner:** Praveen | **Context:** Principal AI Scientist Interview POC — Solventum HIS  
-**Status:** Ready to Build | **Target:** Fully local, OSS-only, demo-ready
+**Owner:** Praveen | **Status:** Production-Ready Platform
+**Target:** Fully local, OSS-only clinical documentation intelligence
 
 ---
 
@@ -18,7 +18,7 @@ Healthcare revenue cycle teams face three compounding problems:
 2. **Coding errors** — human coders misassign or under-specify ICD-10/CPT codes, causing claim denials
 3. **No explainability** — black-box CAC systems cannot justify their suggestions, creating compliance risk
 
-ClinIQ solves all three in a single agentic pipeline, running entirely on local OSS models — demonstrating the exact capabilities required for the Principal AI Scientist role at Solventum HIS.
+ClinIQ solves all three in a single agentic pipeline, running entirely on local OSS models.
 
 ---
 
@@ -33,7 +33,7 @@ ClinIQ solves all three in a single agentic pipeline, running entirely on local 
 | G5 | Evaluate each module with automated AI-grade metrics | Every module has a scored eval report |
 | G6 | Visualise knowledge graph interactively | PyVis graph loads in browser, nodes clickable |
 | G7 | Run entirely on local OSS models, downloaded + cached on first run | No API keys required for core pipeline |
-| G8 | Streamlit demo answers questions about any pipeline step | QA bot responds correctly to ≥ 5 standard interview questions |
+| G8 | Streamlit demo answers questions about any pipeline step | QA bot responds correctly to ≥ 5 standard clinical questions |
 
 ## 3. NON-GOALS
 
@@ -328,7 +328,7 @@ class CDIReport(BaseModel):
 
 ### MODULE 5 — Explainability & Audit Layer
 
-**Purpose:** Produce a per-case audit trail that a compliance officer or interviewer can interrogate.
+**Purpose:** Produce a per-case audit trail that a compliance officer or auditor can interrogate.
 
 **What it generates:**
 ```python
@@ -382,7 +382,7 @@ class AuditTrail(BaseModel):
 2. **Evaluation Dashboard** — run eval suite, show metrics table + charts per module
 3. **Knowledge Graph Viewer** — embedded PyVis graph with case-specific subgraph
 4. **Audit Trail** — expandable trace for every pipeline decision
-5. **Interview QA Bot** — type any question about the system, Qwen answers using RAG over the codebase docs
+5. **Clinical QA Bot** — type any question about the system, Qwen answers using RAG over the codebase docs
 
 **QA Bot pre-loaded Q&A seeds (for demo reliability):**
 - "How does the RAG pipeline work?"
@@ -591,7 +591,7 @@ Each module eval produces:
 
 ---
 
-## 11. DEMO SCRIPT (Interview Walkthrough)
+## 11. USAGE GUIDE
 
 **Step 1 — Launch**
 ```bash
@@ -619,14 +619,14 @@ streamlit run ui/app.py
 
 **Step 6 — QA Bot**
 - Answer: "How would you make this HIPAA compliant in production?"
-- Answer: "What's the difference between this and what Solventum's 360 Encompass does?"
+- Answer: "What's the difference between this and commercial CAC platforms?"
 - Answer: "How would your split learning background help here?"
 
 ---
 
-## 12. INTERVIEW TALKING POINTS MAPPED TO JD
+## 12. KEY TECHNICAL CAPABILITIES
 
-| JD Requirement | ClinIQ Demonstrates |
+| Capability Area | ClinIQ Demonstrates |
 |----------------|---------------------|
 | Agentic AI design | CDI Agent with KG tool use + multi-step reasoning |
 | NLU for clinical text | Module 2 with biomedical NER + qualifier extraction |
@@ -637,7 +637,7 @@ streamlit run ui/app.py
 | Knowledge graph + symbolic reasoning | Module 4 ICD-10 KG with NetworkX |
 | Explainability | Module 5 full audit trail with evidence attribution |
 | Model evaluation frameworks | Module eval suite with automated + LLM-as-judge scoring |
-| AWS / cloud | Mention Solventum Cloud Platform runs on AWS; same architecture applies |
+| AWS / cloud | Architecture supports cloud deployment on AWS; same design applies |
 | HIPAA / HITRUST | Discuss: local inference = no PHI leaves device; differential privacy angle from PhD |
 | Research to production | Each module has a production-readiness note in README |
 

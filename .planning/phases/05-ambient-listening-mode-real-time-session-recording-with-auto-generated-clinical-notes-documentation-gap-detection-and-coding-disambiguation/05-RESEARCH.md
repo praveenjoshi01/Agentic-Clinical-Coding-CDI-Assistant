@@ -2,15 +2,15 @@
 
 **Researched:** 2026-03-24
 **Domain:** Real-time audio capture, speech-to-text, clinical note generation, Streamlit UI
-**Confidence:** HIGH (standard libraries, well-documented patterns, interview-demo scope)
+**Confidence:** HIGH (standard libraries, well-documented patterns, current scope)
 
 ## Summary
 
 Phase 5 adds an "Ambient Listening Mode" page to the existing Streamlit UI. The feature captures (or simulates) a physician-patient encounter, transcribes it, generates structured clinical notes (SOAP format), then feeds the transcript through the existing ClinIQ pipeline for documentation gap detection, missed diagnosis flagging, and coding disambiguation. This requires three new capabilities: (1) audio capture/transcription, (2) transcript-to-structured-note generation via LLM, and (3) a new Streamlit page with session lifecycle management.
 
-**Critical design constraint:** This is an interview demo project, not production software. The project already uses a "pre-computed demo data" pattern extensively (Phase 4). The ambient listening mode MUST support both a live path (microphone -> Whisper -> LLM -> pipeline) and a pre-computed demo path (hardcoded transcript -> pre-computed results). The demo path is the primary interview experience; the live path demonstrates technical capability.
+**Critical design constraint:** The project uses a pre-computed data pattern for reliability. The project already uses a "pre-computed demo data" pattern extensively (Phase 4). The ambient listening mode MUST support both a live path (microphone -> Whisper -> LLM -> pipeline) and a pre-computed demo path (hardcoded transcript -> pre-computed results). The demo path provides reliable results; the live path demonstrates full technical capability.
 
-**Primary recommendation:** Use `st.audio_input` (native Streamlit, GA since v1.40.0) for audio capture, `faster-whisper` with the `small` model for local CPU transcription, Qwen2.5-1.5B-Instruct (already in stack) for SOAP note generation, and the existing `run_pipeline_audited` for downstream CDI analysis. Provide pre-computed demo encounters for instant, reliable interview demonstrations.
+**Primary recommendation:** Use `st.audio_input` (native Streamlit, GA since v1.40.0) for audio capture, `faster-whisper` with the `small` model for local CPU transcription, Qwen2.5-1.5B-Instruct (already in stack) for SOAP note generation, and the existing `run_pipeline_audited` for downstream CDI analysis. Provide pre-computed demo encounters for instant, reliable demonstrations.
 
 ## Standard Stack
 
@@ -113,7 +113,7 @@ def session_timer():
 
 ### Pattern 3: Dual-Path Architecture (Demo vs Live)
 **What:** Support both pre-computed demo mode and live audio processing
-**When to use:** Always -- demo mode is primary for interviews
+**When to use:** Always -- demo mode is the primary path
 
 ```python
 # Demo path (instant, reliable):
@@ -366,18 +366,18 @@ def session_timer_fragment():
 
 2. **Number of pre-computed demo encounters**
    - What we know: Phase 4 uses 3 pre-computed pipeline results. Ambient mode needs conversations, not just notes.
-   - What's unclear: How many varied scenarios are needed to impress in an interview?
+   - What's unclear: How many varied scenarios are needed for adequate coverage?
    - Recommendation: 2 pre-computed encounters covering different specialties (e.g., primary care follow-up, urgent care visit). Each should demonstrate different CDI findings.
 
 3. **Whisper model accuracy on medical terminology**
    - What we know: Whisper is general-purpose, not medical-domain-specific. The `small` model is 244M parameters.
    - What's unclear: How well does it handle clinical terms like medication names, ICD codes mentioned verbally?
-   - Recommendation: For interview demo, pre-computed transcripts bypass this concern. For live demo, accept imperfect transcription -- the value story is the CDI layer, not perfect ASR.
+   - Recommendation: Pre-computed transcripts bypass this concern. For live demo, accept imperfect transcription -- the value story is the CDI layer, not perfect ASR.
 
 4. **Qwen 1.5B quality for SOAP note generation**
    - What we know: 1.5B parameter model; previously used for CDI queries with template fallback.
    - What's unclear: Quality of structured note output from a small model.
-   - Recommendation: Use aggressive few-shot prompting with 1-2 complete examples. For demo mode, use pre-computed notes. For live mode, accept imperfect output and let CDI analysis demonstrate gap detection on the imperfect note (this actually makes the demo MORE impressive).
+   - Recommendation: Use aggressive few-shot prompting with 1-2 complete examples. For demo mode, use pre-computed notes. For live mode, accept imperfect output and let CDI analysis demonstrate gap detection on the imperfect note (this actually demonstrates the CDI layer's value on imperfect input).
 
 ## Sources
 

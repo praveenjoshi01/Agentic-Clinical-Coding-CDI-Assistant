@@ -2,7 +2,7 @@
 
 ## What This Is
 
-A fully local, multi-modal, agentic pipeline that ingests clinical data (text, FHIR R4, scanned images), extracts medical entities via NLU, retrieves ICD-10 codes via RAG, detects documentation gaps via a knowledge graph CDI agent, evaluates every step with AI-grade metrics, and visualises the entire reasoning chain in a polished Streamlit demo. Built using only small, specialised OSS HuggingFace models — no API keys required. This is a Principal AI Scientist interview POC for Solventum HIS.
+A fully local, multi-modal, agentic pipeline that ingests clinical data (text, FHIR R4, scanned images), extracts medical entities via NLU, retrieves ICD-10 codes via RAG, detects documentation gaps via a knowledge graph CDI agent, evaluates every step with AI-grade metrics, and visualises the entire reasoning chain in a polished Streamlit demo. Built using only small, specialised OSS HuggingFace models — no API keys required.
 
 ## Core Value
 
@@ -23,7 +23,7 @@ Every clinical note produces correctly sequenced ICD-10 codes with full explaina
 - [ ] Explainability layer: per-case audit trail with chain-of-thought traces and evidence attribution
 - [ ] PyVis interactive knowledge graph visualisation (colour-coded by documentation status)
 - [ ] Streamlit demo UI with 5 pages: Pipeline Runner, Eval Dashboard, KG Viewer, Audit Trail, QA Bot
-- [ ] QA Bot using Qwen + RAG over project docs for interview Q&A
+- [ ] QA Bot using Qwen + RAG over project docs for clinical Q&A
 - [ ] Automated eval suite: 5 module evals with quantitative targets (F1 >= 0.80, Top-3 >= 0.85, MRR >= 0.75, Query relevance >= 0.80)
 - [ ] All models downloaded + cached on first run via bootstrap script (~2.1GB total)
 
@@ -37,7 +37,7 @@ Every clinical note produces correctly sequenced ICD-10 codes with full explaina
 
 ## Context
 
-**Interview target:** Principal AI Scientist role at Solventum HIS. The project directly maps to JD requirements: agentic AI, clinical NLU, FHIR pipelines, RAG, multi-modal AI, knowledge graphs, explainability, and model evaluation frameworks.
+**Domain alignment:** The project directly addresses key healthcare AI capabilities: agentic AI, clinical NLU, FHIR pipelines, RAG, multi-modal AI, knowledge graphs, explainability, and model evaluation frameworks.
 
 **Week 1 foundation already built:** Repo scaffold, model_manager.py (download + cache 5 models), FAISS index builder, NetworkX graph builder, synthetic test cases + gold_standard.json.
 
@@ -62,7 +62,7 @@ Every clinical note produces correctly sequenced ICD-10 codes with full explaina
 - **All local:** No cloud APIs, no API keys for core pipeline — everything runs on local OSS models
 - **Model size:** Total ~2.1GB download; must run on a machine with sufficient RAM for Qwen 1.5B
 - **Synthetic data only:** All test cases are synthetic (Synthea FHIR + PIL-generated images + hand-annotated notes)
-- **Demo-ready:** Must be polished enough for a live interview walkthrough with progressive disclosure
+- **Production-quality UX:** Must be polished enough for stakeholder walkthroughs with progressive disclosure
 - **Timeline:** ~3 weeks remaining (Weeks 2-4); Week 1 foundation is complete
 
 ## Key Decisions
@@ -74,7 +74,7 @@ Every clinical note produces correctly sequenced ICD-10 codes with full explaina
 | NetworkX over Neo4j for KG | No external DB dependency; graph fits in memory; simpler demo | — Pending |
 | SmolVLM for image ingestion | Smallest viable multimodal model; avoids large VLM downloads | — Pending |
 | LLM-as-judge for subjective evals | No human raters available; Qwen with calibrated rubric is pragmatic | — Pending |
-| Streamlit over Gradio | Better multi-page support; more professional look for interview demo | — Pending |
+| Streamlit over Gradio | Better multi-page support; more professional appearance for clinical workflows | — Pending |
 
 ---
 *Last updated: 2026-03-18 after initialization*

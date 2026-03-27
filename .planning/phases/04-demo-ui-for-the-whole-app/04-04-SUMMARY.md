@@ -46,7 +46,7 @@ completed: 2026-03-18
 
 # Phase 4 Plan 04: Eval Dashboard and QA Bot Summary
 
-**Plotly radar/bar evaluation dashboard with 5-module metrics and Jaccard-matched QA chat bot with 8 pre-seeded interview questions**
+**Plotly radar/bar evaluation dashboard with 5-module metrics and Jaccard-matched QA chat bot with 8 pre-seeded clinical questions**
 
 ## Performance
 

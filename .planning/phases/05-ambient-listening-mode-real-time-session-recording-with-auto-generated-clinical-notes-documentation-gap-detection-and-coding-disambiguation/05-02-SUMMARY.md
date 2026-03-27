@@ -30,7 +30,7 @@ key-files:
   modified: []
 
 key-decisions:
-  - "Handcrafted JSON over pipeline-generated: demo data is authored for clinical realism and interview impact, not auto-generated from models"
+  - "Handcrafted JSON over pipeline-generated: demo data is authored for clinical realism and clinical realism, not auto-generated from models"
   - "SOAP note as pipeline input for regeneration: precompute script feeds generated_note (not transcript) to run_pipeline_audited"
   - "9 disambiguation items total (5 + 4) covering gaps, missed diagnoses, ambiguities, and conflicts across both scenarios"
 
@@ -73,7 +73,7 @@ Each task was committed atomically:
 - `scripts/precompute_ambient.py` - Regeneration script feeding SOAP notes through live pipeline
 
 ## Decisions Made
-- Handcrafted JSON over pipeline-generated: ensures clinically realistic, impressive content for interviews without model dependency
+- Handcrafted JSON over pipeline-generated: ensures clinically realistic, impressive clinical content without model dependency
 - SOAP note (generated_note) is the pipeline input for regeneration, since that is what run_pipeline_audited processes
 - 9 disambiguation items total covering all four categories (gap, missed_diagnosis, conflict, ambiguity)
 

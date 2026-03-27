@@ -74,8 +74,17 @@ Requirements for initial release. Each maps to roadmap phases.
 - [ ] **UI-03**: Streamlit KG Viewer page: embedded PyVis graph with case-specific subgraph
 - [ ] **UI-04**: Streamlit Audit Trail page: expandable trace for every pipeline decision
 - [ ] **UI-05**: Streamlit QA Bot page: Qwen answers questions about the system via RAG over project docs
-- [ ] **UI-06**: QA Bot responds correctly to >= 5 standard interview questions (pre-seeded)
+- [ ] **UI-06**: QA Bot responds correctly to >= 5 standard clinical questions (pre-seeded)
 - [ ] **UI-07**: All 5 pages share session state correctly across navigation
+
+### OpenAI Backend (Phase 6)
+
+- [ ] **OAI-01**: cliniq_v2 package mirrors cliniq module structure with all local model calls replaced by OpenAI API calls
+- [ ] **OAI-02**: UI displays API key input screen on startup; validates key with a test API call before granting access
+- [ ] **OAI-03**: NER pipeline uses GPT-4o for entity extraction, negation detection, and qualifier capture (replacing d4data/biomedical-ner-all)
+- [ ] **OAI-04**: RAG coding uses text-embedding-3-small for embeddings and GPT-4o for code selection/reasoning (replacing bge-small + cross-encoder + Qwen)
+- [ ] **OAI-05**: CDI intelligence and explainability modules use GPT-4o for physician queries, gap detection reasoning, and CoT capture (replacing Qwen)
+- [ ] **OAI-06**: Ambient mode uses OpenAI Whisper API for transcription and GPT-4o for clinical note generation (replacing local whisper model + Qwen)
 
 ## v2 Requirements
 
@@ -100,10 +109,10 @@ Deferred to future release. Tracked but not in current roadmap.
 | Feature | Reason |
 |---------|--------|
 | Real PHI / HIPAA infrastructure | Synthetic data only; demo POC not production |
-| Model fine-tuning | Inference only; discuss fine-tuning strategy in interview |
+| Model fine-tuning | Inference only; fine-tuning planned for future release |
 | Live EHR / real FHIR server | Use synthetic FHIR bundles; show integration architecture |
 | Inpatient DRG coding | Outpatient + professional fee only for MVP scope |
-| Mobile app / cloud deployment | Desktop Streamlit sufficient for interview demo |
+| Mobile app / cloud deployment | Desktop Streamlit sufficient for current release |
 | CPT/HCPCS procedure coding | ICD-10 diagnosis coding demonstrates capability |
 | User authentication / RBAC | Single-user demo; mention security in architecture discussion |
 | Real-time processing at scale | Pre-computed results acceptable; discuss scaling strategy |

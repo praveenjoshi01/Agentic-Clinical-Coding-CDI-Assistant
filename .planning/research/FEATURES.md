@@ -1,10 +1,10 @@
 # Feature Landscape
 
-**Domain:** Clinical Coding and CDI Intelligence Platform (Interview POC Demo)
+**Domain:** Clinical Coding and CDI Intelligence Platform
 **Researched:** 2026-03-18
 **Confidence:** MEDIUM
 
-Clinical coding and CDI intelligence platforms operate at the intersection of healthcare documentation, revenue cycle management, and regulatory compliance. This research identifies features for an interview POC demo targeting a Principal AI Scientist role at Solventum HIS.
+Clinical coding and CDI intelligence platforms operate at the intersection of healthcare documentation, revenue cycle management, and regulatory compliance.
 
 ## Table Stakes
 
@@ -22,11 +22,11 @@ Features users expect in any clinical coding/CDI platform. Missing these makes t
 
 ## Differentiators
 
-Features that set the demo apart and align with interview talking points (agentic AI, multi-modal, RAG, KG, explainability).
+Features that differentiate the platform through advanced AI capabilities (agentic AI, multi-modal, RAG, KG, explainability).
 
 | Feature | Value Proposition | Complexity | Notes |
 |---------|-------------------|------------|-------|
-| **Agentic AI Architecture** | Demonstrates SOTA 2026 approach; autonomous agents that take actions (not just suggestions) | High | Aligns with Solventum HIS Principal Scientist role; shows architectural thinking beyond simple ML models |
+| **Agentic AI Architecture** | Demonstrates SOTA 2026 approach; autonomous agents that take actions (not just suggestions) | High | Demonstrates architectural thinking beyond simple ML models |
 | **Multi-Modal Ingestion** | Handles text, FHIR structured data, AND scanned images (SmolVLM); differentiates from text-only competitors | High | Very few platforms support true multi-modal clinical AI; demonstrates advanced capability |
 | **RAG-Based ICD-10 Coding** | Uses retrieval-augmented generation with reranking; research shows 17-26% exact match improvement with RAG | High | Cutting-edge approach; studies show RAG outperforms human coders in ED diagnostic accuracy |
 | **Knowledge Graph CDI Agent** | Graph-based reasoning for documentation integrity; visualizes clinical relationships and missing links | Very High | Rare in commercial products; demonstrates research-level capability and explainability |
@@ -38,12 +38,12 @@ Features that set the demo apart and align with interview talking points (agenti
 
 ## Anti-Features
 
-Features to explicitly NOT build for an interview POC demo.
+Features explicitly deferred from current release.
 
 | Anti-Feature | Why Avoid | What to Do Instead |
 |--------------|-----------|-------------------|
 | **Full EHR Integration** | Production EHR integration takes months; unnecessary for demo credibility | Use FHIR R4 synthetic data with realistic structure; show integration architecture diagram |
-| **Real-Time Processing at Scale** | Performance optimization is time-consuming; demo is proof-of-concept not production | Process sample encounters; use pre-computed results for complex queries; acknowledge scaling requirements |
+| **Real-Time Processing at Scale** | Performance optimization deferred to future release; focus on correctness first | Process sample encounters; use pre-computed results for complex queries; acknowledge scaling requirements |
 | **Comprehensive ICD-10 Coverage** | ICD-10-CM has 72,000+ codes; full coverage requires massive training data | Focus on high-volume diagnosis categories (10-15 common conditions cover 60%+ encounters) |
 | **CPT/HCPCS Procedure Coding** | Adds scope without demonstrating new capabilities; ICD-10 diagnosis coding is sufficient | Mention as "future work"; keep demo focused on diagnosis coding and CDI |
 | **Billing/RCM Features** | Outside core AI/NLP scope; dilutes technical demonstration | Show how outputs feed downstream RCM (architecture diagram); don't build billing logic |
@@ -87,11 +87,11 @@ Multi-Modal Ingestion
 - **Explainability is cross-cutting**: Every module should contribute to audit trail, not a separate feature
 - **Multi-modal ingestion is a differentiator**: Can be scoped out if time-constrained; text + FHIR still demonstrates strong capability
 
-## MVP Recommendation for Interview Demo
+## MVP Feature Set
 
 ### Launch With (v1 Demo - 5 pages minimum)
 
-Prioritize features that demonstrate AI/ML depth and align with interview talking points.
+Prioritize features that demonstrate AI/ML depth and clinical value.
 
 - [x] **Multi-modal FHIR R4 ingestion** - Shows interoperability understanding; handles Condition, Procedure, Observation resources
 - [x] **Clinical NER with negation detection** - Core NLP capability; use biomedical-ner-all model
@@ -104,7 +104,7 @@ Prioritize features that demonstrate AI/ML depth and align with interview talkin
 
 ### Defer for Time Constraints (v1.1)
 
-Features that add value but aren't critical for technical interview.
+Features that add value but aren't critical for initial release.
 
 - [ ] **SmolVLM image ingestion** - Multi-modal is impressive but text+FHIR sufficient; add if time permits
 - [ ] **Physician query generation** - High-value CDI feature but adds scope; gap detection is sufficient to show concept
@@ -114,7 +114,7 @@ Features that add value but aren't critical for technical interview.
 
 ### Explicitly Out of Scope (v2+)
 
-Features to mention in "future work" but not build for interview.
+Features planned for future releases.
 
 - [ ] **CPT/HCPCS procedure coding** - Diagnosis coding demonstrates capability
 - [ ] **Real-time EHR integration** - Show architecture, use synthetic data
@@ -124,8 +124,8 @@ Features to mention in "future work" but not build for interview.
 
 ## Feature Prioritization Matrix
 
-| Feature | User Value | Implementation Cost | Interview Impact | Priority |
-|---------|------------|---------------------|------------------|----------|
+| Feature | User Value | Implementation Cost | Technical Depth | Priority |
+|---------|------------|---------------------|-----------------|----------|
 | ICD-10 Code Extraction (RAG) | HIGH | MEDIUM | HIGH | P0 |
 | Clinical NER + Negation | HIGH | MEDIUM | HIGH | P0 |
 | FHIR R4 Ingestion | HIGH | LOW | MEDIUM | P0 |
@@ -140,15 +140,15 @@ Features to mention in "future work" but not build for interview.
 | Confidence Scoring | HIGH | LOW | MEDIUM | P1 |
 
 **Priority key:**
-- P0: Must have for credible demo; build first
-- P1: Should have; strong interview impact; build if time permits
-- P2: Nice to have; mention in architecture or future work
+- P0: Must have for credible platform; build first
+- P1: Should have; high technical depth; build next
+- P2: Nice to have; planned for future releases
 
 ## Competitive Feature Analysis
 
 Based on market leaders (3M CodeFinder, Nuance Clintegrity, Dolbey Fusion CAC):
 
-| Feature | 3M CodeFinder | Nuance Clintegrity | Dolbey Fusion CAC | ClinIQ POC Approach |
+| Feature | 3M CodeFinder | Nuance Clintegrity | Dolbey Fusion CAC | ClinIQ Approach |
 |---------|---------------|-------------------|-------------------|---------------------|
 | **NLP-based NER** | Rule-based + terminology mapping | AI-driven NLP + CAC | AI/ML with CDI Alerts | Transformer-based biomedical-ner-all + negation |
 | **ICD-10 Automation** | Logic-based encoder | AI-powered with HCC support | ML-based code suggestions | RAG with FAISS + cross-encoder reranking |
@@ -161,11 +161,11 @@ Based on market leaders (3M CodeFinder, Nuance Clintegrity, Dolbey Fusion CAC):
 | **Visualization** | Reports/dashboards | Standard reporting | Performance dashboards | **Interactive knowledge graph (PyVis)** |
 | **RAG/Retrieval** | N/A | N/A | N/A | **FAISS + bge-small + cross-encoder** |
 
-**ClinIQ's competitive positioning for interview:**
+**ClinIQ's competitive positioning:**
 - **Research-level capabilities**: RAG, KG, agentic AI, multi-modal - features rarely seen in commercial products
 - **Explainability-first**: Full audit trails and interactive KG visualization address 2026 regulatory demands
 - **Modern AI stack**: Transformers, FAISS, cross-encoders vs rule-based/legacy ML in competitors
-- **Architecture thinking**: Demonstrates system design skills beyond model selection
+- **Architecture thinking**: System design depth beyond model selection
 
 ## Sources
 
@@ -219,6 +219,6 @@ Based on market leaders (3M CodeFinder, Nuance Clintegrity, Dolbey Fusion CAC):
 - [Five Steps To An Effective Physician Query Process - AGS Health](https://www.agshealth.com/blog/five-steps-to-an-effective-physician-query-process/)
 
 ---
-*Feature research for: Clinical Coding and CDI Intelligence Platform (Interview POC)*
+*Feature research for: Clinical Coding and CDI Intelligence Platform*
 *Researched: 2026-03-18*
 *Confidence: MEDIUM - Based on market analysis and 2026 technical literature; validated across multiple commercial products and research papers*

@@ -71,7 +71,7 @@ Each task was committed atomically:
 
 ## Files Created/Modified
 - `ui/pages/ambient_mode.py` - Full ambient page: session lifecycle, demo/live paths, transcript tab, SOAP note tab, clinical findings tab, disambiguation review tab with Accept/Dismiss
-- `ui/app.py` - Added Ambient Mode page definition, "Ambient" navigation group, ambient session state defaults, sidebar ambient session info, updated "How to Demo" text
+- `ui/app.py` - Added Ambient Mode page definition, "Ambient" navigation group, ambient session state defaults, sidebar ambient session info, updated "Getting Started" text
 
 ## Decisions Made
 - Store all pipeline results and disambiguation items as plain dicts in session state for serialization safety (reconstruct PipelineResult via model_validate only when rendering)

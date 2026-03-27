@@ -19,7 +19,7 @@ from cliniq.config import (
 MODEL_REGISTRY = {
     "REASONING_LLM": "gpt-4o",
     "EMBEDDER": "text-embedding-3-small",
-    "WHISPER": "whisper-1",
+    "TRANSCRIPTION": "gpt-4o-mini-transcribe",
     "VISION": "gpt-4o",
 }
 

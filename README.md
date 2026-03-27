@@ -9,6 +9,7 @@ An end-to-end clinical NLP pipeline that ingests clinical notes, extracts medica
 - **RAG-based ICD-10 coding** — FAISS retrieval → cross-encoder reranking → Qwen LLM reasoning
 - **CDI analysis** — knowledge-graph-driven gap detection, co-occurrence missed diagnoses, Excludes1 conflict checks, and physician query generation
 - **Explainability** — per-stage audit trail with timing, chain-of-thought traces, evidence span linkage, and retrieval logs
+- **Ambient listening mode** — real-time encounter recording, auto-generated SOAP notes, documentation gap detection, missed diagnosis flagging, and coding disambiguation with provider review workflow
 - **Gold standard evaluation** — 10 synthetic clinical cases with LLM-as-judge scoring
 
 ## Architecture
@@ -43,6 +44,18 @@ Clinical Note (text / FHIR / image)
           │  AuditTrail (per-stage timing, retrieval logs, evidence)
           ▼
       PipelineResult
+
+── Ambient Listening Mode ──────────────────────────────────────────
+
+  Physician–Patient Encounter (audio)
+            │
+            ▼
+  ┌─────────────────────┐
+  │  M6  AMBIENT        │  faster-whisper transcription → Qwen SOAP note
+  └─────────┬───────────┘
+            │  StructuredNote (CC, HPI, Assessment, Plan)
+            ▼
+      M1→M5 Pipeline  →  DisambiguationItems (gaps, missed dx, conflicts)
 ```
 
 ## Demo
@@ -165,6 +178,7 @@ pytest cliniq/tests/ -v
 | Reranker | `cross-encoder/ms-marco-MiniLM-L-6-v2` | 80M | Candidate reranking |
 | Reasoning LLM | `Qwen/Qwen2.5-1.5B-Instruct` | 3B | Code selection + physician queries |
 | OCR/Vision | `HuggingFaceTB/SmolVLM-256M-Instruct` | 500M | Image-based note ingestion |
+| Transcription | `faster-whisper` (CTranslate2) | ~500M | Audio-to-text for ambient encounters |
 | Knowledge Graph | NetworkX DiGraph | — | CDI gap/conflict/co-occurrence rules |
 
 ## Project Structure
@@ -179,14 +193,16 @@ cliniq/
 │   ├── m2_nlu.py             # NER + negation detection
 │   ├── m3_rag_coding.py      # FAISS retrieval → rerank → LLM reasoning
 │   ├── m4_cdi.py             # CDI agent (KG queries + physician queries)
-│   └── m5_explainability.py  # Audit trail builder, evidence linking
+│   ├── m5_explainability.py  # Audit trail builder, evidence linking
+│   └── m6_ambient.py         # Ambient transcription, SOAP generation, disambiguation
 ├── models/
 │   ├── document.py           # ClinicalDocument, DocumentMetadata
 │   ├── entities.py           # ClinicalEntity, NLUResult
 │   ├── coding.py             # CodeSuggestion, CodingResult
 │   ├── cdi.py                # CDIReport, DocumentationGap, MissedDiagnosis
 │   ├── audit.py              # AuditTrail, StageTrace, RetrievalLog
-│   └── evaluation.py         # GoldStandardCase, EvalResult
+│   ├── evaluation.py         # GoldStandardCase, EvalResult
+│   └── ambient.py            # AmbientSession, StructuredNote, DisambiguationItem
 ├── rag/
 │   ├── retriever.py          # FAISSRetriever (BGE embeddings)
 │   ├── reranker.py           # CrossEncoderReranker
@@ -205,7 +221,8 @@ cliniq/
 scripts/
 ├── demo.py                   # Demo script (2 scenarios)
 ├── generate_test_data.py     # Gold standard data generator
-└── generate_test_images.py   # Test image generator
+├── generate_test_images.py   # Test image generator
+└── precompute_ambient.py     # Regenerate ambient demo data
 ui/
 ├── app.py                    # Streamlit entry point (multipage navigation)
 ├── pages/
@@ -214,7 +231,8 @@ ui/
 │   ├── kg_viewer.py          # Interactive PyVis knowledge graph viewer
 │   ├── audit_trail.py        # Per-stage decision trace and evidence
 │   ├── eval_dashboard.py     # Evaluation metrics with radar/bar charts
-│   └── qa_bot.py             # Chat-based Q&A with pre-seeded answers
+│   ├── qa_bot.py             # Chat-based Q&A with pre-seeded answers
+│   └── ambient_mode.py       # Ambient encounter recording and review
 ├── components/
 │   ├── theme.py              # Entity color palette and styling
 │   ├── metric_cards.py       # Reusable metric display cards
@@ -223,6 +241,7 @@ ui/
 │   ├── graph_embed.py        # PyVis graph embedding in Streamlit
 │   └── pipeline_status.py    # Pipeline execution with progress indicators
 └── demo_data/                # Pre-computed results and demo Q&A bank
+    └── ambient/              # Pre-computed ambient encounter demos
 ```
 
 ## Interactive UI
@@ -235,7 +254,7 @@ ClinIQ includes a Streamlit-based web interface for exploring the pipeline inter
 streamlit run ui/app.py
 ```
 
-The UI launches in the browser with sidebar navigation organized into three groups: Overview, Pipeline, and Analysis.
+The UI launches in the browser with sidebar navigation organized into four groups: Overview, Pipeline, Analysis, and Ambient.
 
 ### Pages
 
@@ -247,6 +266,7 @@ The UI launches in the browser with sidebar navigation organized into three grou
 | **Audit Trail** | Complete pipeline decision trace with expandable per-stage views showing timing, input/output summaries, chain-of-thought reasoning, retrieval logs, and evidence attribution spans. Includes a processing time breakdown chart. |
 | **Evaluation Dashboard** | Quantitative validation of all five pipeline modules. Displays radar and grouped bar charts comparing actual vs. target metrics (precision, recall, F1, MRR, etc.) with per-module pass/fail status. |
 | **QA Bot** | Chat interface with a three-tier answer strategy: pre-seeded verified answers for system questions, template-based answers from the active pipeline result for patient-specific questions, and optional LLM fallback. Includes 8 pre-seeded patient questions and sidebar quick-access buttons. |
+| **Ambient Mode** | Passive encounter recording with auto-generated SOAP notes. Supports live audio recording (faster-whisper transcription) and pre-computed demo encounters. Results are displayed across four tabs: Transcript, Generated Note, Clinical Findings (NER + ICD-10 + CDI), and Disambiguation & Review (accept/dismiss workflow for gaps, missed diagnoses, and code conflicts). |
 
 ### Demo Cases
 
@@ -257,6 +277,15 @@ The Pipeline Runner page provides three pre-loaded clinical scenarios:
 - **Case 001: Diabetes + Neuropathy** -- Diabetes with neuropathy case (FHIR bundle)
 
 Select a demo case and click "Run Pipeline" to view NER annotations, ICD-10 code assignments, CDI findings, and the full audit trail. Pre-computed results are available for instant loading without model downloads.
+
+### Ambient Demo Encounters
+
+The Ambient Mode page provides two pre-computed encounter recordings:
+
+- **Encounter 001: Primary Care Follow-Up** — 68-year-old with CKD stage 3, hypertension, and diabetes presenting with fatigue and bilateral leg edema
+- **Encounter 002: Urgent Care Visit** — 52-year-old with acute chest pain and shortness of breath, substernal pressure radiating to the left arm
+
+Select a demo encounter to instantly view the transcript, auto-generated SOAP note, full clinical findings, and disambiguation items for provider review.
 
 ## Pipeline Stages
 
@@ -274,6 +303,9 @@ Builds a NetworkX knowledge graph with ICD-10 hierarchy, co-occurrence weights, 
 
 ### M5 — Explainability
 Wraps each pipeline stage with timing and trace capture. Links ICD-10 codes to supporting text spans in the clinical note. Captures chain-of-thought traces from LLM responses. Produces a complete `AuditTrail` with per-stage `StageTrace` objects and `RetrievalLog` entries.
+
+### M6 — Ambient Listening
+Records physician–patient encounters and automatically generates clinical documentation. In live mode, audio is transcribed via `faster-whisper` (CTranslate2, int8 quantization on CPU) and a SOAP note is generated by Qwen 2.5. The generated note is then fed through the full M1–M5 pipeline. CDI findings are surfaced as disambiguation items (documentation gaps, missed diagnoses, code conflicts) with an accept/dismiss review workflow. Pre-computed demo encounters are available for instant loading without model downloads.
 
 ## Running Tests
 

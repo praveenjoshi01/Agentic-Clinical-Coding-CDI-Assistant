@@ -1,11 +1,11 @@
 """
 Ambient listening module for cliniq_v2.
 
-Provides encounter transcription via OpenAI Whisper API, SOAP note generation
-via GPT-4o, and full ambient pipeline integration with cliniq_v2 CDI analysis.
+Provides encounter transcription via OpenAI gpt-4o-mini-transcribe, SOAP note
+generation via GPT-4o, and full ambient pipeline integration with cliniq_v2 CDI analysis.
 
 Replaces:
-- faster-whisper local model with OpenAI Whisper API (whisper-1)
+- faster-whisper local model with OpenAI gpt-4o-mini-transcribe
 - Local LLM with GPT-4o for SOAP note generation
 - cliniq.pipeline with cliniq_v2.pipeline for CDI analysis
 
@@ -28,23 +28,22 @@ logger = logging.getLogger(__name__)
 
 
 # ---------------------------------------------------------------------------
-# Function 1: Audio transcription via OpenAI Whisper API
+# Function 1: Audio transcription via gpt-4o-mini-transcribe
 # ---------------------------------------------------------------------------
 
 
 def transcribe_audio(audio_path: str) -> EncounterTranscript:
     """
-    Transcribe an audio file to an EncounterTranscript using OpenAI Whisper API.
+    Transcribe an audio file to an EncounterTranscript using gpt-4o-mini-transcribe.
 
-    Uses the whisper-1 model. No local model loading or caching needed
-    (API is stateless).
+    Uses the gpt-4o-mini-transcribe model. No local model loading or caching
+    needed (API is stateless).
 
     Args:
         audio_path: Path to the audio file (WAV, MP3, M4A supported).
 
     Returns:
-        EncounterTranscript with raw_text populated and duration_seconds=0.0
-        (Whisper API does not return duration).
+        EncounterTranscript with raw_text populated and duration_seconds=0.0.
     """
     from cliniq_v2.api_client import OpenAIClient
 
@@ -52,15 +51,14 @@ def transcribe_audio(audio_path: str) -> EncounterTranscript:
 
     with open(audio_path, "rb") as f:
         transcription = client.audio.transcriptions.create(
-            model="whisper-1",
+            model="gpt-4o-mini-transcribe",
             file=f,
-            language="en",
         )
 
     transcript_text = transcription.text
 
     logger.info(
-        "Transcription complete: %d words (via Whisper API)",
+        "Transcription complete: %d words (via gpt-4o-mini-transcribe)",
         len(transcript_text.split()),
     )
 

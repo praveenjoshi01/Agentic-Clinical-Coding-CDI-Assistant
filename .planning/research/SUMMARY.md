@@ -40,7 +40,7 @@ The 2026 standard stack for local clinical NLP + RAG + KG centers on PyTorch 2.1
 
 ### Expected Features
 
-Clinical coding and CDI platforms operate at intersection of healthcare documentation, revenue cycle management, and regulatory compliance. Research identifies table stakes, differentiators, and anti-features for an interview POC targeting Principal AI Scientist role.
+Clinical coding and CDI platforms operate at the intersection of healthcare documentation, revenue cycle management, and regulatory compliance. Research identifies table stakes, differentiators, and anti-features for the platform.
 
 **Must have (table stakes):**
 - **ICD-10-CM code extraction** — Core requirement; 95%+ accuracy expected with multi-code assignments per encounter

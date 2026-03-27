@@ -6,13 +6,13 @@
 
 ## Summary
 
-Phase 4 builds the complete Streamlit demo UI that showcases the entire ClinIQ pipeline end-to-end. Phase 3 was originally planned to include a 5-page Streamlit app (Pipeline Runner, Eval Dashboard, KG Viewer, Audit Trail, QA Bot) plus PyVis KG visualization and an automated evaluation suite. Since Phase 4 was added AFTER the original roadmap as "demo UI for the whole app," its purpose is to deliver the actual implementation of that full UI system -- the 5 core pages, the PyVis embedding, the QA Bot, plus a polished landing page and "interview-ready" demo experience with pre-computed results.
+Phase 4 builds the complete Streamlit demo UI that showcases the entire ClinIQ pipeline end-to-end. Phase 3 was originally planned to include a 5-page Streamlit app (Pipeline Runner, Eval Dashboard, KG Viewer, Audit Trail, QA Bot) plus PyVis KG visualization and an automated evaluation suite. Since Phase 4 was added AFTER the original roadmap as "demo UI for the whole app," its purpose is to deliver the actual implementation of that full UI system -- the 5 core pages, the PyVis embedding, the QA Bot, plus a polished landing page and "production-ready" demo experience with pre-computed results.
 
 The existing codebase has all backend modules (M1-M5) implemented with Pydantic schemas, a pipeline orchestrator (`run_pipeline_audited`), KG builder/querier, LLM-as-judge evaluation, and a CLI demo script. There is NO `ui/` directory yet -- no Streamlit code exists. The entire UI needs to be built from scratch, but the backend API surface (PipelineResult, CDIReport, AuditTrail, NLUResult, CodingResult) is well-defined and stable.
 
 Streamlit 1.55.0 (March 2026) provides all necessary features: `st.navigation` with `st.Page` for programmatic multipage apps, `st.status` for pipeline progress visualization, `st.chat_message`/`st.chat_input` for the QA Bot, `st.components.v1.html` for PyVis graph embedding, `st.plotly_chart` for evaluation dashboards, `st.dialog` for modal overlays, and comprehensive theming/CSS customization. The `st-annotated-text` library (v4.0.2) handles NER entity highlighting in clinical text.
 
-**Primary recommendation:** Build a 7-page Streamlit app using `st.navigation` with grouped sections: a Landing/Home page as the entry point, the 5 functional pages (Pipeline Runner, Eval Dashboard, KG Viewer, Audit Trail, QA Bot), and a pre-computed "Demo Showcase" page with cached results for instant interview demos. Use `st.cache_resource` for ML model loading, `st.session_state` for cross-page pipeline results, and JSON-serialized pre-computed results for zero-startup-delay demos.
+**Primary recommendation:** Build a 7-page Streamlit app using `st.navigation` with grouped sections: a Landing/Home page as the entry point, the 5 functional pages (Pipeline Runner, Eval Dashboard, KG Viewer, Audit Trail, QA Bot), and a pre-computed "Quick Start" page with cached results for instant loading. Use `st.cache_resource` for ML model loading, `st.session_state` for cross-page pipeline results, and JSON-serialized pre-computed results for zero-startup-delay demos.
 
 ## Standard Stack
 
@@ -136,7 +136,7 @@ with st.status("Running ClinIQ Pipeline...", expanded=True) as status:
 
 ### Pattern 3: Pre-computed Demo Results for Instant Startup
 **What:** Serialize PipelineResult objects to JSON files during a pre-computation step. On the demo page, load these instantly instead of running the full pipeline (which takes minutes on CPU).
-**When to use:** For the "Demo Showcase" / landing page and for interview scenarios where startup latency is unacceptable.
+**When to use:** For the "Quick Start" / landing page and for scenarios where startup latency is unacceptable.
 **Example:**
 ```python
 import json
@@ -264,7 +264,7 @@ def render_kg_graph(G, case_codes, cdi_report):
 ```
 
 ### Pattern 7: Chat Interface for QA Bot
-**What:** Use `st.chat_message` and `st.chat_input` with session state history for the interview QA bot.
+**What:** Use `st.chat_message` and `st.chat_input` with session state history for the clinical QA bot.
 **When to use:** On the QA Bot page.
 **Example:**
 ```python
@@ -362,7 +362,7 @@ if prompt or st.session_state.get("pending_question"):
 ### Pitfall 6: QA Bot Generates Hallucinated Answers
 **What goes wrong:** Qwen2.5-1.5B generates plausible-sounding but incorrect answers about the system, especially for edge-case questions.
 **Why it happens:** Small LLMs hallucinate when they lack grounding context.
-**How to avoid:** (1) Implement RAG over project docs (CLINIQ_SPEC.md, README.md, docstrings) so the QA bot has grounding context. (2) Pre-seed 7+ standard interview questions with verified answers that are injected as few-shot examples. (3) Add a confidence indicator and "I don't have enough information" fallback.
+**How to avoid:** (1) Implement RAG over project docs (CLINIQ_SPEC.md, README.md, docstrings) so the QA bot has grounding context. (2) Pre-seed 7+ standard clinical questions with verified answers that are injected as few-shot examples. (3) Add a confidence indicator and "I don't have enough information" fallback.
 **Warning signs:** Bot gives technically incorrect answers about the architecture, model names, or evaluation metrics.
 
 ### Pitfall 7: Custom CSS Breaks on Streamlit Updates
