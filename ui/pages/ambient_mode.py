@@ -151,24 +151,32 @@ def _build_disambiguation_items(pipeline_result) -> list:
         return items
 
     for gap in pipeline_result.cdi_report.documentation_gaps:
+        desc = gap.physician_query
+        if gap.evidence_text:
+            desc += f"\n\n**Evidence:** _{gap.evidence_text}_"
         items.append(
             DisambiguationItem(
                 item_id=uuid.uuid4().hex[:8],
                 category="gap",
                 title=f"Documentation Gap: {gap.code}",
-                description=gap.physician_query,
+                description=desc,
                 suggested_action=f"Clarify {gap.missing_qualifier} for {gap.code}",
                 source_code=gap.code,
                 confidence=gap.confidence,
             )
         )
     for md in pipeline_result.cdi_report.missed_diagnoses:
+        desc = md.description
+        if md.evidence_text:
+            desc += f"\n\n**Evidence:** _{md.evidence_text}_"
+        if md.co_coded_with:
+            desc += f"\n\n**Co-coded with:** `{md.co_coded_with}`"
         items.append(
             DisambiguationItem(
                 item_id=uuid.uuid4().hex[:8],
                 category="missed_diagnosis",
                 title=f"Potential Missed Dx: {md.suggested_code}",
-                description=md.description,
+                description=desc,
                 suggested_action=f"Consider documenting {md.suggested_code} ({md.description})",
                 source_code=md.suggested_code,
                 confidence=md.co_occurrence_weight,
@@ -386,6 +394,7 @@ elif ambient_state == "processing":
                     # ----------------------------------------------------------
                     st.write("**Step 1/4** — Transcribing audio...")
 
+                    t0 = time.time()
                     with tempfile.NamedTemporaryFile(
                         suffix=".wav", delete=False
                     ) as tmp:
@@ -394,9 +403,10 @@ elif ambient_state == "processing":
 
                     transcript = ambient_mod.transcribe_audio(tmp_path)
                     st.session_state["ambient_transcript"] = transcript.raw_text
+                    t1 = time.time()
 
                     word_count = len(transcript.raw_text.split())
-                    st.success(f"Transcription complete — {word_count} words captured")
+                    st.success(f"Transcription complete — {word_count} words captured ({t1 - t0:.1f}s)")
                     with st.expander("Preview transcript", expanded=False):
                         preview = transcript.raw_text[:500]
                         if len(transcript.raw_text) > 500:
@@ -408,10 +418,12 @@ elif ambient_state == "processing":
                     # ----------------------------------------------------------
                     st.write("**Step 2/4** — Generating structured clinical note...")
 
+                    t2 = time.time()
                     note = ambient_mod.generate_soap_note(transcript.raw_text)
                     st.session_state["ambient_note"] = note.full_text
+                    t3 = time.time()
 
-                    st.success("Clinical note generated")
+                    st.success(f"Clinical note generated ({t3 - t2:.1f}s)")
                     with st.expander("Preview note sections", expanded=False):
                         sections_found = []
                         if note.chief_complaint:
@@ -432,9 +444,11 @@ elif ambient_state == "processing":
                     # ----------------------------------------------------------
                     st.write("**Step 3/4** — Running clinical NER, ICD-10 coding & CDI analysis...")
 
+                    t4 = time.time()
                     pipeline_result = pipeline_mod.run_pipeline_audited(
                         note.full_text, use_llm_queries=False
                     )
+                    t5 = time.time()
 
                     entity_count = (
                         pipeline_result.nlu_result.entity_count
@@ -455,7 +469,7 @@ elif ambient_state == "processing":
 
                     st.success(
                         f"Pipeline complete — {entity_count} entities, "
-                        f"{code_count} ICD-10 codes, {gap_count} documentation gaps"
+                        f"{code_count} ICD-10 codes, {gap_count} documentation gaps ({t5 - t4:.1f}s)"
                     )
                     with st.expander("Preview findings", expanded=False):
                         if pipeline_result.nlu_result and pipeline_result.nlu_result.entities:
@@ -467,7 +481,7 @@ elif ambient_state == "processing":
                         if pipeline_result.coding_result and pipeline_result.coding_result.principal_diagnosis:
                             pd = pipeline_result.coding_result.principal_diagnosis
                             st.markdown(
-                                f"**Principal Dx:** `{pd.code}` — {pd.description}"
+                                f"**Principal Dx:** `{pd.icd10_code}` — {pd.description}"
                             )
 
                     st.session_state["ambient_pipeline_result"] = json.loads(
@@ -479,6 +493,7 @@ elif ambient_state == "processing":
                     # ----------------------------------------------------------
                     st.write("**Step 4/4** — Building disambiguation & review items...")
 
+                    t6 = time.time()
                     disambiguation_items = _build_disambiguation_items(pipeline_result)
 
                     st.session_state["ambient_disambiguation"] = [
@@ -497,10 +512,12 @@ elif ambient_state == "processing":
                         st.success(f"Found {item_count} items for review: {cat_summary}")
                     else:
                         st.success("No disambiguation items — documentation looks complete!")
+                    t7 = time.time()
 
+                    total_time = t7 - t0
                     st.session_state["ambient_state"] = "results"
                     status.update(
-                        label="Encounter processed!",
+                        label=f"Encounter processed! (Total: {total_time:.1f}s)",
                         state="complete",
                         expanded=False,
                     )
