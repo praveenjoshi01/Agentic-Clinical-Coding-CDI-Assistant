@@ -1,0 +1,45 @@
+name: ClinIQ CI/CD
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  test:
+    name: Run Pytest
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.10
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
+          cache: "pip"
+
+      - name: Install system dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg build-essential
+
+      - name: Install Python dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -e ".[dev]"
+          python -m spacy download en_core_web_sm
+
+      - name: Run tests with pytest
+        run: |
+          pytest cliniq/tests/ cliniq_v2/evaluation/
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          PINECONE_API_KEY: ${{ secrets.PINECONE_API_KEY }}
+
+  # Note: Deployment to Streamlit Community Cloud is handled natively 
+  # by authorizing Streamlit to watch this GitHub repo's main branch.
