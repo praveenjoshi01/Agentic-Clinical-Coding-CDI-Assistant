@@ -136,8 +136,8 @@ Plans:
 - [x] 06-02-PLAN.md — RAG infrastructure (FAISS index builder, retriever) + m3_rag_coding
 - [x] 06-03-PLAN.md — m4_cdi (GPT-4o queries) + m5_explainability (re-export) + m6_ambient (Whisper API)
 - [x] 06-04-PLAN.md — Pipeline orchestrator + evaluation/llm_judge (GPT-4o judge)
-- [ ] 06-05-PLAN.md — UI API key gate + backend selector + page import updates + FAISS index check
-- [ ] 06-06-PLAN.md — v2 FAISS index build script
+- [x] 06-05-PLAN.md — UI API key gate + backend selector + page import updates + FAISS index check
+- [x] 06-06-PLAN.md — v2 FAISS index build script
 
 ## Progress
 
@@ -151,7 +151,7 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6
 | 3. Evaluation & Demo UI | 0/TBD | Not started | - |
 | 4. Demo UI for the Whole App | 0/5 | Planned | - |
 | 5. Ambient Listening Mode | 3/3 | ✓ Complete | 2026-03-24 |
-| 6. ClinIQ v2 — OpenAI Backend | 4/6 | In progress | - |
+| 6. ClinIQ v2 — OpenAI Backend | 6/6 | ✓ Complete | 2026-03-27 |
 
 ---
 *Roadmap created: 2026-03-18*
@@ -167,3 +167,4 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6
 *Phase 5 complete: 2026-03-24 (3/3 plans, verification passed 6/6)*
 *Phase 6 planned: 2026-03-27 (6 plans across 4 waves, plan 06-06 added for FAISS build script + backend-aware execution)*
 *Phase 6 revised: 2026-03-27 (moved FAISS index check from 06-06 to 06-05, eliminated file overlap)*
+*Phase 6 complete: 2026-03-27 (6/6 plans, verification passed 31/31)*
