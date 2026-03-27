@@ -5,23 +5,23 @@
 See: .planning/PROJECT.md (updated 2026-03-18)
 
 **Core value:** Every clinical note produces correctly sequenced ICD-10 codes with full explainability — from entity extraction through RAG retrieval through KG-based CDI gap detection — all running locally on OSS models.
-**Current focus:** Phase 6 in progress. ClinIQ v2 OpenAI backend.
+**Current focus:** Phase 6 complete. ClinIQ v2 OpenAI backend finished.
 
 ## Current Position
 
 Phase: 6 of 6 (ClinIQ v2 OpenAI Backend)
-Plan: 5 of 6 in current phase
-Status: Plan 06-05 complete
-Last activity: 2026-03-27 — Completed 06-05-PLAN.md (UI Integration)
+Plan: 6 of 6 in current phase
+Status: Phase 06 complete — all plans executed
+Last activity: 2026-03-27 — Completed 06-06-PLAN.md (v2 FAISS Index Build Script)
 
-Progress: [████████████████████████] 97%
+Progress: [█████████████████████████] 100%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 25
-- Average duration: 3.4 min
-- Total execution time: 1.41 hours
+- Total plans completed: 26
+- Average duration: 3.3 min
+- Total execution time: 1.43 hours
 
 **By Phase:**
 
@@ -31,11 +31,11 @@ Progress: [███████████████████████
 | 02 | 6 | 14 min | 2.3 min |
 | 04 | 4 | 15 min | 3.75 min |
 | 05 | 3 | 11 min | 3.7 min |
-| 06 | 5 | 18 min | 3.6 min |
+| 06 | 6 | 19 min | 3.2 min |
 
 **Recent Trend:**
-- Last 5 plans: 4 min, 4 min, 5 min, 3 min, 2 min
-- Trend: Steady pace
+- Last 5 plans: 4 min, 5 min, 3 min, 2 min, 1 min
+- Trend: Accelerating on final plans
 
 *Updated after each plan completion*
 | Phase 01 P05 | 3 | 2 tasks | 2 files |
@@ -59,6 +59,7 @@ Progress: [███████████████████████
 | Phase 06 P03 | 5 | 2 tasks | 3 files |
 | Phase 06 P04 | 3 | 2 tasks | 3 files |
 | Phase 06 P05 | 2 | 2 tasks | 6 files |
+| Phase 06 P06 | 1 | 1 tasks | 1 files |
 
 ## Accumulated Context
 
@@ -160,6 +161,9 @@ Recent decisions affecting current work:
 - 06-05: TYPE_CHECKING imports preserved for IDE support; only runtime imports made dynamic
 - 06-05: FAISS index check returns None (not crash) when v2 index missing
 - 06-05: _get_model_manager() retained for v1 fallback (lazy import inside cached function)
+- 06-06: Enhanced error handling with specific messages for invalid API key, rate limits, and missing ICD-10 data
+- 06-06: KeyboardInterrupt handler for graceful cancellation of long-running index builds
+- 06-06: Help epilog with usage examples for CLI discoverability
 
 ### Pending Todos
 
@@ -178,10 +182,10 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-03-27
-Stopped at: Completed 06-05-PLAN.md
+Stopped at: Completed 06-06-PLAN.md (Phase 6 complete)
 Resume file: None
 
 ---
 *State initialized: 2026-03-18*
-*Last updated: 2026-03-27 after completing 06-05*
-*Next action: Execute 06-06-PLAN.md (v2 FAISS Index Build Script)*
+*Last updated: 2026-03-27 after completing 06-06*
+*Next action: All phases complete. Project finished.*
