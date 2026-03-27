@@ -287,7 +287,7 @@ with nav_col3:
         )
         st.page_link("pages/qa_bot.py", label="Open QA Bot", icon=":material/chat:")
 
-eval_col, _, _ = st.columns(3)
+eval_col, ambient_col, _ = st.columns(3)
 with eval_col:
     with st.container(border=True):
         st.markdown("##### Evaluation Metrics")
@@ -296,6 +296,15 @@ with eval_col:
             "across all 5 pipeline modules."
         )
         st.page_link("pages/eval_dashboard.py", label="Open Eval Dashboard", icon=":material/assessment:")
+
+with ambient_col:
+    with st.container(border=True):
+        st.markdown("##### Ambient Mode")
+        st.caption(
+            "Record doctor-patient encounters, auto-generate SOAP notes, "
+            "and detect documentation gaps with coding disambiguation."
+        )
+        st.page_link("pages/ambient_mode.py", label="Open Ambient Mode", icon=":material/mic:")
 
 st.divider()
 
