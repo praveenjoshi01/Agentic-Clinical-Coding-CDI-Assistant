@@ -174,6 +174,7 @@ None yet.
 - Phase 4 added: demo UI for the whole app
 - Phase 5 added: Ambient Listening Mode – real-time session recording with auto-generated clinical notes, documentation gap detection, and coding disambiguation
 - Phase 6 added: ClinIQ v2 OpenAI backend – replace all local OSS models with OpenAI API calls
+- Phase 7 added: Optional Pinecone vector DB instead of FAISS when API key provided
 
 ### Blockers/Concerns
 
