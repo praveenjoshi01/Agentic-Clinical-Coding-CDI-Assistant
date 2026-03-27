@@ -5,23 +5,23 @@
 See: .planning/PROJECT.md (updated 2026-03-18)
 
 **Core value:** Every clinical note produces correctly sequenced ICD-10 codes with full explainability — from entity extraction through RAG retrieval through KG-based CDI gap detection — all running locally on OSS models.
-**Current focus:** Phase 6 complete. ClinIQ v2 OpenAI backend finished.
+**Current focus:** Phase 7 in progress. Optional Pinecone vector DB integration.
 
 ## Current Position
 
-Phase: 6 of 6 (ClinIQ v2 OpenAI Backend)
-Plan: 6 of 6 in current phase
-Status: Phase 06 complete — all plans executed
-Last activity: 2026-03-27 — Completed 06-06-PLAN.md (v2 FAISS Index Build Script)
+Phase: 7 of 7 (Optional Pinecone Vector DB)
+Plan: 1 of 2 in current phase
+Status: Executing Phase 07 — plan 01 complete
+Last activity: 2026-03-27 — Completed 07-01-PLAN.md (Pinecone Retriever and Factory Wiring)
 
-Progress: [█████████████████████████] 100%
+Progress: [████████████████████████░] 96%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 26
-- Average duration: 3.3 min
-- Total execution time: 1.43 hours
+- Total plans completed: 27
+- Average duration: 3.2 min
+- Total execution time: 1.46 hours
 
 **By Phase:**
 
@@ -32,10 +32,11 @@ Progress: [███████████████████████
 | 04 | 4 | 15 min | 3.75 min |
 | 05 | 3 | 11 min | 3.7 min |
 | 06 | 6 | 19 min | 3.2 min |
+| 07 | 1 | 2 min | 2 min |
 
 **Recent Trend:**
-- Last 5 plans: 4 min, 5 min, 3 min, 2 min, 1 min
-- Trend: Accelerating on final plans
+- Last 5 plans: 5 min, 3 min, 2 min, 1 min, 2 min
+- Trend: Consistently fast execution
 
 *Updated after each plan completion*
 | Phase 01 P05 | 3 | 2 tasks | 2 files |
@@ -60,6 +61,7 @@ Progress: [███████████████████████
 | Phase 06 P04 | 3 | 2 tasks | 3 files |
 | Phase 06 P05 | 2 | 2 tasks | 6 files |
 | Phase 06 P06 | 1 | 1 tasks | 1 files |
+| Phase 07 P01 | 2 | 2 tasks | 8 files |
 
 ## Accumulated Context
 
@@ -164,6 +166,10 @@ Recent decisions affecting current work:
 - 06-06: Enhanced error handling with specific messages for invalid API key, rate limits, and missing ICD-10 data
 - 06-06: KeyboardInterrupt handler for graceful cancellation of long-running index builds
 - 06-06: Help epilog with usage examples for CLI discoverability
+- 07-01: BaseRetriever as Protocol (structural subtyping) so FAISSRetriever needs no modification
+- 07-01: Factory catches RuntimeError and ImportError to fall back to FAISS transparently
+- 07-01: PineconeRetriever uses lazy index connection matching FAISS lazy-load pattern
+- 07-01: Pinecone import wrapped in try/except at module level for graceful missing-package handling
 
 ### Pending Todos
 
@@ -183,10 +189,10 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-03-27
-Stopped at: Completed 06-06-PLAN.md (Phase 6 complete)
+Stopped at: Completed 07-01-PLAN.md (Pinecone Retriever and Factory Wiring)
 Resume file: None
 
 ---
 *State initialized: 2026-03-18*
-*Last updated: 2026-03-27 after completing 06-06*
-*Next action: All phases complete. Project finished.*
+*Last updated: 2026-03-27 after completing 07-01*
+*Next action: Execute 07-02-PLAN.md (tests and population script)*
