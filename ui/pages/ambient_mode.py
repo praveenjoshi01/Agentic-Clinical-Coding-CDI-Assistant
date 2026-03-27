@@ -138,6 +138,57 @@ def _category_badge(category: str) -> str:
 
 
 # ---------------------------------------------------------------------------
+# Helper: build disambiguation items from PipelineResult
+# ---------------------------------------------------------------------------
+
+
+def _build_disambiguation_items(pipeline_result) -> list:
+    """Extract disambiguation items from a PipelineResult's CDI report."""
+    from cliniq.models.ambient import DisambiguationItem
+
+    items: list[DisambiguationItem] = []
+    if pipeline_result.cdi_report is None:
+        return items
+
+    for gap in pipeline_result.cdi_report.documentation_gaps:
+        items.append(
+            DisambiguationItem(
+                item_id=uuid.uuid4().hex[:8],
+                category="gap",
+                title=f"Documentation Gap: {gap.code}",
+                description=gap.physician_query,
+                suggested_action=f"Clarify {gap.missing_qualifier} for {gap.code}",
+                source_code=gap.code,
+                confidence=gap.confidence,
+            )
+        )
+    for md in pipeline_result.cdi_report.missed_diagnoses:
+        items.append(
+            DisambiguationItem(
+                item_id=uuid.uuid4().hex[:8],
+                category="missed_diagnosis",
+                title=f"Potential Missed Dx: {md.suggested_code}",
+                description=md.description,
+                suggested_action=f"Consider documenting {md.suggested_code} ({md.description})",
+                source_code=md.suggested_code,
+                confidence=md.co_occurrence_weight,
+            )
+        )
+    for cc in pipeline_result.cdi_report.code_conflicts:
+        items.append(
+            DisambiguationItem(
+                item_id=uuid.uuid4().hex[:8],
+                category="conflict",
+                title=f"Code Conflict: {cc.code_a} vs {cc.code_b}",
+                description=cc.conflict_reason,
+                suggested_action=cc.recommendation,
+                source_code=f"{cc.code_a},{cc.code_b}",
+            )
+        )
+    return items
+
+
+# ---------------------------------------------------------------------------
 # Page layout
 # ---------------------------------------------------------------------------
 
@@ -244,22 +295,46 @@ elif ambient_state == "processing":
                     st.session_state["ambient_state"] = "idle"
                     status.update(label="Failed to load demo", state="error")
                 else:
-                    st.write("Parsing transcript...")
-                    time.sleep(0.5)
-                    st.write("Generating clinical note...")
-                    time.sleep(0.5)
-                    st.write("Running CDI analysis...")
-                    time.sleep(0.5)
+                    # Step 1: Transcript
+                    st.write("**Step 1/4** — Loading transcript...")
+                    time.sleep(0.3)
+                    transcript_text = demo_data.get("transcript", "")
+                    st.session_state["ambient_transcript"] = transcript_text
+                    word_count = len(transcript_text.split()) if transcript_text else 0
+                    st.success(f"Transcript loaded — {word_count} words")
+                    with st.expander("Preview transcript", expanded=False):
+                        preview = transcript_text[:500]
+                        if len(transcript_text) > 500:
+                            preview += "..."
+                        st.text(preview)
 
-                    st.session_state["ambient_transcript"] = demo_data.get(
-                        "transcript", ""
-                    )
-                    st.session_state["ambient_note"] = demo_data.get(
-                        "generated_note", ""
-                    )
-                    st.session_state["ambient_pipeline_result"] = demo_data.get(
-                        "pipeline_result"
-                    )
+                    # Step 2: Clinical note
+                    st.write("**Step 2/4** — Parsing clinical note...")
+                    time.sleep(0.3)
+                    note_text = demo_data.get("generated_note", "")
+                    st.session_state["ambient_note"] = note_text
+                    st.success("Clinical note loaded")
+                    with st.expander("Preview note", expanded=False):
+                        st.markdown(note_text[:400] + ("..." if len(note_text) > 400 else ""))
+
+                    # Step 3: Pipeline results
+                    st.write("**Step 3/4** — Loading pipeline results...")
+                    time.sleep(0.3)
+                    pipeline_dict = demo_data.get("pipeline_result")
+                    st.session_state["ambient_pipeline_result"] = pipeline_dict
+                    if pipeline_dict:
+                        nlu = pipeline_dict.get("nlu_result") or {}
+                        entity_count = nlu.get("entity_count", 0)
+                        coding = pipeline_dict.get("coding_result") or {}
+                        code_count = (1 if coding.get("principal_diagnosis") else 0) + len(coding.get("secondary_codes", [])) + len(coding.get("complication_codes", []))
+                        cdi = pipeline_dict.get("cdi_report") or {}
+                        gap_count = cdi.get("gap_count", 0)
+                        st.success(f"Pipeline loaded — {entity_count} entities, {code_count} codes, {gap_count} gaps")
+                    else:
+                        st.success("Pipeline results loaded")
+
+                    # Step 4: Disambiguation
+                    st.write("**Step 4/4** — Preparing disambiguation items...")
 
                     # Load disambiguation items with pending status
                     raw_items = demo_data.get("disambiguation_items", [])
@@ -272,6 +347,19 @@ elif ambient_state == "processing":
                         items_with_status.append(item)
                     st.session_state["ambient_disambiguation"] = items_with_status
 
+                    item_count = len(items_with_status)
+                    if item_count > 0:
+                        cats: dict[str, int] = {}
+                        for it in items_with_status:
+                            c = it.get("category", "unknown")
+                            cats[c] = cats.get(c, 0) + 1
+                        cat_summary = ", ".join(
+                            f"{cnt} {cat.replace('_', ' ')}" for cat, cnt in cats.items()
+                        )
+                        st.success(f"Found {item_count} items for review: {cat_summary}")
+                    else:
+                        st.success("No disambiguation items — documentation looks complete!")
+
                     st.session_state["ambient_state"] = "results"
                     status.update(
                         label="Demo encounter loaded!",
@@ -281,47 +369,135 @@ elif ambient_state == "processing":
                     st.rerun()
 
             else:
-                # LIVE PATH: transcribe -> note -> CDI pipeline
+                # LIVE PATH: transcribe -> note -> NER/RAG -> CDI -> disambiguation
                 audio_bytes = st.session_state.get("ambient_audio_bytes")
                 if audio_bytes is None:
                     st.error("No audio data captured. Please record audio first.")
                     st.session_state["ambient_state"] = "idle"
                     status.update(label="No audio data", state="error")
                 else:
-                    st.write("Step 1: Transcribing audio...")
-
-                    from ui.helpers.backend import get_ambient_module
+                    from ui.helpers.backend import get_ambient_module, get_pipeline_module
 
                     ambient_mod = get_ambient_module()
-                    run_ambient_pipeline = ambient_mod.run_ambient_pipeline
-                    transcribe_audio = ambient_mod.transcribe_audio
+                    pipeline_mod = get_pipeline_module()
 
-                    # Save audio to temporary WAV file
+                    # ----------------------------------------------------------
+                    # Step 1: Transcribe audio
+                    # ----------------------------------------------------------
+                    st.write("**Step 1/4** — Transcribing audio...")
+
                     with tempfile.NamedTemporaryFile(
                         suffix=".wav", delete=False
                     ) as tmp:
                         tmp.write(audio_bytes)
                         tmp_path = tmp.name
 
-                    transcript = transcribe_audio(tmp_path)
+                    transcript = ambient_mod.transcribe_audio(tmp_path)
                     st.session_state["ambient_transcript"] = transcript.raw_text
 
-                    st.write("Step 2: Generating clinical note and running CDI pipeline...")
+                    word_count = len(transcript.raw_text.split())
+                    st.success(f"Transcription complete — {word_count} words captured")
+                    with st.expander("Preview transcript", expanded=False):
+                        preview = transcript.raw_text[:500]
+                        if len(transcript.raw_text) > 500:
+                            preview += "..."
+                        st.text(preview)
 
-                    note, pipeline_result, disambiguation_items = (
-                        run_ambient_pipeline(transcript.raw_text)
+                    # ----------------------------------------------------------
+                    # Step 2: Generate SOAP note
+                    # ----------------------------------------------------------
+                    st.write("**Step 2/4** — Generating structured clinical note...")
+
+                    note = ambient_mod.generate_soap_note(transcript.raw_text)
+                    st.session_state["ambient_note"] = note.full_text
+
+                    st.success("Clinical note generated")
+                    with st.expander("Preview note sections", expanded=False):
+                        sections_found = []
+                        if note.chief_complaint:
+                            sections_found.append(f"**CC:** {note.chief_complaint[:120]}...")
+                        if note.hpi:
+                            sections_found.append(f"**HPI:** {note.hpi[:120]}...")
+                        if note.assessment:
+                            sections_found.append(f"**Assessment:** {note.assessment[:120]}...")
+                        if note.plan:
+                            sections_found.append(f"**Plan:** {note.plan[:120]}...")
+                        if sections_found:
+                            st.markdown("\n\n".join(sections_found))
+                        else:
+                            st.text(note.full_text[:300])
+
+                    # ----------------------------------------------------------
+                    # Step 3: Run NER + RAG coding + CDI pipeline
+                    # ----------------------------------------------------------
+                    st.write("**Step 3/4** — Running clinical NER, ICD-10 coding & CDI analysis...")
+
+                    pipeline_result = pipeline_mod.run_pipeline_audited(
+                        note.full_text, use_llm_queries=False
                     )
 
-                    st.session_state["ambient_note"] = note.full_text
+                    entity_count = (
+                        pipeline_result.nlu_result.entity_count
+                        if pipeline_result.nlu_result
+                        else 0
+                    )
+                    code_count = 0
+                    if pipeline_result.coding_result:
+                        if pipeline_result.coding_result.principal_diagnosis:
+                            code_count += 1
+                        code_count += len(pipeline_result.coding_result.secondary_codes)
+                        code_count += len(pipeline_result.coding_result.complication_codes)
+                    gap_count = (
+                        pipeline_result.cdi_report.gap_count
+                        if pipeline_result.cdi_report
+                        else 0
+                    )
+
+                    st.success(
+                        f"Pipeline complete — {entity_count} entities, "
+                        f"{code_count} ICD-10 codes, {gap_count} documentation gaps"
+                    )
+                    with st.expander("Preview findings", expanded=False):
+                        if pipeline_result.nlu_result and pipeline_result.nlu_result.entities:
+                            top_ents = pipeline_result.nlu_result.entities[:5]
+                            ent_text = ", ".join(
+                                f"`{e.text}` ({e.entity_type})" for e in top_ents
+                            )
+                            st.markdown(f"**Top entities:** {ent_text}")
+                        if pipeline_result.coding_result and pipeline_result.coding_result.principal_diagnosis:
+                            pd = pipeline_result.coding_result.principal_diagnosis
+                            st.markdown(
+                                f"**Principal Dx:** `{pd.code}` — {pd.description}"
+                            )
+
                     st.session_state["ambient_pipeline_result"] = json.loads(
                         pipeline_result.model_dump_json()
                     )
+
+                    # ----------------------------------------------------------
+                    # Step 4: Build disambiguation items
+                    # ----------------------------------------------------------
+                    st.write("**Step 4/4** — Building disambiguation & review items...")
+
+                    disambiguation_items = _build_disambiguation_items(pipeline_result)
+
                     st.session_state["ambient_disambiguation"] = [
                         json.loads(item.model_dump_json())
                         for item in disambiguation_items
                     ]
 
-                    st.write("Step 3: Processing complete!")
+                    item_count = len(disambiguation_items)
+                    if item_count > 0:
+                        cats = {}
+                        for it in disambiguation_items:
+                            cats[it.category] = cats.get(it.category, 0) + 1
+                        cat_summary = ", ".join(
+                            f"{cnt} {cat.replace('_', ' ')}" for cat, cnt in cats.items()
+                        )
+                        st.success(f"Found {item_count} items for review: {cat_summary}")
+                    else:
+                        st.success("No disambiguation items — documentation looks complete!")
+
                     st.session_state["ambient_state"] = "results"
                     status.update(
                         label="Encounter processed!",
