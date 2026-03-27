@@ -30,12 +30,18 @@ INDEX_DIR = CACHE_DIR / "icd10_index"
 # text-embedding-3-small default dimension
 EMBEDDING_DIMENSIONS = 1536
 
+# Pinecone configuration (used when Pinecone API key is provided)
+PINECONE_INDEX_NAME = "cliniq-icd10"
+PINECONE_NAMESPACE = "icd10"
+
 # Re-exported for convenience (imported from cliniq.config above)
 __all__ = [
     "MODEL_REGISTRY",
     "CACHE_DIR",
     "INDEX_DIR",
     "EMBEDDING_DIMENSIONS",
+    "PINECONE_INDEX_NAME",
+    "PINECONE_NAMESPACE",
     "CONFIDENCE_THRESHOLD",
     "RETRIEVAL_TOP_K",
     "DATA_DIR",

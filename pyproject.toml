@@ -34,6 +34,7 @@ dev = [
     "pytest",
     "pytest-cov",
 ]
+pinecone = ["pinecone>=8.0.0"]
 
 [tool.setuptools.packages.find]
 where = ["."]
