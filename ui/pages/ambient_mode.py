@@ -4,7 +4,7 @@ clinical notes, CDI gap detection, missed diagnosis flagging, and coding
 disambiguation.
 
 Supports dual-path architecture:
-- Demo mode: Pre-computed encounters for instant, reliable interview demos
+- Demo mode: Pre-computed encounters for instant, reliable results
 - Live mode: Microphone recording -> Whisper transcription -> SOAP note generation -> CDI pipeline
 """
 
@@ -175,11 +175,6 @@ if is_demo_mode:
         key="ambient_demo_select",
     )
     demo_encounter_id = demo_options[demo_label]
-else:
-    audio_data = st.audio_input(
-        "Record encounter audio",
-        key="ambient_audio_recorder",
-    )
 
 # ---- SESSION CONTROLS (state machine) ------------------------------------
 
@@ -203,41 +198,33 @@ if ambient_state == "idle":
             st.session_state["_demo_encounter_id"] = demo_encounter_id
             st.rerun()
     else:
-        start_disabled = audio_data is None
+        st.markdown("##### Step 1: Record Encounter")
+        st.caption(
+            "Click the **microphone icon** below to start recording. "
+            "Click it again to stop. The captured audio will appear as a playback bar."
+        )
+        live_audio = st.audio_input(
+            "Record encounter audio",
+            key="ambient_audio_recorder",
+        )
+
+        st.markdown("##### Step 2: Process Recording")
+        has_audio = live_audio is not None
+        if has_audio:
+            st.success("Audio captured! Click below to process.")
         if st.button(
-            "Start Recording",
+            "Process Recording",
             type="primary",
-            disabled=start_disabled,
+            disabled=not has_audio,
             use_container_width=True,
         ):
             st.session_state["ambient_session_id"] = uuid.uuid4().hex[:8]
             st.session_state["ambient_is_demo"] = False
-            st.session_state["ambient_state"] = "recording"
-            st.session_state["recording_start_time"] = datetime.now()
-            st.session_state["ambient_audio_bytes"] = (
-                audio_data.read() if audio_data else None
-            )
-            st.rerun()
-
-# --- RECORDING STATE (live mode only) ---
-elif ambient_state == "recording":
-    _session_timer()
-
-    live_audio = st.audio_input(
-        "Recording in progress -- speak into your microphone",
-        key="ambient_audio_live",
-    )
-
-    if st.button(
-        "End Session",
-        type="secondary",
-        use_container_width=True,
-    ):
-        # Capture latest audio
-        if live_audio is not None:
             st.session_state["ambient_audio_bytes"] = live_audio.read()
-        st.session_state["ambient_state"] = "processing"
-        st.rerun()
+            st.session_state["ambient_state"] = "processing"
+            st.rerun()
+        if not has_audio:
+            st.caption("Record audio above first, then click Process.")
 
 # --- PROCESSING STATE ---
 elif ambient_state == "processing":
@@ -303,10 +290,11 @@ elif ambient_state == "processing":
                 else:
                     st.write("Step 1: Transcribing audio...")
 
-                    from cliniq.modules.m6_ambient import (
-                        run_ambient_pipeline,
-                        transcribe_audio,
-                    )
+                    from ui.helpers.backend import get_ambient_module
+
+                    ambient_mod = get_ambient_module()
+                    run_ambient_pipeline = ambient_mod.run_ambient_pipeline
+                    transcribe_audio = ambient_mod.transcribe_audio
 
                     # Save audio to temporary WAV file
                     with tempfile.NamedTemporaryFile(
@@ -405,7 +393,10 @@ elif ambient_state == "results":
         if pipeline_dict is None:
             st.info("No pipeline results available for this session.")
         else:
-            from cliniq.pipeline import PipelineResult
+            from ui.helpers.backend import get_pipeline_module
+
+            pipeline_mod = get_pipeline_module()
+            PipelineResult = pipeline_mod.PipelineResult
             from ui.components.code_display import (
                 render_code_cards,
                 render_principal_diagnosis,

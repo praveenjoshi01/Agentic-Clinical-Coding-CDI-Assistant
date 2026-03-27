@@ -136,8 +136,10 @@ if run_clicked:
     if use_precomputed and demo_case_id:
         raw_json = _load_precomputed(demo_case_id)
         if raw_json is not None:
-            from cliniq.pipeline import PipelineResult
+            from ui.helpers.backend import get_pipeline_module
 
+            pipeline_mod = get_pipeline_module()
+            PipelineResult = pipeline_mod.PipelineResult
             result = PipelineResult.model_validate_json(raw_json)
             st.success(f"Loaded pre-computed results for {demo_label}.")
         else:
@@ -154,16 +156,14 @@ if run_clicked:
 
         # If no custom input but a demo case selected, use demo case text
         if effective_input is None and demo_case_id:
-            # Try loading the demo case source text from the test data
-            demo_text_path = (
-                Path(__file__).resolve().parent.parent.parent
-                / "tests"
-                / "data"
-                / "cases"
-                / f"{demo_case_id}.txt"
-            )
+            # Try loading the demo case source from the gold standard data
+            gold_std = Path(__file__).resolve().parent.parent.parent / "cliniq" / "data" / "gold_standard"
+            demo_text_path = gold_std / "text_notes" / f"{demo_case_id}.txt"
+            demo_fhir_path = gold_std / "fhir_bundles" / f"{demo_case_id}.json"
             if demo_text_path.exists():
                 effective_input = demo_text_path.read_text(encoding="utf-8")
+            elif demo_fhir_path.exists():
+                effective_input = json.loads(demo_fhir_path.read_text(encoding="utf-8"))
             else:
                 st.error(
                     "No input provided and demo case source text not found. "
